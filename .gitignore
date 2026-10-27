@@ -4,3 +4,11 @@ dist/
 *.log
 recordings/
 .DS_Store
+
+.cache/
+submission/video/work/
+submission/video/captures/
+submission/video/voiceover.*
+
+docs/cache-cleanup*.json
+scripts/ops/

@@ -1,0 +1,7 @@
+Khayal application and original vector species artwork: MIT License, see LICENSE.
+
+This project includes MediaPipe Tasks Vision0.10.35 runtime and Google's SelfieSegmenter landscape model. Upstream project: https://github.com/google-ai-edge/mediapipe ; model distribution: https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter_landscape/float16/1/selfie_segmenter_landscape.tflite . Apache License2.0 text: public/assets/vision/LICENSE-Apache-2.0.txt . Exact sourceURLs and checksums are recorded in public/assets/vision/manifest.json.
+
+Font files are distributed under their respective SILOpenFontLicense notices in public/assets/fonts/. Original copyright and reserved font names are preserved verbatim.
+
+The Devpost cover is OpenAI-generated promotional illustration commissioned by the project owner. It is not a browser screenshot, webcam capture, authentic historical photograph, contest award or customer evidence. Generation metadata and prompt are retained in submission/artwork/khayal-devpost-3x2.provenance.json.

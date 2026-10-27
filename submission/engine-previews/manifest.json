@@ -1,0 +1,32 @@
+{
+  "kind": "engine rehearsal previews",
+  "width": 1920,
+  "height": 1080,
+  "items": [
+    {
+      "file": "01-stage.png",
+      "source": "shared SVG scene + synthetic Director fixture; no camera, browser capture or real Twitch",
+      "sha256": "8fd9f9d728815d21b1e8020edde2d0de57e8323747dc2048968caf4dc6d89405"
+    },
+    {
+      "file": "02-freeplay.png",
+      "source": "shared SVG scene + synthetic Director fixture; no camera, browser capture or real Twitch",
+      "sha256": "373c032d8e5c5f19c249d0fa1ce2af80b8e3ae71841a009f45e3dd0ffff818dd"
+    },
+    {
+      "file": "03-depth.png",
+      "source": "shared SVG scene + synthetic Director fixture; no camera, browser capture or real Twitch",
+      "sha256": "38af78810f2cce3a7debb8c553d1449ae227f82e0dafad15daec0b1a717c1a83"
+    },
+    {
+      "file": "04-hunt.png",
+      "source": "shared SVG scene + synthetic Director fixture; no camera, browser capture or real Twitch",
+      "sha256": "bd357fc8c2c9db10d606fba484076e83e2ae0fca849d719c6d8d803423a732ff"
+    },
+    {
+      "file": "05-company.png",
+      "source": "shared SVG scene + synthetic Director fixture; no camera, browser capture or real Twitch",
+      "sha256": "efd0341ddee67e6876f752891abd585ce80156495aa4fdbdcdd33e2a9502615c"
+    }
+  ]
+}

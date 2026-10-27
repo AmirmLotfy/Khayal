@@ -1,5 +1,17 @@
 import { test, expect } from "vitest";
 import { Director } from "./director";
+test("ordinary puppets respond to a fresh motion hit with a bounded bounce", () => {
+  const d = new Director();
+  d.raised = true;
+  d.input({ id: "viewer", name: "Nour" }, "!cat");
+  d.tick(0.016, () => false);
+  expect(d.puppets[0].y).toBe(850);
+  d.tick(0.016, () => true);
+  expect(d.puppets[0].vy).toBeLessThan(0);
+  const velocity = d.puppets[0].vy;
+  d.tick(0.016, () => true);
+  expect(d.puppets[0].vy).toBeGreaterThan(velocity);
+});
 test("stage bans match Twitch login even when display name is Arabic", () => {
   const d = new Director();
   d.raised = true;

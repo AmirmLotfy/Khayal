@@ -6,7 +6,7 @@ Product: a local Twitch shadow theater. Vite + vanilla TypeScript + PixiJS v8 + 
 
 Commands pass through the shared parser. One puppet per viewer, cap24, FIFO queue300. Captions plain text, link/control removal,60 graphemes. Moderator authority comes from Twitch IDs and badges. Stage bans do not ban Twitch accounts.
 
-Use only palette.ts colors, brief typography, gentle rod movement and slow light fluctuation. No neon, glass effects, emoji, pure black/white or generated concept images. Temporary local art must be labeled honestly in documentation.
+User Oct27 ground-up redesign supersedes the original linen/cabinet art direction: use the moonlit cyanotype direction in docs/DESIGN_DIRECTION.md and current palette.ts. Deep ink blue, pale cut-paper species, open space, amber flames; no parchment/curtains/wood/brass/city skyline. No neon/glass/emoji. Promotional AI illustration is authorized for the3:2cover and must be labeled as promotional, never as gameplay evidence. Shared original vector art may be production art, not automatically a placeholder. Gentle rod movement remains.
 
 Run npm test and npm run build before a milestone commit. Record exact results and evidence limits. Real Twitch events, human swats/fairness, OBS performance, photography/audio and publication are separate acceptance gates. Never mark simulator evidence as live.
 

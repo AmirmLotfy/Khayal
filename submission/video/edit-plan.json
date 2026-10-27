@@ -1,0 +1,21 @@
+{
+  "title": "Khayal — Your body. Chat’s playground.",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 150,
+  "voiceStartsAt": 6,
+  "voiceFile": "voiceover.wav",
+  "output": "khayal-submission-150s.mp4",
+  "segments": [
+    {"name":"hook","start":0,"end":6,"file":"captures/00-physical-save.mp4","source":"real-camera-and-twitch","description":"One uninterrupted real incoming afreet and physical save."},
+    {"name":"intro","start":6,"end":22,"file":"captures/01-company.mp4","source":"real-twitch","description":"Actual stage and community interaction."},
+    {"name":"idea","start":22,"end":38,"file":"captures/02-silhouette.mp4","source":"real-camera","description":"Actual camera silhouette, no illustrative substitute."},
+    {"name":"puppets","start":38,"end":55,"file":"captures/03-command-depth.mp4","source":"real-twitch","description":"Visible command to puppet to depth change, continuous causal action."},
+    {"name":"hunt","start":55,"end":78,"file":"captures/04-lantern-defense.mp4","source":"real-camera-and-twitch","description":"Five lanterns and actual timed defense; no unmarked time compression."},
+    {"name":"direction","start":78,"end":95,"file":"captures/05-director.mp4","source":"actual-app","description":"Cue-book controls with rehearsal source label if simulated."},
+    {"name":"company","start":95,"end":110,"file":"captures/06-playbill.mp4","source":"actual-app","description":"Actual exported cast from the recorded performance."},
+    {"name":"codex","start":110,"end":135,"file":"captures/07-codex-build.mp4","source":"genuine-codex-build","description":"Actual primary chat, actual source, current checks; exclude credentials."},
+    {"name":"closing","start":135,"end":150,"file":"captures/08-curtain.mp4","source":"real-camera-and-twitch","description":"Best real performance moment, curtain and title."}
+  ]
+}

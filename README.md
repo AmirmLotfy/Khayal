@@ -1,31 +1,61 @@
 # Khayal · خيال
 
-A local shadow theatre for Twitch: chat holds the puppets, the streamer guards the light.
+**Your body. Chat’s playground.** A local shadowplay where Twitch chat controls the company and the streamer’s silhouette guards five lanterns.
 
-## Run
+![Khayal promotional illustration](submission/artwork/khayal-devpost-3x2.png)
 
-Requires Node22.12+ and current desktop Chrome. `npm ci`, `npm run assets:vision`, `npm run dev`. Open http://localhost:5173/ then **Open cue book**. Production: `npm run build`, `npm start`. Only one server can occupy5173; startup fails rather than changing the OAuth origin.
+**Status: development preview, not yet submission-ready.** Thirty automated tests and the production build pass. Browser, real-camera, real-Twitch, human fairness and OBS acceptance are still pending. The cover is a promotional illustration, not gameplay footage. [Current gates](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
 
-Raise the lamp, start the simulator company, and try `!cat`, `!camel`, `!goha`, `!boat`, `!croc`, `!left`, `!right`, `!jump`, `!closer`, `!far`, `!say hello`. Start Afreet Hunt; viewers launch `!afreet` and dodge with `!up`/`!down`. Mods use `!khayal pause`, `!khayal clear`, `!khayal ban @login`. Bans affect this stage only. Keyboard1/2/4 runs raise/hunt/curtain; Space pauses. Caption export may prompt Chrome to permit multiple PNG downloads for casts larger than48.
+## Run locally
 
-## Twitch
+Requires Node22.12+ and current desktop Chrome.
 
-Register a dedicated application named Khayal Theatre, category Game Integration, Confidential client type for implicit OAuth, redirect **http://localhost:5173/**. Copy `.env.example` to `.env.local` and set `VITE_TWITCH_CLIENT_ID` to its public client ID. Restart the server. No client secret belongs in the app or env file. Connect Twitch while the show is stopped and authorize your own broadcaster account. Required scopes: `user:read:chat moderator:read:followers`. Tokens remain in memory, are validated hourly, and need reauthorization after reload/expiry. All frontend environment variables are public.
+```sh
+npm ci
+npm run dev
+```
 
-Simulator and live inputs are distinct; switching source clears stage/cast state. Rehearsal controls do not inject events into live mode. Follow/raid delivery still needs real-event verification. A dedicated app has **not yet been created**: internal-browser control is disabled in Work settings.
+Open http://localhost:5173/ and **Enter the theatre**, then **Director’s desk**. Bundled fonts and vision assets are local. To re-fetch pinned upstream camera assets, run `npm run assets:vision`. Production: `npm run build`, then `npm start`. Both servers use localhost5173 with a strict port, so only one can run at a time.
 
-## Camera and capture
+## Play
 
-Start camera from cue book or stage and grant video permission in the stage window. No microphone is requested. Keep arms away from the torso outline when swatting: segmentation detects a changing silhouette, not internal hand motion. Camera/model failure pauses the hunt. Choose15/30fps and GPU/CPU in Settings. The worker and model are served locally; the fetch command records source URLs and hashes. No camera upload endpoint exists.
+From the director’s desk, start the rehearsal company or send `!cat`, `!camel`, `!goha`, `!boat`, `!croc`. Move with `!left`, `!right`, `!jump`; change projected depth with `!closer`/`!far`; add a60grapheme plain-text caption with `!say hello`. One puppet per viewer,24onstage and a bounded fair queue.
 
-Use Chrome window capture in OBS, with a1920×1080/60 output. Capture view hides setup chrome; press the browser reload or leave capture mode via Escape to return to controls. Keep the stage window visible. If OBS holds the webcam, use a camera-only OBS Virtual Camera. OBS installation and device/recording acceptance remain pending.
+**Afreet Hunt:**60seconds after a3second countdown. Chat sends `!afreet` and dodges with `!up`/`!down`; the performer keeps at least three of five lights burning. Camera motion is measured at the silhouette boundary; moving a hand wholly inside an unchanged torso outline does not create a swat. Ordinary puppets also bounce on a fresh outline hit.
 
-## Evidence and limits
+Mods use `!khayal pause`, `!khayal clear`, `!khayal ban @login`. Stage blocks never ban a Twitch account. Captions are plain text, links/controls removed, and moderated deletions are synchronized. Source labels distinguish simulator and live mode; switching source clears rehearsal state.
 
-This build uses original code-drawn development silhouettes and procedural cloth/frame placeholders. Meshy models, photographed linen/khayamiya/wordmark, user sound recordings are **pending**. The four specified font families and their OFL notices are served locally. It is not the final art pipeline result. No generated concept art or video is used.
+Keyboard1/2/4 opens theatre/starts Hunt/exports cast; Space pauses. Escape leaves focus mode. **Save frame** exports the actual canvas. **Record stage** exports up to3minutes of video-only canvas capture; add the owner voice in the edit. Multiple playbill pages preserve large casts. **Sound** enables original quiet synthesized cues; it starts off and contains no sampled music or crowd voice.
 
-`npm test` tests parser, moderation ownership, queue/clock and mask behavior. `npm run build` checks TypeScript and produces the static app. Neither establishes browser rendering, actual camera latency, human swat fairness, real Twitch events or OBS performance. See CURRENT_HANDOFF.md and docs/hackathon-build/checklist.md for current gates.
+## Connect Twitch
 
-## License
+Register a dedicated **Khayal Theatre** application: Game Integration, Confidential for the implicit flow, redirect **http://localhost:5173/**. Copy `.env.example` to `.env.local`, set the public `VITE_TWITCH_CLIENT_ID`, and restart the server. Every frontend environment value is public: never add a client secret. Connect your own broadcaster account while the show is stopped. Scopes: `user:read:chat moderator:read:followers`.
 
-Application code: MIT. MediaPipe runtime: Apache2.0 (see dependency notices); downloaded model provenance is in public/assets/vision/manifest.json. Generated/final assets require their individual license and attribution records before public release. Do not publish recordings or participant names without their permission.
+Tokens remain in memory, OAuthstate is verified, validation repeats hourly, and reload/expiry requires reauthorization. EventSub handles chat/moderation/follow/raid, deduplicates notifications, and distinguishes reconnect handover from fresh subscription setup. The dedicated app is not yet created because browser control in the current development session is unavailable. No code test substitutes for real event qualification.
+
+## Camera, capture and privacy
+
+Enable silhouette and grant video permission in the stage window. No microphone is requested. The model/WASM are served locally, with one frame in flight and no camera-upload endpoint. Choose GPU/CPU and15/30inferencefps in the director’s settings. Stale or failed inference hides the shadow and pauses a Hunt. Keep the stage visible; use OBS Virtual Camera if another app already owns the camera.
+
+For full live capture use OBS window capture at1920×1080, with cue book excluded. Actual camera latency, swat accuracy, sustained rendering during OBS recording and human fairness remain unmeasured. The source-levelfps counter is not a verified benchmark.
+
+## Submission and reproducibility
+
+```sh
+npm test
+npm run build
+npm run submission:frames
+npm run submission:captions
+npm run submission:review
+npm run submission:check
+```
+
+Frame exports use the same original SVGspecies paths and scene layout as Pixi, with synthetic Director fixtures; they are labeled engine rehearsal previews, not browser screenshots or realcamera/Twitch evidence. The2:30captioned review video uses those previews, promotional illustration and editorial source cards. It has no ownervoice and is not the final demo. The final edit script reports missing genuine captures and voice rather than inventing them. `submission/voiceover-script.md` contains eight recording takes.
+
+The cyanotype art direction deliberately differs from Aragoz’s wood/brass/curtainworkshop. Khayal’s distinguishing mechanic is body-driven shadow defense; changing colors alone would not establish a substantially different contest entry. Prior winners and inspirations are credited in `submission/research.md`.
+
+## Licenses
+
+Application code and original procedural vector artwork: MIT. Local font families: SILOFL notices and upstreammanifest in `public/assets/fonts/`. MediaPipe runtime/selfie model: upstreamGoogle/MediaPipe distribution, Apache2.0notice in `public/assets/vision/`; sourceURLs and hashes in its manifest. Promotional cover: generated with the owner’s authorization through OpenAI image generation; exactprompt, provenance and source category are beside thePNG. It is included as project promotional media, not a claim of human photography or live performance. No Aragoz artwork or code was copied.
+
+Do not publish participant recordings or names without their permission. No completed Devpost submission, owner attestation or award is claimed.

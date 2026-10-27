@@ -14,19 +14,19 @@ export async function exportPlaybill(names: string[], channel: string) {
     canvas.width = 1080;
     canvas.height = 1350;
     const c = canvas.getContext("2d")!;
-    c.fillStyle = "#EEE5D3";
+    c.fillStyle = "#07182E";
     c.fillRect(0, 0, 1080, 1350);
-    c.strokeStyle = "#9C2E1F";
+    c.strokeStyle = "#8DB5C3";
     c.lineWidth = 3;
     c.strokeRect(45, 45, 990, 1260);
-    c.fillStyle = "#9C2E1F";
+    c.fillStyle = "#8DB5C3";
     c.textAlign = "center";
-    c.font = "88px Georgia";
+    c.font = "72px Readex Pro";
     c.fillText("خيال · KHAYAL", 540, 170);
-    c.font = "24px sans-serif";
+    c.font = "18px IBM Plex Mono";
     c.fillText("THE NIGHT’S COMPANY", 540, 230);
-    c.fillStyle = "#17110D";
-    c.font = "20px sans-serif";
+    c.fillStyle = "#DAF0EF";
+    c.font = "18px Readex Pro";
     c.fillText(
       channel +
         " · " +
@@ -35,7 +35,7 @@ export async function exportPlaybill(names: string[], channel: string) {
       280,
     );
     c.textAlign = "start";
-    c.font = "25px sans-serif";
+    c.font = "25px Readex Pro";
     names.slice(page * 48, (page + 1) * 48).forEach((name, i) => {
       const rtl = /[\u0600-\u06ff]/.test(name);
       c.direction = rtl ? "rtl" : "ltr";
@@ -45,9 +45,9 @@ export async function exportPlaybill(names: string[], channel: string) {
     });
     c.direction = "ltr";
     c.textAlign = "center";
-    c.font = "italic 27px Georgia";
+    c.font = "24px Readex Pro";
     c.fillText("Come back tomorrow. There is more to see.", 540, 1190);
-    c.font = "18px sans-serif";
+    c.font = "16px IBM Plex Mono";
     c.fillText(
       `${names.length} cast members · Playbill ${page + 1} of ${pages}`,
       540,

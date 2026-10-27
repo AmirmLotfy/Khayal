@@ -1,4 +1,5 @@
 import "./style.css";
+import { ShowSound } from "./show/sound";
 import { Director } from "./show/director";
 import { createStage } from "./stage/render";
 import { exportPlaybill } from "./playbill/export";
@@ -24,7 +25,7 @@ function send(type: string, value?: any) {
   dispatch({ type, value });
 }
 function cueBook() {
-  root.innerHTML = `<article class="paper"><p class="eyebrow">KHAYAL · THE KEEPER’S CUE BOOK</p><h1>Tonight’s performance</h1><p id="connection" class="status">Waiting for the stage…</p><section class="cues"><button class="cue" id="raise"><b>01</b> Raise the lamp</button><button class="cue" id="hunt"><b>02</b> Afreet Hunt <small>60 seconds</small></button><button class="cue" id="curtain"><b>04</b> Curtain & playbill</button></section><section><div class="toolbar"><button id="pause">Pause / resume</button><button id="hide">Hide / show captions</button><button id="clear" class="danger">Clear stage</button></div></section><section><p class="eyebrow">REHEARSAL DESK</p><form id="command"><input name="viewer" aria-label="Viewer name" value="CairoCat"><input name="command" aria-label="Chat command" placeholder="!cat" value="!cat"><button>Send cue</button></form><div class="toolbar"><button id="simulate">Start / stop company</button><button id="follow">Rehearse follow</button><button id="raid">Rehearse raid</button></div><p class="note" style="color:#9C2E1F">Rehearsal inputs are available only in simulator mode.</p></section><section><details><summary>Settings & connection</summary><label>Input <select id="source"><option value="sim">Rehearsal simulator</option><option value="live">Live Twitch</option></select></label><label><input type="checkbox" id="steady"> Steady lamp</label><label><input type="checkbox" id="mirror" checked> Mirror silhouette</label><label>Inference <select id="fps"><option>30</option><option>15</option></select> fps</label><label>Processor <select id="delegate"><option>GPU</option><option>CPU</option></select></label><div class="toolbar"><button id="camera">Start / stop camera</button><button id="login">Connect Twitch</button></div><p class="note" style="color:#17110D">Camera permission is granted in the stage window. Reconnect Twitch while the show is stopped.</p></details></section><footer class="note" style="color:#17110D">1 Raise lamp · 2 Hunt · 4 Curtain · Space Pause<br>Come back tomorrow. There is more to see.</footer></article>`;
+  root.innerHTML = `<article class="paper"><p class="eyebrow">KHAYAL · DIRECTOR / SESSION CONTROL</p><h1>Behind the moon</h1><p id="connection" class="status">Waiting for the stage…</p><section class="cues"><button class="cue" id="raise"><b>01</b> Open the theatre</button><button class="cue" id="hunt"><b>02</b> Afreet Hunt <small>60 seconds</small></button><button class="cue" id="curtain"><b>04</b> Curtain & playbill</button></section><section><div class="toolbar"><button id="pause">Pause / resume</button><button id="hide">Hide / show captions</button><button id="clear" class="danger">Clear stage</button></div></section><section><p class="eyebrow">THE COMPANY / REHEARSAL</p><form id="command"><input name="viewer" aria-label="Viewer name" value="CairoCat"><input name="command" aria-label="Chat command" placeholder="!cat" value="!cat"><button>Send cue</button></form><div class="toolbar"><button id="simulate">Start / stop company</button><button id="follow">Rehearse follow</button><button id="raid">Rehearse raid</button></div><p class="note">Rehearsal inputs are available only in simulator mode.</p></section><section><details><summary>Settings & connection</summary><label>Input <select id="source"><option value="sim">Rehearsal simulator</option><option value="live">Live Twitch</option></select></label><label><input type="checkbox" id="steady"> Steady lamp</label><label><input type="checkbox" id="mirror" checked> Mirror silhouette</label><label>Inference <select id="fps"><option>30</option><option>15</option></select> fps</label><label>Processor <select id="delegate"><option>GPU</option><option>CPU</option></select></label><div class="toolbar"><button id="camera">Start / stop camera</button><button id="login">Connect Twitch</button></div><p class="note">Camera permission is granted in the stage window. Reconnect Twitch while the show is stopped.</p></details></section><footer class="note">1 Raise lamp · 2 Hunt · 4 Curtain · Space Pause<br>Come back tomorrow. There is more to see.</footer></article>`;
   for (const id of [
     "raise",
     "hunt",
@@ -52,6 +53,16 @@ function cueBook() {
   bus.onmessage = (e) => {
     if (e.data.kind === "status") {
       lastSeen = performance.now();
+      const settings = e.data.settings;
+      if (settings)
+        for (const [id, value] of Object.entries(settings)) {
+          const input = document.getElementById(id) as HTMLInputElement | null;
+          if (input && document.activeElement !== input) {
+            if (input.type === "checkbox") input.checked = Boolean(value);
+            else input.value = String(value);
+          }
+        }
+
       document.getElementById("connection")!.textContent = e.data.text;
       for (const el of root.querySelectorAll<HTMLButtonElement>("button"))
         el.disabled = false;
@@ -68,18 +79,25 @@ function cueBook() {
   bus.postMessage({ kind: "hello" });
 }
 async function stage() {
-  root.innerHTML = `<div class="shell"><header class="masthead"><h1 class="brand">خيال <span>KHAYAL · SHADOW THEATRE</span></h1><button id="cue">Open cue book ↗</button></header><div class="stage" id="stage"></div><div class="toolbar"><button id="raise">Raise the lamp</button><button id="camera">Start camera</button><button id="capture">Capture view</button><button id="login">Connect Twitch</button></div><p class="note" id="notice">A theatre for your community. Open the cue book to summon the company.<br>Development artwork · photographed materials and finished Meshy cast pending.</p></div>`;
+  root.innerHTML = `<div class="shell"><header class="masthead"><a class="brand" href="/" aria-label="Khayal home">KHAYAL<span lang="ar">خيال</span></a><span class="nav-note">A SHARED SHADOWPLAY</span><button id="cue" class="quiet">Director’s desk ↗</button></header><section class="hero"><p class="eyebrow">YOUR BODY. CHAT’S PLAYGROUND.</p><h1>Your shadow.<br><em>Their imagination.</em></h1><div class="hero-aside"><p>Step into the picture.<br>Let your community bring it to life.</p><span class="micro">ONE CAMERA · A WHOLE COMPANY</span></div></section><div class="stage-heading"><span id="stage-signal">THEATRE / REHEARSAL</span><span>SUMMON · PLAY · DEFEND THE LIGHT</span></div><div class="stage" id="stage" aria-label="Interactive shadowplay stage"></div><div class="toolbar"><button id="raise" class="primary">Enter the theatre <span>01</span></button><button id="camera">Enable silhouette</button><button id="capture">Focus stage</button><button id="sound" aria-pressed="false">Sound off</button><button id="save-frame">Save frame</button><button id="record">Record stage</button><button id="login" class="quiet">Connect Twitch ↗</button></div><section class="session-footer"><div><span class="micro">A SMALL INVITATION</span><p>Type <code>!cat</code> to arrive.<br><code>!closer</code> to become impossible to ignore.</p></div><p class="note" id="notice">Open the director’s desk for a solo rehearsal.<br>Your camera is processed on this device.</p><div class="closing-mark" lang="ar">خيال</div></section></div>`;
   const d = new Director();
+  const sound = new ShowSound();
   let twitchStatus = "Twitch disconnected";
   let cameraStatus = "Camera off";
   let sim = false;
   let channel = "Rehearsal";
   let cameraStop: (() => void) | undefined;
-  let swat: ((x: number, y: number) => boolean) | undefined;
+  let swat: ((x: number, y: number, radius?: number) => boolean) | undefined;
   const client = new TwitchClient({
     clientId: import.meta.env.VITE_TWITCH_CLIENT_ID ?? "",
     onStatus: (s) => {
       twitchStatus = s.message;
+      d.connection =
+        s.state === "connected"
+          ? "connected"
+          : s.state === "connecting" || s.state === "reconnecting"
+            ? "connecting"
+            : "offline";
       if (
         ["disconnected", "error", "revoked"].includes(s.state) &&
         d.source === "live" &&
@@ -109,8 +127,10 @@ async function stage() {
         d.clearCaptions(e.userId);
       }
       if (e.kind === "chat-clear") d.clearCaptions();
-      if (e.kind === "follow" || e.kind === "raid")
+      if (e.kind === "follow" || e.kind === "raid") {
         d.event(e.kind, e.displayName, e.kind === "raid" ? e.viewers : 1);
+        sound.cue("ceremony");
+      }
     },
   });
   const renderer = await createStage(document.getElementById("stage")!, d);
@@ -137,6 +157,9 @@ async function stage() {
       if (a.type === "hide") d.captions = !d.captions;
       if (a.type === "steady") d.steady = a.value;
       if (a.type === "source") {
+        if (a.value === "live" && d.connection !== "connected")
+          throw new Error("Connect Twitch before switching to live input.");
+        if (recording?.state === "recording") recording.stop();
         d.clear();
         d.source = a.value;
         d.cast.clear();
@@ -208,7 +231,7 @@ async function stage() {
     const ctx = canvas.getContext("2d")!;
     const texture = Texture.from(canvas);
     const shadow = new Sprite(texture);
-    shadow.tint = 0x17110d;
+    shadow.tint = 0xdaf0ef;
     shadow.alpha = 0.55;
     shadow.position.set(160, 90);
     shadow.width = 1600;
@@ -251,7 +274,7 @@ async function stage() {
     try {
       await controller.start(video);
       d.camera = true;
-      swat = (x, y) => {
+      swat = (x, y, radius = 45) => {
         const frame = controller.currentFrame;
         return (
           !!frame &&
@@ -260,8 +283,8 @@ async function stage() {
             {
               x: (x - 160) / 1600,
               y: (y - 90) / 900,
-              radiusX: 45 / 1600,
-              radiusY: 55 / 900,
+              radiusX: radius / 1600,
+              radiusY: (radius * 1.2) / 900,
             },
             performance.now(),
             "motion",
@@ -285,6 +308,76 @@ async function stage() {
       document.getElementById("notice")!.textContent =
         "Allow the cue-book window, then open it again.";
   });
+  function download(blob: Blob, name: string) {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  }
+  button("save-frame", () => {
+    renderer.render();
+    (renderer.app.canvas as HTMLCanvasElement).toBlob((b) => {
+      if (b) download(b, `khayal-${d.source}-${Date.now()}.png`);
+    }, "image/png");
+  });
+  let recording: MediaRecorder | undefined;
+  button("record", () => {
+    if (recording?.state === "recording") {
+      recording.stop();
+      return;
+    }
+    try {
+      const canvas = renderer.app.canvas as HTMLCanvasElement;
+      const stream = canvas.captureStream(30);
+      const mime = [
+        "video/webm;codecs=vp9",
+        "video/webm;codecs=vp8",
+        "video/mp4",
+      ].find((t) => MediaRecorder.isTypeSupported(t));
+      if (!mime)
+        throw new Error(
+          "Stage recording is unavailable in this browser. Use OBS window capture.",
+        );
+      const chunks: BlobPart[] = [];
+      recording = new MediaRecorder(stream, {
+        mimeType: mime,
+        videoBitsPerSecond: 4500000,
+      });
+      recording.ondataavailable = (e) => {
+        if (e.data.size) chunks.push(e.data);
+      };
+      const recordingSource = d.source;
+      recording.onstop = () => {
+        download(
+          new Blob(chunks, { type: mime }),
+          `khayal-${recordingSource}-${Date.now()}.${mime.includes("mp4") ? "mp4" : "webm"}`,
+        );
+        stream.getTracks().forEach((t) => t.stop());
+        document.getElementById("record")!.textContent = "Record stage";
+      };
+      recording.start(1000);
+      document.getElementById("record")!.textContent = "Stop recording";
+      const currentRecording = recording;
+      setTimeout(() => {
+        if (currentRecording.state === "recording") currentRecording.stop();
+      }, 180000);
+    } catch (e) {
+      document.getElementById("notice")!.textContent = String(e);
+    }
+  });
+  button("sound", () => {
+    void sound
+      .toggle()
+      .then((on) => {
+        const el = document.getElementById("sound")!;
+        el.textContent = on ? "Sound on" : "Sound off";
+        el.setAttribute("aria-pressed", String(on));
+      })
+      .catch((e) => {
+        document.getElementById("notice")!.textContent = String(e);
+      });
+  });
   button("capture", () => {
     document.body.classList.toggle("capture");
   });
@@ -293,16 +386,29 @@ async function stage() {
     if (e.data.kind === "hello") publish();
   };
   function publish() {
+    document.getElementById("stage-signal")!.textContent =
+      `THEATRE / ${d.source === "sim" ? "REHEARSAL" : channel.toUpperCase()}`;
     const m = renderer.metrics();
     bus.postMessage({
       kind: "status",
+      settings: { source: d.source, steady: d.steady, ...visionSettings },
       text: `${d.source === "sim" ? "REHEARSAL" : channel} · ${d.phase === "hunt" ? d.afreets.length : d.puppets.length} on stage / ${d.phase === "hunt" ? d.attackQueue.length : d.queue.length} waiting · ${m.fps.toFixed(0)} fps\n${twitchStatus} · ${cameraStatus}${d.paused ? " · PAUSED" : ""}`,
     });
   }
   setInterval(publish, 1000);
   let simTimer = 0,
     last = performance.now();
+  let previousSwats = 0,
+    previousLights = 5,
+    previousActors = 0,
+    previousPhase = d.phase;
   function frame() {
+    if (
+      d.source === "live" &&
+      (d.connection !== "connected" || !d.camera) &&
+      (d.phase === "hunt" || d.phase === "countdown")
+    )
+      d.paused = true;
     const now = performance.now(),
       dt = Math.min(0.05, (now - last) / 1000);
     last = now;
@@ -325,6 +431,15 @@ async function stage() {
       }
     }
     d.tick(dt, swat);
+    if (d.swats > previousSwats) sound.cue("swat");
+    const lights = d.lanterns.filter(Boolean).length;
+    if (lights < previousLights) sound.cue("out");
+    if (d.puppets.length > previousActors) sound.cue("enter");
+    if (d.phase === "hunt" && previousPhase !== "hunt") sound.cue("hunt");
+    previousSwats = d.swats;
+    previousLights = lights;
+    previousActors = d.puppets.length;
+    previousPhase = d.phase;
     renderer.render();
     requestAnimationFrame(frame);
   }
@@ -349,12 +464,15 @@ async function stage() {
     d.cast.clear();
   }
   window.addEventListener("beforeunload", () => {
+    sound.dispose();
     client.dispose();
     cameraStop?.();
     bus.close();
   });
 }
 document.addEventListener("keydown", (e) => {
+  if (e.key === " " && (e.target as HTMLElement).closest("button,a,summary"))
+    return;
   if (e.key === "Escape") document.body.classList.remove("capture");
   if ((e.target as HTMLElement).matches("input,textarea,select")) return;
   const action: Record<string, string> = {

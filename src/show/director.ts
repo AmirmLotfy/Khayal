@@ -19,6 +19,8 @@ export type Puppet = {
   captionUntil?: number;
   vy: number;
   target: number;
+  targetX?: number;
+  lastSwat?: number;
 };
 export type Ceremony = {
   kind: "follow" | "raid";
@@ -28,6 +30,7 @@ export type Ceremony = {
 };
 export class Director {
   source: "sim" | "live" = "sim";
+  connection: "offline" | "connecting" | "connected" = "offline";
   raised = false;
   curtain = false;
   paused = false;
@@ -107,8 +110,8 @@ export class Director {
     if (c.kind === "move" && p) {
       p.activeAt = this.time;
       const d = c.direction;
-      if (d === "left") p.x = Math.max(100, p.x - 75);
-      if (d === "right") p.x = Math.min(1820, p.x + 75);
+      if (d === "left") p.targetX = Math.max(100, (p.targetX ?? p.x) - 75);
+      if (d === "right") p.targetX = Math.min(1820, (p.targetX ?? p.x) + 75);
       if (d === "closer") p.z = Math.min(1, p.z + 0.2);
       if (d === "far") p.z = Math.max(0, p.z - 0.2);
       if (d === "jump" && p.y >= 845) p.vy = -450;
@@ -139,7 +142,8 @@ export class Director {
       id: v.id,
       name: v.name,
       kind,
-      x: 140 + Math.random() * 1640,
+      x: -140,
+      targetX: 140 + Math.random() * 1640,
       y: 850,
       z: 0,
       born: this.time,
@@ -152,7 +156,7 @@ export class Director {
     const lit = this.lanterns.flatMap((on, i) => (on ? [i] : []));
     return lit[Math.floor(Math.random() * lit.length)] ?? 0;
   }
-  tick(dt: number, swat?: (x: number, y: number) => boolean) {
+  tick(dt: number, swat?: (x: number, y: number, radius?: number) => boolean) {
     if (this.paused) return;
     this.time += dt;
     if (this.phase === "countdown") {
@@ -170,7 +174,7 @@ export class Director {
       );
       this.afreets = this.afreets.filter((a) => {
         if (!this.lanterns[a.target]) a.target = this.pickLantern();
-        if (swat?.(a.x, a.y)) {
+        if (swat?.(a.x, a.y - 100, 45)) {
           this.swats++;
           return false;
         }
@@ -192,6 +196,17 @@ export class Director {
       if (this.remaining === 0) this.finishHunt();
     }
     for (const p of this.puppets) {
+      p.x += ((p.targetX ?? p.x) - p.x) * Math.min(1, dt * 6);
+      if (
+        this.raised &&
+        this.phase !== "hunt" &&
+        this.phase !== "countdown" &&
+        this.time - (p.lastSwat ?? -10) > 0.6 &&
+        swat?.(p.x, p.y - 90 * (1 + 2.2 * p.z), 35 * (1 + 2.2 * p.z))
+      ) {
+        p.vy = -320;
+        p.lastSwat = this.time;
+      }
       p.vy += 1000 * dt;
       p.y = Math.min(850, p.y + p.vy * dt);
       if (p.y === 850) p.vy = 0;

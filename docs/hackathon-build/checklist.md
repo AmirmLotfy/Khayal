@@ -1,15 +1,19 @@
-# Implementation and acceptance gates
+# Implementation and acceptance gates — cyanotype revision
 
-- [x] Scaffold local app, command/director/simulator, cue-book protocol, placeholder stage, hunt/ceremonies/playbill.
-- [x] Implement Twitch OAuth/EventSub lifecycle and moderation inputs.
-- [x] Implement worker segmentation, local asset fetch, coarse temporal collision.
-- [ ] Create dedicated Twitch app and set public clientID. Blocked: local browser control disabled.
-- [ ] Verify stage and cue-book rendered behavior, camera permission/loss and popup recovery in Chrome.
-- [ ] Qualify20swats (≥18hits) and30sstatic overlap (0hits), mirrored/cropped alignment.
-- [ ] Compare GPU/CPU sequentially and record5min selected setup with24puppets in OBS:≥58averagefps, p95≤20ms frame interval,≥15inferences/s,p95app latency≤120ms.
-- [ ] Generate approved Meshy camel/cat pilot, inspect; then remaining8models subject to240creditcap and core gate.
-- [ ] Integrate Blender layered render/pivots and runtime atlas rather than placeholders.
-- [ ] Integrate owner photographs, wordmark, four font families and recorded percussion/voice.
-- [ ] Validate real Twitch chat/follow/raid and recorded3-viewer show plus5-participant fairness check.
-- [ ] Validate clean checkout startup and licenses, publish publicGitHub, assemble/review/publish publicYouTube.
-- [ ] Confirm eligibility/terms, complete Devpost fields/sessionID and verify Submitted.
+- [x] Local app, shared parser/director,24puppet/300queue,60sHunt, ceremonies and playbill.
+- [x] Twitch OAuth/EventSub implementation and lifecycle/moderation unit checks.
+- [x] Local camera worker/model assets and temporal collision helpers.
+- [x] Ground-up cyanotype identity and seven original vector species; sourceart shared by Pixi and native exports.
+- [x] Four local font families/OFL notices, original optional synthesized cues, stagePNG/video export controls.
+- [x] Creative3:2promotionalcover, provenance, five labeled native engine previews.
+- [x] Prior-winner research, Devpost draft,293word VOscript,150second storyboard/captions, encoded1080p30silent reviewcut.
+- [x] Thirty tests, TypeScript/production build and model integrity check pass.
+- [ ] Dedicated Twitch app and publicclientID. Blocked by localbrowser control.
+- [ ] Actual browser screenshots, camera permission/loss, separatewindow recovery and live input qualification.
+- [ ]20physicalswats≥18hits,30sstaticoverlap0hits, mirrored/projected alignment.
+- [ ] Sustained OBS/GPU/CPU performance and human fairness session.
+- [ ] Owner narration and genuine Twitch/camera/Codex footage integrated into final under3minute master.
+- [ ] Clean checkout verification and publicGitHub source publication.
+- [ ] PublicYouTube link, actualCodexsessionID, authenticatedDevpostfields and ownereligibility/terms confirmation; verifySubmitted.
+
+The user's new direction supersedes the old Meshy/fabric-photo look. Meshy and Blender production are not claimed. Naddaha gameplay and other optional modes remain deferred.

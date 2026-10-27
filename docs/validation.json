@@ -1,25 +1,43 @@
 {
-  "recorded_at": "2026-10-27T22:39:07.670540+03:00",
+  "recorded_at": "2026-10-27T20:16:29.869282+00:00",
   "evidence": "local automated and HTTP only",
   "tests": {
-    "passed": 29,
+    "passed": 30,
     "files": 4
   },
-  "typescript_and_production_build": "passed",
+  "typescript_and_production_build": "passed after cyanotype redesign",
   "vision_asset_integrity": "passed",
   "http_smoke": {
     "routes_checked": 7,
     "all_status": 200
   },
-  "browser_rendering": "not verified - browser control disabled in Work settings",
+  "browser_rendering": "not verified - local browser control disabled",
   "real_camera_swats": "not verified",
   "obs_performance": "not verified",
   "real_twitch_chat_follow_raid": "not verified",
   "meshy_credits_spent": 0,
-  "publication": "not performed",
+  "publication": "public source preparation; no final video/Devpost publication",
   "owned_server": {
     "url": "http://localhost:5173/",
     "pid": 60197,
     "exec_session": 27438
-  }
+  },
+  "native_engine_previews": 5,
+  "review_video": {
+    "path": "submission/video/khayal-review-150s.mp4",
+    "duration": 150,
+    "resolution": "1920x1080",
+    "fps": 30,
+    "ownerVoice": false,
+    "source": "engine rehearsal and editorial art; not real Twitch footage"
+  },
+  "cover": {
+    "path": "submission/artwork/khayal-devpost-3x2.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "source": "built-in imagegen promotional illustration, two calls, five lanterns inspected"
+  },
+  "cleanup": "5926 manifest-bound cache files removed and verified absent; private receipts excluded from public repository"
 }
