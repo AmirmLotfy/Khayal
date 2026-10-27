@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-10-28T01:53:14+03:00",
+  "channel": "Frameless",
+  "channel_id": "UCiF3FxqJVHBxD6h6xARnhoQ",
+  "channel_handle": "@framelessco",
+  "video_id": "vynF1sjtyFw",
+  "url": "https://www.youtube.com/watch?v=vynF1sjtyFw",
+  "visibility": "public",
+  "artifact": "submission/video/khayal-gameplay-review-114s.mp4",
+  "sha256": "65600df3a3c2bbdcbe72630b661d8d77a324bb8234410d6492a0f684f8f5362a",
+  "duration_seconds": 114,
+  "owner_upload_terms_and_publication_confirmation": "Accept and publish publicly",
+  "ui_publication_confirmation": "Video published",
+  "copyright_check": "No issues found",
+  "community_guidelines_initial_check": "No issues found",
+  "thumbnail": "submission/artwork/khayal-youtube-16x9.jpg",
+  "captions": "English by you; imported captions.srt with timing; UI confirmed English subtitles published; watch Settings shows Subtitles/CC English",
+  "quality_options_verified": [
+    "1080p HD",
+    "720p",
+    "480p",
+    "360p",
+    "240p"
+  ],
+  "devpost_video_saved": true,
+  "devpost_status": "DRAFT / INCOMPLETE SUBMISSION;3/5steps",
+  "eligibility_checkboxes": [
+    false,
+    false,
+    false
+  ],
+  "final_submission_clicked": false,
+  "review_labels_retained": true,
+  "manual_full_listening_qc": false,
+  "human_performance_gates_complete": false,
+  "private_proof": [
+    "docs/browser-evidence/youtube-published.jpg",
+    "docs/browser-evidence/youtube-watch-page.jpg",
+    "docs/browser-evidence/devpost-video-saved.jpg"
+  ],
+  "checks": {
+    "npm test": "30/30 tests;4/4 files passed",
+    "npm run build": "TypeScript and Vite production build passed"
+  }
+}

@@ -13,11 +13,12 @@
 - [ ] Camera denial/loss, separate-window recovery, expired login, long-name/caption edge cases and broader provider qualification.
 - [ ]20physicalswats≥18hits,30sstaticoverlap0hits, mirrored/projected alignment.
 - [ ] Sustained OBS/GPU/CPU performance and human fairness session.
-- [x] Supplied 105.480-second owner narration aligned locally; 56 corrected captions and continuous normalized audio integrated into a114-second actual-gameplay review;112 burned caption frames and eight audio windows pass. Raw voice and narrated review remain private local files.
+- [x] Supplied 105.480-second owner narration aligned locally; 56 corrected captions and continuous normalized audio integrated into a114-second actual-gameplay review;112 burned caption frames and eight audio windows pass. Raw voice remains local; the demo is now public on YouTube and its local binary stays ignored in Git.
 - [ ] Listening review and genuine Twitch/camera/Codex footage integrated into final under3minute master.
 - [x] Clean checkout installation/tests/build/assets verified.
 - [x] Public GitHub source repository published: https://github.com/AmirmLotfy/Khayal .
 - [x] Devpost existing draft verified; cover, five actual-capture gallery images, story/repo, session ID and owner-provided answers saved.
-- [ ] PublicYouTube link, owner eligibility/terms and final submission. Owner requested three eligibility boxes remain unchecked.
+- [x] Public YouTube demo, designed16:9thumbnail, metadata, timed English subtitles and1080p availability verified: https://www.youtube.com/watch?v=vynF1sjtyFw . Saved as Devpost video; draft3/5.
+- [ ] Owner eligibility/terms and final submission. Owner requested three eligibility boxes remain unchecked.
 
 The user's new direction supersedes the old Meshy/fabric-photo look. Meshy and Blender production are not claimed. Naddaha gameplay and other optional modes remain deferred.

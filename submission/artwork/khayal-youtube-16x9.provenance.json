@@ -1,0 +1,11 @@
+{
+  "asset": "khayal-youtube-16x9.jpg",
+  "source": "khayal-devpost-3x2.png",
+  "treatment": "Format packaging only: fit the entire existing image onto a1920x1080 ink-blue matte; JPEG quality93. No new image generation or content alteration.",
+  "purpose": "Public YouTube promotional thumbnail",
+  "evidence_label": "AI-generated promotional illustration; not gameplay evidence.",
+  "sha256": "162f37071f79a37ba18eba129a52750d868fc23cb5b46c38c74c06fc3e71f8ba",
+  "width": 1920,
+  "height": 1080,
+  "bytes": 359654
+}

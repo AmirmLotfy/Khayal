@@ -1,6 +1,6 @@
 {
   "title": "Khayal",
-  "tagline": "Your body. Chat\u2019s playground.",
+  "tagline": "Your body. Chat’s playground.",
   "repository_url": "https://github.com/AmirmLotfy/Khayal",
   "codex_session_id": "01a17eb7-e4d9-7453-9053-6b3eab7a4153",
   "codex_session_id_evidence": "Matching CODEX_SESSION_ID and CODEX_THREAD_ID in the active build runtime",
@@ -12,7 +12,7 @@
   ],
   "review_video_file": "submission/video/khayal-gameplay-review-114s.mp4",
   "review_video_is_final": false,
-  "youtube_url": null,
+  "youtube_url": "https://www.youtube.com/watch?v=vynF1sjtyFw",
   "devpost_project_url": "https://devpost.com/software/khayal",
   "owner_voice_file": "submission/video/voiceover.wav (private local input)",
   "native_engine_previews": 5,
@@ -24,7 +24,6 @@
     "Full listening review and human performance rehearsal pending",
     "Real follow/raid, deliberate-swat accuracy, multi-viewer fairness and sustained OBS checks pending",
     "Direct Codex app capture blocked by Computer Use; actual source explanation used instead",
-    "YouTube final video not published",
     "Owner requested eligibility declarations remain unchecked; final terms and submission not authorized"
   ],
   "owner_voice_received": true,
@@ -42,5 +41,9 @@
   "human_viewer_rehearsal": false,
   "genuine_codex_ui_capture": false,
   "caption_cues": 56,
-  "encoded_audio_and_caption_checks_pass": true
+  "encoded_audio_and_caption_checks_pass": true,
+  "youtube_visibility": "public",
+  "youtube_video_is_final": false,
+  "devpost_video_url_saved": true,
+  "devpost_steps_done": "3/5"
 }

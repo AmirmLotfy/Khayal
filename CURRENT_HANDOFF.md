@@ -1,3 +1,17 @@
+# Latest checkpoint — public YouTube demo published
+
+On October28 the owner explicitly requested upload and completion on their YouTube channel, then approved the actual upload acknowledgement with **Accept and publish publicly**. Using the internal browser, uploaded the exact validated114-second gameplay review to **Frameless / @framelessco** and published it publicly: https://www.youtube.com/watch?v=vynF1sjtyFw . YouTube confirmed **Video published**, copyright and Community Guidelines checks **No issues found**, and **English subtitles published**. The public watch page exposes English captions and1080pHD. Custom16:9thumbnail is the full authorized promotional cover on an ink-blue matte; metadata discloses test/rehearsal sources and pending acceptance. No source footage, voice or review labels were changed.
+
+Saved the public video URL and updated story to the existing Devpost project. Verified the public page embeds this video. Draft now **3/5steps**, still **INCOMPLETE SUBMISSION**. Read-only DOM checks confirmed all three eligibility declarations remain false. Final terms/Submit untouched. YouTube terms approval does not authorize Devpost eligibility declarations. See `docs/youtube-publication-validation.json` and `submission/youtube-metadata.json`.
+
+Current working checkout is `/Users/frameless/Desktop/Khayal`, branch `main`, parentHEAD `f0f692226b7199e1f2e721bc4aecf6449a79d3eb`. Checks at this checkpoint: `npm test`30/30tests in4files pass; `npm run build`TypeScript and Vite pass. No heavy process remains after this checkpoint. Current listener check found **no localhost5173 server**; the old stage/cue tabs were absent from the fresh browser inventory, so prior in-memory OAuth continuity is no longer claimed. No unrelated app/process was stopped. Disk had7.1GiB free before packaging; preserve2GiB reserve.
+
+Browser retained this turn: internal browser2; Studio tab1 (handoff), public watch tab2 (deliverable), Devpost Additional info tab3 (handoff), public project tab4 (deliverable). Recheck inventory in future turns. Private browser proof remains ignored. Next action: owner full listening review and pending actual human/follow/raid/swat/OBS qualification; eligibility boxes remain unchecked unless owner changes instruction. No final submission claimed.
+
+The prior checkpoint details below remain useful for implementation and raw-media provenance; its unpublished-video and active-server statements are superseded above.
+
+---
+
 # Khayal handoff — actual gameplay and corrected audio/captions
 
 Workspace `/Users/frameless/Desktop/Khayal`; branch `main`; HEAD before this milestone `c83c66e98c04d9c409dba293f532b9b4f0b039bc`. Primary coordinator owns the bounded work. Caption/audio specialist finished, no specialist remains assigned and no heavy job remains. Exact pre-commit dirty/untracked manifest is in `docs/browser-live-validation.json`. Final commit identifies the new checkpoint; no successor task was needed.

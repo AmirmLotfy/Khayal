@@ -32,7 +32,7 @@ Automated checks cover command ownership, moderator checks, Unicode captions, co
 
 ## What's next
 
-The entry remains in preparation. A multi-viewer performance, real follow and raid qualification, the deliberate-swat accuracy study, sustained OBS measurements, full listening review and the final public video remain open. The finished demonstration will preserve the distinction between real Twitch interaction, rehearsals and editorial explanations.
+The [public gameplay demo](https://www.youtube.com/watch?v=vynF1sjtyFw) shows the recorded Twitch and camera test, a labeled rehearsal and the Codex implementation explanation. The entry remains in preparation: a multi-viewer performance, real follow and raid qualification, the deliberate-swat accuracy study, sustained OBS measurements and full listening review remain open. The demo preserves the distinction between real Twitch interaction, rehearsals and editorial explanations.
 
 ## Try it
 
