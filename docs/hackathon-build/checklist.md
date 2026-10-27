@@ -13,7 +13,8 @@
 - [ ]20physicalswats≥18hits,30sstaticoverlap0hits, mirrored/projected alignment.
 - [ ] Sustained OBS/GPU/CPU performance and human fairness session.
 - [ ] Owner narration and genuine Twitch/camera/Codex footage integrated into final under3minute master.
-- [ ] Clean checkout verification and publicGitHub source publication.
+- [x] Clean checkout installation/tests/build/assets verified.
+- [ ] PublicGitHub source publication.
 - [ ] PublicYouTube link, actualCodexsessionID, authenticatedDevpostfields and ownereligibility/terms confirmation; verifySubmitted.
 
 The user's new direction supersedes the old Meshy/fabric-photo look. Meshy and Blender production are not claimed. Naddaha gameplay and other optional modes remain deferred.

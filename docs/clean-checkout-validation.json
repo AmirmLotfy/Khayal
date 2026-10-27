@@ -1,0 +1,13 @@
+{
+  "sourceHead": "3f269f2d280214d5d7f83a0b84f7ea9bd1b18e1b",
+  "npmCi": "passed;59packages installed in29seconds",
+  "tests": {
+    "passed": 30,
+    "files": 4
+  },
+  "productionBuild": "passed",
+  "visionAssets": "passed",
+  "ownedTemporaryCheckoutRemoved": true,
+  "cleanupGuard": "Verified macOS actual temporary root, clone remote, source HEAD and no open handles before removal",
+  "browserAcceptance": false
+}

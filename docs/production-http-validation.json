@@ -1,0 +1,37 @@
+{
+  "evidence": "production preview HTTP only; not browser/device acceptance",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "bytes": 849,
+      "contentType": "text/html"
+    },
+    {
+      "route": "/cue?show=production-smoke",
+      "status": 200,
+      "bytes": 849,
+      "contentType": "text/html"
+    },
+    {
+      "route": "/assets/fonts/fonts.css",
+      "status": 200,
+      "bytes": 1119,
+      "contentType": "text/css"
+    },
+    {
+      "route": "/assets/vision/wasm/vision_wasm_module_internal.wasm",
+      "status": 200,
+      "bytes": 11153641,
+      "contentType": "application/wasm"
+    },
+    {
+      "route": "/assets/vision/selfie_segmenter_landscape.tflite",
+      "status": 200,
+      "bytes": 250177,
+      "contentType": ""
+    }
+  ],
+  "listenerPid": 18155,
+  "execSession": 65095
+}
