@@ -1,0 +1,24 @@
+{
+  "packageVersion": "0.10.35",
+  "modelVersion": "1",
+  "assets": [
+    {
+      "path": "wasm/vision_wasm_module_internal.js",
+      "source": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.35/wasm/vision_wasm_module_internal.js",
+      "bytes": 322082,
+      "sha256": "Hx1iFTJKH+YvZ0LUmj25ERcJh8oYrYwbdfGhyCrPK0Q="
+    },
+    {
+      "path": "wasm/vision_wasm_module_internal.wasm",
+      "source": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.35/wasm/vision_wasm_module_internal.wasm",
+      "bytes": 11153641,
+      "sha256": "YXuOAkjb0n6dfs5CGABOrkzvtJkZbRu0+g4/7yFwh1Y="
+    },
+    {
+      "path": "selfie_segmenter_landscape.tflite",
+      "source": "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter_landscape/float16/1/selfie_segmenter_landscape.tflite",
+      "bytes": 250177,
+      "sha256": "SQ6epzQxPg3hD6DNnjxhM+NupNsrekm96e8Bn3J5a44="
+    }
+  ]
+}

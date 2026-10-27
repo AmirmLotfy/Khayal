@@ -1,0 +1,11 @@
+# Accepted technical specification
+
+Accepted in chat Oct27,2026: five must-haves (stage, silhouette, chat puppets, Afreet Hunt, follow/raid+curtain), cue book and simulator. Local Vite/TypeScript/PixiJS8/MediaPipe0.10.35/Vitest; two windows, one authoritative stage. Browser memory-only Twitch implicit OAuth on localhost5173; public clientID only. The chosen Twitch registration client type is Confidential because Twitch limits Public clients to Device Code Grant.
+
+Modules: stage draws palette/actors; show Director owns state and commands; Twitch parses/sanitizes/cooldowns and normalizes EventSub; vision worker owns inference and temporal64×36 mask; panel/main owns windows/settings; playbill exports paginated1080×1350 PNGs. Input→typed command→authorization/cooldown→Director→stage/cast ledger. Cue book exchanges per-show actions/status via BroadcastChannel. Vision sends a fresh mirrored/cropped256×144 display mask and64×36 collision grid. No backend.
+
+24active puppets, one per viewer, FIFO300; waiting viewers rotate after30s. Captions60 graphemes; links/controls stripped, Twitch moderation deletions synchronized. Hunt60s after3s countdown,5one-hit lanterns, keeper wins with≥3saved; static overlap never swats, motion expires250ms. Afreets cap24, one queued/active perviewer; ceremonies wait until hunt ends. Camera loss pauseshunt.
+
+Art direction: brief palette and Aref Ruqaa/Young Serif/Readex Pro/IBM Plex Mono; final photographs and sound supplied by owner. Meshy6 cap240 credits, ten initial meshes+two replacements; camel/cat pilot and playable camera/Hunt gate precede batch. Blender creates cleaned layered2048px silhouettes and pivots. Optional Naddaha gameplay/riddle/cheers/subscriptions/hype/strip/AIrecap deferred.
+
+Release targets: publicGitHub MIT code, separately licensed assets, publicYouTube ~2:50 showing real Twitch and real Codex/Blender work; Devpost submission by Nov2,18:00Cairo. Formal deadline Nov3,00:00Cairo. Owner supplies photos/audio, live performance, participants/permissions, eligibility/terms agreement. Simulator data cannot qualify as real evidence.

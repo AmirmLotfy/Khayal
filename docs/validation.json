@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-10-27T22:39:07.670540+03:00",
+  "evidence": "local automated and HTTP only",
+  "tests": {
+    "passed": 29,
+    "files": 4
+  },
+  "typescript_and_production_build": "passed",
+  "vision_asset_integrity": "passed",
+  "http_smoke": {
+    "routes_checked": 7,
+    "all_status": 200
+  },
+  "browser_rendering": "not verified - browser control disabled in Work settings",
+  "real_camera_swats": "not verified",
+  "obs_performance": "not verified",
+  "real_twitch_chat_follow_raid": "not verified",
+  "meshy_credits_spent": 0,
+  "publication": "not performed",
+  "owned_server": {
+    "url": "http://localhost:5173/",
+    "pid": 60197,
+    "exec_session": 27438
+  }
+}

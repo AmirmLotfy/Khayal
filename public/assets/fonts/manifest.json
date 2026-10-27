@@ -1,0 +1,30 @@
+{
+  "stylesheetSource": "https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Mono&family=Readex+Pro&family=Young+Serif&display=swap",
+  "files": [
+    {
+      "source": "https://fonts.gstatic.com/s/arefruqaa/v26/WwkbxPW1E165rajQKDulEIA.ttf",
+      "file": "e4f8e3be1cc9ce3b5684da0919f1bcc61b502263d4628dea93492f97545964aa.ttf",
+      "sha256": "e4f8e3be1cc9ce3b5684da0919f1bcc61b502263d4628dea93492f97545964aa"
+    },
+    {
+      "source": "https://fonts.gstatic.com/s/arefruqaa/v26/WwkYxPW1E165rajQKDulKDwNcNI.ttf",
+      "file": "eb916bee1eec1f92b27ea9965a451bf2d8356f89d1fd2dc20244b2f51137fb54.ttf",
+      "sha256": "eb916bee1eec1f92b27ea9965a451bf2d8356f89d1fd2dc20244b2f51137fb54"
+    },
+    {
+      "source": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n5ig.ttf",
+      "file": "a7fdc993f9f0387caedba4e42521136fa97e4c0837ae6239bf0413ccf8af00c2.ttf",
+      "sha256": "a7fdc993f9f0387caedba4e42521136fa97e4c0837ae6239bf0413ccf8af00c2"
+    },
+    {
+      "source": "https://fonts.gstatic.com/s/readexpro/v27/SLXnc1bJ7HE5YDoGPuzj_dh8uc7wUy8ZQQyX2KY8TL0kGZN6blTC4USmgg.ttf",
+      "file": "843e9e39e53e36e835e73f15573bf3589e2e60932bd5d6512d01672d1bd5792e.ttf",
+      "sha256": "843e9e39e53e36e835e73f15573bf3589e2e60932bd5d6512d01672d1bd5792e"
+    },
+    {
+      "source": "https://fonts.gstatic.com/s/youngserif/v2/3qTpojO2nS2VtkB3KtkQZ2t6.ttf",
+      "file": "a0a943015fae6d41423f2f65ff27655055b1f1aca1a890b84c2b3855ae925a2b.ttf",
+      "sha256": "a0a943015fae6d41423f2f65ff27655055b1f1aca1a890b84c2b3855ae925a2b"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Preserve upstream runtime checksums and license notices verbatim.
+public/assets/vision/wasm/*.js -whitespace
+public/assets/fonts/*-OFL.txt -whitespace

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Aref Ruqaa';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/e4f8e3be1cc9ce3b5684da0919f1bcc61b502263d4628dea93492f97545964aa.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Aref Ruqaa';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/fonts/eb916bee1eec1f92b27ea9965a451bf2d8356f89d1fd2dc20244b2f51137fb54.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/a7fdc993f9f0387caedba4e42521136fa97e4c0837ae6239bf0413ccf8af00c2.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Readex Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/843e9e39e53e36e835e73f15573bf3589e2e60932bd5d6512d01672d1bd5792e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Young Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/a0a943015fae6d41423f2f65ff27655055b1f1aca1a890b84c2b3855ae925a2b.ttf) format('truetype');
+}
