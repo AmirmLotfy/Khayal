@@ -1,0 +1,55 @@
+{
+  "received_date": "2026-10-28",
+  "source": "Owner-supplied Screen Recording 2026-10-28 at 1.57.32 AM.mov",
+  "source_sha256": "12cd2da866985d7b33502da4dc166204adf9f93c907dcba3fb83fa1e164a574f",
+  "source_duration_seconds": 19.15,
+  "source_dimensions": [
+    2880,
+    1800
+  ],
+  "source_audio_streams": 0,
+  "evidence": "Genuine owner-recorded Codex conversation, including historical planning and implementation/checkpoint summaries. Not generated UI or continuous code-writing footage.",
+  "publication_authorization": "Owner supplied this recording and asked to add it to the public project README.",
+  "stills": [
+    {
+      "file": "accepted-plan.jpg",
+      "source_seek_seconds": 12.5,
+      "crop_xywh": [
+        0,
+        0,
+        1994,
+        1800
+      ],
+      "sha256": "48d75f72a072215231e855b0a5179735d92a68ef6860737381906b63fec6d22b",
+      "treatment": "Direct frame extraction, conversation-pane crop, JPEG encoding. No semantic edits or generated content."
+    },
+    {
+      "file": "implementation-checkpoint.jpg",
+      "source_seek_seconds": 2.5,
+      "crop_xywh": [
+        0,
+        0,
+        1994,
+        1800
+      ],
+      "sha256": "d9e348afc99d89effc90901c8314b1b687b43f736ab5805729415f7760aebf57",
+      "treatment": "Direct frame extraction, conversation-pane crop, JPEG encoding. No semantic edits or generated content."
+    }
+  ],
+  "recording": {
+    "file": "owner-build-walkthrough.mp4",
+    "sha256": "bc329fb4cdb53b85d39c54f9e187a5c8b3a219638408c8c9a88d288813a694bf",
+    "duration_seconds": 19.166667,
+    "dimensions": [
+      1920,
+      1200
+    ],
+    "treatment": "Complete clip, resized to1920x1200 and encoded H.264 at30fps. No audio was present. CFR rounding adds less than one frame to container duration; no scenes or text added."
+  },
+  "review": "Inspected four full-frame samples and a1fps contact sheet. Selected stills isolate the conversation pane. Visible historical test counts/blockers are captioned as historical, not current acceptance.",
+  "limitations": [
+    "The recording does not show expanded source diffs or continuous implementation.",
+    "It does not establish live human participation, swat accuracy or OBS qualification.",
+    "It has not been integrated into the already-published gameplay demo."
+  ]
+}

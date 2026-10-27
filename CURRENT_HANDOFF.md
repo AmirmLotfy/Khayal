@@ -1,3 +1,13 @@
+# Latest checkpoint — owner-supplied Codex recording and build account
+
+Owner supplied a19.15-second2880x1800screen recording and requested its addition to README plus an account of how Codex planned/built Khayal. Preserved the original under ignored `recordings/codex-owner-20261028/original.mov`. Inspected samples and a1fps contact sheet. Published two direct conversation-pane stills and a compact complete1920x1200H.264clip under `docs/media/codex/`, with hashes, exact extraction/crop details and limits in `provenance.json`. This is genuine owner-recorded UI showing existing conversation records; it is not continuous coding footage. Historical29-test/browser-blocker text is labeled historical.
+
+README now explains Amir/Codex responsibilities, six build steps, source architecture and actual evidence. `docs/BUILD_WITH_CODEX.md` maps decisions to source, commits, validation and remaining gates. Fixed README's stale claim that no Twitch app exists. Public YouTube demo remains unchanged and still has its editorial source card; new recording integration into that video is pending. No Devpost declarations, final submission or external account settings changed. Genuine Codex recording is available now; prior capture-unavailable statements are superseded only for this owner-supplied media.
+
+Workspace `/Users/frameless/Desktop/Khayal`, branch`main`, parentHEAD`a2e1100`. No subagents or long-running app process was started. One owned encode completed; no encoder remains. Keep2GiB reserve. Source original/private contact sheets stay ignored; only reviewed documentation media is intended for Git. Milestone checks: `npm test`30/30tests in4files pass; `npm run build`TypeScript and Vite pass; README/build-account local links resolve. No runtime source changed.
+
+---
+
 # Latest checkpoint — public YouTube demo published
 
 On October28 the owner explicitly requested upload and completion on their YouTube channel, then approved the actual upload acknowledgement with **Accept and publish publicly**. Using the internal browser, uploaded the exact validated114-second gameplay review to **Frameless / @framelessco** and published it publicly: https://www.youtube.com/watch?v=vynF1sjtyFw . YouTube confirmed **Video published**, copyright and Community Guidelines checks **No issues found**, and **English subtitles published**. The public watch page exposes English captions and1080pHD. Custom16:9thumbnail is the full authorized promotional cover on an ink-blue matte; metadata discloses test/rehearsal sources and pending acceptance. No source footage, voice or review labels were changed.

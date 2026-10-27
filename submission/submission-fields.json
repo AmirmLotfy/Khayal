@@ -23,7 +23,7 @@
   "blockers": [
     "Full listening review and human performance rehearsal pending",
     "Real follow/raid, deliberate-swat accuracy, multi-viewer fairness and sustained OBS checks pending",
-    "Direct Codex app capture blocked by Computer Use; actual source explanation used instead",
+    "Owner-provided genuine Codex recording is documented in README; integration into the published demo remains pending",
     "Owner requested eligibility declarations remain unchecked; final terms and submission not authorized"
   ],
   "owner_voice_received": true,
@@ -39,11 +39,13 @@
   "real_twitch_broadcaster_test_recorded": true,
   "real_camera_test_recorded": true,
   "human_viewer_rehearsal": false,
-  "genuine_codex_ui_capture": false,
+  "genuine_codex_ui_capture": true,
   "caption_cues": 56,
   "encoded_audio_and_caption_checks_pass": true,
   "youtube_visibility": "public",
   "youtube_video_is_final": false,
   "devpost_video_url_saved": true,
-  "devpost_steps_done": "3/5"
+  "devpost_steps_done": "3/5",
+  "genuine_codex_ui_capture_source": "docs/media/codex/owner-build-walkthrough.mp4",
+  "genuine_codex_ui_in_published_demo": false
 }

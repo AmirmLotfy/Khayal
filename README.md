@@ -6,6 +6,35 @@
 
 **Status: development preview, not yet submission-ready.** Thirty automated tests and the production build pass. The first actual browser/camera/Twitch broadcaster test is recorded. Multi-viewer fairness, formal swat accuracy, real follow/raid and OBS acceptance remain pending. The cover is a promotional illustration, not gameplay footage. [Current gates](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
 
+[Watch the public gameplay demo](https://www.youtube.com/watch?v=vynF1sjtyFw) · [Devpost project draft](https://devpost.com/software/khayal)
+
+## Planned and built with Codex
+
+Amir supplied the hackathon brief, approved the implementation plan, directed the visual redesign, provided the narration and recorded the Codex conversation below. Codex served as the implementation agent: it turned the brief into a technical plan, wrote the application and tests, revised the design, operated authorized browser tests, and prepared the submission media. This was an iterative collaboration with specific decisions and corrections from Amir.
+
+1. **Define the performance and its limits.** The accepted plan fixed the five-lantern Hunt, viewer-owned puppets, a fair queue, a private cue book and a simulator. Optional modes were deferred. Local processing, memory-only tokens and honest separation of rehearsal from Twitch evidence were explicit constraints.
+2. **Choose one source of truth.** Codex built a Vite/TypeScript app in which one stage owns show state, rendering, Twitch and the camera. A separate cue-book window exchanges typed actions and status through `BroadcastChannel`. A Web Lock prevents a second stage owner.
+3. **Implement the interaction rules first.** Live and simulated messages enter the same command parser and Director. Viewer ownership, moderation, cooldowns, queue rotation, Hunt timing and scoring are tested independently of rendering.
+4. **Connect camera and Twitch.** Codex implemented the MediaPipe worker, shared mask/collision transforms, outline-motion detector, OAuth validation and EventSub lifecycle. Amir approved account authorization and camera permission. Authorized broadcaster chat tests then exercised real puppet commands and a recorded Hunt hit.
+5. **Redesign and refine.** Amir rejected the earlier visual similarity to Aragoz. Codex rebuilt Khayal around a moonlit cyanotype stage and original vector figures. Browser tests exposed Arabic joining and cue-window issues, which were fixed. No Meshy or Blender asset production is claimed.
+6. **Verify and prepare the entry.** Codex ran tests/builds, recorded validation receipts, aligned the supplied narration, repaired missing audio/caption delivery, packaged actual captures, and published the authorized demo. Human performance and final submission gates remain open.
+
+The [detailed build account](docs/BUILD_WITH_CODEX.md) maps these decisions to source files, commits and verification records.
+
+### Actual Codex conversation
+
+These stills were extracted from Amir's supplied screen recording. Crops isolate the conversation pane; the text and UI have not been reconstructed or generated.
+
+![The accepted Khayal plan and Amir's instruction to implement it](docs/media/codex/accepted-plan.jpg)
+
+*Planning evidence: the existing Codex thread shows the plan and the instruction to implement it.*
+
+![An earlier Codex implementation checkpoint and changed-file summary](docs/media/codex/implementation-checkpoint.jpg)
+
+*Implementation evidence: an earlier checkpoint and its changed-file summary. The visible 29-test result and browser blocker describe that historical point; the current suite has 30 tests and later browser/Twitch checks are recorded separately.*
+
+[Watch or download the 19-second owner-supplied Codex walkthrough](docs/media/codex/owner-build-walkthrough.mp4). It scrolls through existing conversation records; it is not a continuous recording of code being written or proof that every acceptance gate passed. [Media provenance](docs/media/codex/provenance.json).
+
 ## Run locally
 
 Requires Node 22.12+ and current desktop Chrome.
@@ -31,7 +60,7 @@ Keys 1 / 2 / 4 opens theatre/starts Hunt/exports cast; Space pauses. Escape leav
 
 Register a dedicated **Khayal Theatre** application: Game Integration, Confidential for the implicit flow, redirect **http://localhost:5173/**. Copy `.env.example` to `.env.local`, set the public `VITE_TWITCH_CLIENT_ID`, and restart the server. Every frontend environment value is public: never add a client secret. Connect your own broadcaster account while the show is stopped. Scopes: `user:read:chat moderator:read:followers`.
 
-Tokens remain in memory, OAuthstate is verified, validation repeats hourly, and reload/expiry requires reauthorization. EventSub handles chat/moderation/follow/raid, deduplicates notifications, and distinguishes reconnect handover from fresh subscription setup. The dedicated app is not yet created because browser control in the current development session is unavailable. No code test substitutes for real event qualification.
+Tokens remain in memory, OAuth state is verified, validation repeats hourly, and reload/expiry requires reauthorization. EventSub handles chat/moderation/follow/raid, deduplicates notifications, and distinguishes reconnect handover from fresh subscription setup. The dedicated Khayal Theatre app was created and an authorized broadcaster chat/camera test was recorded. Reloading the stage still requires a new login; real follow/raid and multi-viewer qualification remain pending. [Browser test record](docs/browser-live-validation.json).
 
 ## Camera, capture and privacy
 
