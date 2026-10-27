@@ -48,7 +48,7 @@ Use the repository README for exact setup. Start the local app on its fixed loca
 
 - Code repository URL: **https://github.com/AmirmLotfy/Khayal** (public source preview).
 - YouTube demo URL: **pending genuine captures, owner voice, review and approved upload**.
-- Primary Codex session ID: **confirm from the actual main build thread's status**.
+- Primary Codex session ID: **01a17eb7-e4d9-7453-9053-6b3eab7a4153**, verified from the active build runtime’s matching session/thread IDs.
 - Public hosted app URL: **none claimed; local application**. Only supply this if an actual form requires it and an approved route exists.
 - Built with: TypeScript, Vite, PixiJS, MediaPipe, Twitch EventSub, Vitest, Codex. Add Blender or Meshy to the public list only with actual usage/artifact evidence appropriate to the claim.
 - Gallery and video: follow `storyboard.md`; attach only existing reviewed assets.
