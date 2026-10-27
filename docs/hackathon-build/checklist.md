@@ -12,7 +12,8 @@
 - [ ] Actual browser screenshots, camera permission/loss, separatewindow recovery and live input qualification.
 - [ ]20physicalswats≥18hits,30sstaticoverlap0hits, mirrored/projected alignment.
 - [ ] Sustained OBS/GPU/CPU performance and human fairness session.
-- [ ] Owner narration and genuine Twitch/camera/Codex footage integrated into final under3minute master.
+- [x] Supplied 105.480-second owner narration aligned locally; 39 captions and normalized audio integrated into a 114-second rehearsal/editorial review. Raw voice and narrated review remain private local files.
+- [ ] Listening review and genuine Twitch/camera/Codex footage integrated into final under3minute master.
 - [x] Clean checkout installation/tests/build/assets verified.
 - [x] Public GitHub source repository published: https://github.com/AmirmLotfy/Khayal .
 - [ ] PublicYouTube link, actualCodexsessionID, authenticatedDevpostfields and ownereligibility/terms confirmation; verifySubmitted.

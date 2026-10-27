@@ -4,8 +4,17 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 const root = fileURLToPath(new URL("../", import.meta.url)),
-  dir = resolve(root, "submission/video"),
-  work = resolve(dir, "work/captions");
+  dir = resolve(root, "submission/video");
+const args = process.argv.slice(2);
+const option = (name, fallback) => {
+  const i = args.indexOf(name);
+  if (i < 0) return fallback;
+  if (!args[i + 1]) throw new Error(`Missing value for ${name}`);
+  return args[i + 1];
+};
+const duration = Number(option("--duration", "150"));
+if (!Number.isFinite(duration) || duration <= 0) throw new Error("Invalid duration");
+const work = resolve(dir, option("--output-dir", "work/captions"));
 await mkdir(work, { recursive: true });
 const cache = resolve(root, ".cache/submission");
 await mkdir(cache, { recursive: true });
@@ -22,7 +31,7 @@ const parse = (s) => {
 };
 const escape = (s) =>
   s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
-const srt = await readFile(resolve(dir, "captions.srt"), "utf8"),
+const srt = await readFile(resolve(dir, option("--srt", "captions.srt")), "utf8"),
   cues = srt
     .trim()
     .split(/\r?\n\r?\n/)
@@ -54,13 +63,15 @@ const add = (name, duration) => {
 };
 for (let i = 0; i < cues.length; i++) {
   const c = cues[i];
+  if (c.start < cursor || c.end <= c.start || c.end > duration)
+    throw new Error(`Caption ${i + 1} overlaps or exceeds the timeline`);
   add("blank.png", c.start - cursor);
   const name = `caption-${String(i).padStart(3, "0")}.png`;
   await frame(name, c.lines);
   add(name, c.end - c.start);
   cursor = c.end;
 }
-add("blank.png", Math.max(0, 150 - cursor));
+add("blank.png", Math.max(0, duration - cursor));
 concat += "file 'blank.png'\n";
 await writeFile(resolve(work, "captions.ffconcat"), concat);
 console.log(`Prepared ${cues.length} native caption overlays.`);

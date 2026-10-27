@@ -9,6 +9,8 @@ recordings/
 submission/video/work/
 submission/video/captures/
 submission/video/voiceover.*
+submission/video/khayal-narrated-review-*.mp4
 
 docs/cache-cleanup*.json
 scripts/ops/
+__pycache__/

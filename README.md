@@ -50,7 +50,7 @@ npm run submission:review
 npm run submission:check
 ```
 
-Frame exports use the same original SVGspecies paths and scene layout as Pixi, with synthetic Director fixtures; they are labeled engine rehearsal previews, not browser screenshots or realcamera/Twitch evidence. The2:30captioned review video uses those previews, promotional illustration and editorial source cards. It has no ownervoice and is not the final demo. The final edit script reports missing genuine captures and voice rather than inventing them. `submission/voiceover-script.md` contains eight recording takes.
+Frame exports use the same original SVGspecies paths and scene layout as Pixi, with synthetic Director fixtures; they are labeled engine rehearsal previews, not browser screenshots or realcamera/Twitch evidence. The original 2:30 silent review and the new 1:54 narrated review use those previews, promotional illustration and editorial source cards. The supplied owner voice has been aligned and normalized in the new review; genuine captures remain pending. The final edit script reports missing genuine captures rather than inventing them. `submission/voiceover-script.md` contains eight recording takes.
 
 The cyanotype art direction deliberately differs from Aragoz’s wood/brass/curtainworkshop. Khayal’s distinguishing mechanic is body-driven shadow defense; changing colors alone would not establish a substantially different contest entry. Prior winners and inspirations are credited in `submission/research.md`.
 

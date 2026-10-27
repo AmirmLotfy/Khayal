@@ -1,6 +1,6 @@
 # Khayal owner voiceover
 
-Target: 2:30 video, 293 spoken words, around 120 words/minute with short action pauses. Read only the eight quoted passages; headings and notes are not spoken. Pronunciation: Khayal = kha-YAAL; afreet = ah-FREET; Pixi = PIX-ee. Record clean voice without background music, leaving a second before and after each take. Codex handles editing and captions.
+Original recording guide: 2:30 video, 293 spoken words, around 120 words/minute with short action pauses. **Recording received:** 105.480 seconds; the current edit preserves its natural pace in a 114-second timeline. Current timings are in `video/edit-plan.json`; the take times below are the original recording guide. Read only the eight quoted passages; headings and notes are not spoken. Pronunciation: Khayal = kha-YAAL; afreet = ah-FREET; Pixi = PIX-ee. Record clean voice without background music, leaving a second before and after each take. Codex handles editing and captions.
 
 This script describes implemented mechanics and the intended performance. Current camera/live Twitch acceptance remains open in the handoff. Keep review footage visibly labeled by source. A final submission needs actual Twitch and Codex footage; recording this narration alone does not satisfy that requirement. Recheck take 7 against the latest implementation before recording.
 
@@ -40,5 +40,5 @@ This script describes implemented mechanics and the intended performance. Curren
 
 - Opening 00:00–00:06 is action and room for sound; no narration.
 - Deliver take 4 with a little urgency, then return to a calm, conversational voice.
-- Final action pauses can shift take boundaries by a few seconds; preserve the 150-second target.
+- Final action pauses can shift take boundaries by a few seconds; follow the current aligned edit plan.
 - No synthetic owner voice, fabricated crowd response or invented testimonial. Use the owner's recording and permission-cleared audio only.

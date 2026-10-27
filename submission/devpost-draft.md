@@ -1,6 +1,6 @@
 # Khayal
 
-**Local draft, 27 October 2026. Nothing has been sent to Devpost.** This is editorial copy updated after the cyanotype redesign. Original vector art, promotional cover, native engine previews and a captioned review cut are prepared. Genuine camera/Twitch/Codex footage, owner voice, links and authenticated form fields remain pending.
+**Local draft, 27 October 2026. Nothing has been sent to Devpost.** This is editorial copy updated after the cyanotype redesign. Original vector art, promotional cover, native engine previews and a captioned review cut are prepared. The supplied owner voice is integrated into a 114-second local review. Genuine camera/Twitch/Codex footage, final video link and authenticated form fields remain pending.
 
 ## Tagline
 
@@ -38,7 +38,7 @@ A coherent performance loop: chat owns the figures, the streamer guards the ligh
 
 ## What's next
 
-Complete real camera and Twitch acceptance, measure OBS performance, record the owner voice and finish the genuine demonstration edit. Optional modes stay outside this baseline. No user numbers, event deliveries, fairness scores or performance claims are invented.
+Complete real camera and Twitch acceptance, measure OBS performance, finish the genuine demonstration edit using the supplied owner voice. Optional modes stay outside this baseline. No user numbers, event deliveries, fairness scores or performance claims are invented.
 
 ## Testing instructions draft
 
@@ -47,7 +47,7 @@ Use the repository README for exact setup. Start the local app on its fixed loca
 ## Fields to finalize after authenticated form inspection
 
 - Code repository URL: **https://github.com/AmirmLotfy/Khayal** (public source preview).
-- YouTube demo URL: **pending genuine captures, owner voice, review and approved upload**.
+- YouTube demo URL: **pending genuine captures, final listening review and approved upload**.
 - Primary Codex session ID: **01a17eb7-e4d9-7453-9053-6b3eab7a4153**, verified from the active build runtime’s matching session/thread IDs.
 - Public hosted app URL: **none claimed; local application**. Only supply this if an actual form requires it and an approved route exists.
 - Built with: TypeScript, Vite, PixiJS, MediaPipe, Twitch EventSub, Vitest, Codex. Add Blender or Meshy to the public list only with actual usage/artifact evidence appropriate to the claim.

@@ -1,4 +1,4 @@
-# Khayal 150-second demo and image plan
+# Khayal demo and image plan
 
 Preparation storyboard, 27 October 2026. It is not a record of completed captures. Refer to `research.md` for current requirements and evidence boundaries. Narration: `voiceover-script.md`. Every requested live shot stays pending until captured from the actual project. Review exports must say `REVIEW CUT` and retain source labels.
 
@@ -6,7 +6,11 @@ Preparation storyboard, 27 October 2026. It is not a record of completed capture
 
 Make the theatre occupy the frame. Ink blue and ice, with mist-blue detail and amber lanterns from the revised `palette.ts`; theatrical negative space, legible figures, slow lamp falloff. Keep specified fonts and modest rod motion. No glowing cyberpunk cyan, stock stage photograph, glass panel or ARAGOZ artwork. The owner-authorized promotional cover is original generated illustration, clearly distinct from real footage. The distinguishing image is an actual human camera outline defending lanterns against chat-owned shadows.
 
-## Edit timeline
+## Current aligned edit
+
+Owner recording received: 105.480 seconds. Keep the natural voice pace: 3-second opening, narration at 00:03, closing hold through 01:54. The active nine-shot timing is in `video/edit-plan.json`; `video/captions.srt` contains 39 locally aligned cues. The original 150-second timing below is retained as the initial shot brief, not the current edit. The narrated review is rehearsal/editorial only and still requires genuine captures and listening QC.
+
+## Original shot brief
 
 | Time | Shot and narration take | Capture needed / honest fallback |
 | --- | --- | --- |

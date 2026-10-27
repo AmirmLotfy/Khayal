@@ -67,9 +67,9 @@ const probe = (path) =>
 const voicedata = probe(voice);
 if (!voicedata.streams.some((s) => s.codec_type === "audio"))
   throw new Error("Voice file has no audio stream");
-if (Number(voicedata.format.duration) > 144)
+if (Number(voicedata.format.duration) > plan.duration - plan.voiceStartsAt)
   throw new Error(
-    "Voice exceeds144s; align/re-edit takes before rendering150s master.",
+    "Voice exceeds the available timeline; align/re-edit takes before rendering.",
   );
 const work = resolve(dir, "work");
 await mkdir(work, { recursive: true });
@@ -99,6 +99,8 @@ for (let i = 0; i < plan.segments.length; i++) {
     "scale=1920:940:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:32:color=0x07182e,setsar=1,fps=30",
     "-c:v",
     "libx264",
+    "-threads",
+    "2",
     "-preset",
     "veryfast",
     "-crf",
@@ -119,7 +121,7 @@ const output = resolve(dir, plan.output);
 const subtitles = resolve(dir, "captions.srt");
 if (!(await exists(subtitles)))
   throw new Error("Prepare and review captions.srt before rendering.");
-run(process.execPath, [resolve(root, "scripts/render-captions.mjs")]);
+run(process.execPath, [resolve(root, "scripts/render-captions.mjs"), "--duration", String(plan.duration)]);
 run("ffmpeg", [
   "-y",
   "-v",
@@ -139,7 +141,7 @@ run("ffmpeg", [
   "-i",
   voice,
   "-filter_complex",
-  "[1:v]fps=30[cap];[0:v][cap]overlay=0:0:eof_action=repeat[v];[2:a]loudnorm=I=-16:TP=-1.5:LRA=9,adelay=6000|6000,apad[a]",
+  `[1:v]fps=30[cap];[0:v][cap]overlay=0:0:eof_action=repeat[v];[2:a]loudnorm=I=-16:TP=-1.5:LRA=9,adelay=${Math.round(plan.voiceStartsAt * 1000)}:all=1,apad[a]`,
   "-map",
   "[v]",
   "-map",

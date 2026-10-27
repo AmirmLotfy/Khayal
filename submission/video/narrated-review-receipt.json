@@ -1,0 +1,16 @@
+{
+  "output": "/Users/frameless/Desktop/Khayal/submission/video/khayal-narrated-review-114s.mp4",
+  "duration": 114,
+  "width": 1920,
+  "height": 1080,
+  "ownerVoice": true,
+  "voiceOffsetSeconds": 3,
+  "captionsAlignedToRecording": true,
+  "audioCodec": "aac",
+  "manualListeningQC": false,
+  "realTwitch": false,
+  "browserCapture": false,
+  "genuineCodexFootage": false,
+  "source": "synthetic Director engine exports + promotional illustration + actual source still",
+  "submissionReady": false
+}

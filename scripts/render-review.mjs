@@ -5,8 +5,15 @@ import { fileURLToPath } from "node:url";
 import { spawnSync, spawn } from "node:child_process";
 import { createRequire } from "node:module";
 const root = fileURLToPath(new URL("../", import.meta.url)),
-  dir = resolve(root, "submission/video"),
-  work = resolve(dir, "work/review");
+  dir = resolve(root, "submission/video");
+const args = process.argv.slice(2), voiceIndex = args.indexOf("--voice");
+const narrated = voiceIndex >= 0;
+if (narrated && !args[voiceIndex + 1]) throw new Error("--voice requires a path");
+const voice = narrated ? resolve(args[voiceIndex + 1]) : null;
+const plan = JSON.parse(await readFile(resolve(dir, "edit-plan.json"), "utf8"));
+const duration = narrated ? plan.duration : 150;
+const work = resolve(dir, narrated ? "work/narrated-review" : "work/review");
+const captionWork = narrated ? "work/narrated-captions" : "work/draft-captions";
 const disk = await statfs(root);
 if (Number(disk.bavail) * Number(disk.bsize) < 2 * 1024 ** 3 + 200 * 1024 ** 2)
   throw new Error("Need2GiB reserve plus200MiB for review render.");
@@ -16,7 +23,9 @@ const run = (binary, args) => {
   if (r.status !== 0) throw new Error(r.stderr || "Command failed");
   return r.stdout;
 };
-run(process.execPath, [resolve(root, "scripts/render-captions.mjs")]);
+run(process.execPath, [resolve(root, "scripts/render-captions.mjs"),
+  "--srt", narrated ? "captions.srt" : "captions-draft-150s.srt",
+  "--duration", String(duration), "--output-dir", captionWork]);
 process.env.FONTCONFIG_FILE = resolve(root, ".cache/submission/fonts.conf");
 const sharp = createRequire(import.meta.url)("sharp");
 const esc = (s) =>
@@ -45,7 +54,7 @@ const excerpt = code
   .slice(at, at + 10)
   .map((s) => s.trim())
   .filter(Boolean)
-  .slice(0, 7);
+  .slice(0, 6);
 const build = await card(
   "build",
   "Built through conversation.",
@@ -59,7 +68,7 @@ const closing = await card(
     "Your body. Chat’s playground.",
     "Come back tomorrow. There is more to see.",
   ],
-  "REVIEW ONLY / OWNER VOICE AND LIVE FOOTAGE PENDING",
+  narrated ? "REVIEW ONLY / GENUINE LIVE FOOTAGE PENDING" : "REVIEW ONLY / OWNER VOICE AND LIVE FOOTAGE PENDING",
 );
 const cover = resolve(root, "submission/artwork/khayal-devpost-3x2.png"),
   preview = (n) => resolve(root, "submission/engine-previews/" + n + ".png");
@@ -74,19 +83,32 @@ const shots = [
   [build, 25],
   [closing, 15],
 ];
+if (narrated) for (let i = 0; i < shots.length; i++) {
+  shots[i][1] = plan.segments[i].end - plan.segments[i].start;
+}
 const overlay = Buffer.from(
-  '<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080"><rect x="0" y="0" width="1920" height="45" fill="#07182E"/><text x="40" y="30" fill="#E9B96A" font-size="18" font-family="IBM Plex Mono">REVIEW CUT / ENGINE REHEARSAL + EDITORIAL ART / NO OWNER VOICE YET</text></svg>',
+  `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080"><rect x="0" y="0" width="1920" height="45" fill="#07182E"/><text x="40" y="30" fill="#E9B96A" font-size="18" font-family="IBM Plex Mono">REVIEW CUT / ENGINE REHEARSAL + EDITORIAL ART / ${narrated ? "LIVE CAPTURE PENDING" : "NO OWNER VOICE YET"}</text></svg>`,
 );
 const fragments = [];
 for (let i = 0; i < shots.length; i++) {
   const [source, duration] = shots[i];
+  const out = resolve(work, `shot-${i}.mp4`);
+  const refreshIndex = args.indexOf("--refresh-section");
+  const refreshSection = refreshIndex < 0 ? null : Number(args[refreshIndex + 1]);
+  if (args.includes("--assemble-only") && refreshSection !== i + 1) {
+    // Only use after reviewing existing fragments against this unchanged timeline.
+    const info = JSON.parse(run("ffprobe", ["-v", "error", "-show_format", "-of", "json", out]));
+    if (Math.abs(Number(info.format.duration) - duration) > 0.05)
+      throw new Error("Existing fragment no longer matches timeline: " + out);
+    fragments.push(out);
+    continue;
+  }
   const input = resolve(work, `frame-${i}.png`);
   await sharp(source)
     .resize(1920, 1080, { fit: "contain", background: "#07182e" })
     .composite([{ input: overlay }])
     .png()
     .toFile(input);
-  const out = resolve(work, `shot-${i}.mp4`);
   console.log(`Encoding review section ${i + 1}/${shots.length}`);
   await new Promise((accept, reject) => {
     const p = spawn(
@@ -129,8 +151,9 @@ for (let i = 0; i < shots.length; i++) {
 }
 const list = resolve(work, "concat.txt");
 await writeFile(list, fragments.map((p) => `file '${p}'`).join("\n"));
-const output = resolve(dir, "khayal-review-150s.mp4");
-console.log("Burning timed narration captions into silent review master.");
+const output = resolve(dir, narrated ? `khayal-narrated-review-${duration}s.mp4` : "khayal-review-150s.mp4");
+console.log("Burning timed captions into review master.");
+const voiceFilters = narrated ? `;[2:a]loudnorm=I=-16:TP=-1.5:LRA=9,adelay=${Math.round(plan.voiceStartsAt * 1000)}:all=1,apad[a]` : "";
 run("ffmpeg", [
   "-y",
   "-v",
@@ -146,14 +169,15 @@ run("ffmpeg", [
   "-safe",
   "0",
   "-i",
-  resolve(dir, "work/captions/captions.ffconcat"),
+  resolve(dir, captionWork, "captions.ffconcat"),
+  ...(narrated ? ["-i", voice] : []),
   "-filter_complex",
-  "[1:v]fps=30[cap];[0:v][cap]overlay=0:0:eof_action=repeat[v]",
+  "[1:v]fps=30[cap];[0:v][cap]overlay=0:0:eof_action=repeat[v]" + voiceFilters,
   "-map",
   "[v]",
   "-t",
-  "150",
-  "-an",
+  String(duration),
+  ...(narrated ? ["-map", "[a]", "-c:a", "aac", "-b:a", "192k"] : ["-an"]),
   "-c:v",
   "libx264",
   "-threads",
@@ -180,14 +204,18 @@ const probe = JSON.parse(
   ]),
 );
 await writeFile(
-  resolve(dir, "review-receipt.json"),
+  resolve(dir, narrated ? "narrated-review-receipt.json" : "review-receipt.json"),
   JSON.stringify(
     {
       output,
       duration: Number(probe.format.duration),
       width: 1920,
       height: 1080,
-      ownerVoice: false,
+      ownerVoice: narrated,
+      voiceOffsetSeconds: narrated ? plan.voiceStartsAt : null,
+      captionsAlignedToRecording: narrated,
+      audioCodec: probe.streams.find(s => s.codec_type === "audio")?.codec_name ?? null,
+      manualListeningQC: false,
       realTwitch: false,
       browserCapture: false,
       genuineCodexFootage: false,

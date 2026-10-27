@@ -10,21 +10,23 @@
     1536,
     1024
   ],
-  "review_video_file": "submission/video/khayal-review-150s.mp4",
+  "review_video_file": "submission/video/khayal-narrated-review-114s.mp4",
   "review_video_is_final": false,
   "youtube_url": null,
   "devpost_project_url": null,
-  "owner_voice_file": null,
+  "owner_voice_file": "submission/video/voiceover.wav (private local input)",
   "native_engine_previews": 5,
   "actual_browser_screenshots": 0,
   "genuine_twitch_camera_codex_capture_complete": false,
   "owner_eligibility_terms_confirmed": false,
   "submission_ready": false,
   "blockers": [
-    "Owner voice recording not supplied",
     "Genuine Twitch/camera/Codex motion and actual browser captures not recorded",
     "Browser control unavailable; dedicated Twitch app not created",
     "Devpost connector requires reauthentication; actual form/registration unverified",
     "Final YouTube publication and owner eligibility/terms attestation pending"
-  ]
+  ],
+  "owner_voice_received": true,
+  "narration_integrated_into_review": true,
+  "review_video_duration_seconds": 114
 }

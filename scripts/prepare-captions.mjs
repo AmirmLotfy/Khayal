@@ -38,9 +38,9 @@ for (let i = 0; i < takes.length; i++) {
   }
 }
 await writeFile(
-  new URL("../submission/video/captions.srt", import.meta.url),
+  new URL("../submission/video/captions-draft-150s.srt", import.meta.url),
   output.trimEnd()+"\n",
 );
 console.log(
-  "Draft captions prepared. Align to the actual owner voice before final rendering.",
+  "Original 150-second draft captions prepared separately. Current voice-aligned captions.srt is preserved.",
 );

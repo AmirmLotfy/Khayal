@@ -1,0 +1,74 @@
+{
+  "voiceSha256": "243805bc3448077610d3c7f9266576c2066d884144c37960bd9bcb9519e09eef",
+  "voiceDuration": 105.480272,
+  "timelineDuration": 114,
+  "voiceStartsAt": 3,
+  "spokenScriptWords": 293,
+  "localRecognitionWords": 295,
+  "normalizedSequenceSimilarity": 0.9524,
+  "captionCues": 39,
+  "takeStarts": [
+    3.0,
+    15.32,
+    29.06,
+    40.84,
+    57.99,
+    72.05,
+    82.53,
+    99.53
+  ],
+  "method": "Local whisper.cpp, English base model; approved-script spelling with recognized word timings; replacement spans interpolated",
+  "recognitionDifferencesForReview": [
+    {
+      "script": "Khayal:",
+      "recognition": "Hayao,"
+    },
+    {
+      "script": "theatre",
+      "recognition": "theater"
+    },
+    {
+      "script": "theatre:",
+      "recognition": "theater,"
+    },
+    {
+      "script": "Khayal",
+      "recognition": "Hayao"
+    },
+    {
+      "script": "queue",
+      "recognition": "cue"
+    },
+    {
+      "script": "Afreet",
+      "recognition": "a freak"
+    },
+    {
+      "script": "Sixty",
+      "recognition": "60"
+    },
+    {
+      "script": "swat",
+      "recognition": "swap"
+    },
+    {
+      "script": "Codex",
+      "recognition": "codecs"
+    },
+    {
+      "script": "Pixi",
+      "recognition": "Pixie"
+    },
+    {
+      "script": "theatre; MediaPipe",
+      "recognition": "fear, media pipe"
+    },
+    {
+      "script": "Khayal",
+      "recognition": "Hayao"
+    }
+  ],
+  "manualListeningQC": false,
+  "finalPublicationApproved": false,
+  "rawVoiceIsPublic": false
+}
