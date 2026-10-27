@@ -24,7 +24,7 @@ The owner directed the concept, interaction and visual constraints. Codex implem
 
 The command path sanitizes plain-text captions, enforces viewer ownership and reads moderator authority from Twitch IDs and badges. OAuth tokens stay in memory. The app has no backend or camera-upload endpoint. This is implementation description, not a claim of device or provider acceptance.
 
-Following a new art direction, Codex authored original cut-paper species paths and a moonlit cyanotype stage shared by Pixi and native vector exports. An owner-authorized OpenAI-generated3:2cover is promotional illustration, not gameplay evidence. The app uses original quiet synthesized cues; the owner supplies the narration. A Blender exporter exists as an optional tool, but no Meshy generation or completed Blender production run is claimed.
+Following a new art direction, Codex authored original cut-paper species paths and a moonlit cyanotype stage shared by Pixi and native vector exports. An owner-authorized OpenAI-generated 3:2 cover is promotional illustration, not gameplay evidence. The app uses original quiet synthesized cues; the owner supplies the narration. A Blender exporter exists as an optional tool, but no Meshy generation or completed Blender production run is claimed.
 
 ## Challenges and what we learned
 
@@ -34,7 +34,7 @@ Another challenge is keeping the public performance readable while the operator 
 
 ## What we are proud of
 
-A coherent performance loop: chat owns the figures, the streamer guards the light, and the cast receives a playbill. The command, moderation, queue and camera systems are connected in the local implementation. The current source passes30automated tests and the TypeScript/production build. These checks establish source behavior only; browser, Twitch, camera, OBS and human acceptance remain separate.
+A coherent performance loop: chat owns the figures, the streamer guards the light, and the cast receives a playbill. The command, moderation, queue and camera systems are connected in the local implementation. The current source passes 30 automated tests and the TypeScript/production build. These checks establish source behavior only; browser, Twitch, camera, OBS and human acceptance remain separate.
 
 ## What's next
 
@@ -46,7 +46,7 @@ Use the repository README for exact setup. Start the local app on its fixed loca
 
 ## Fields to finalize after authenticated form inspection
 
-- Code repository URL: **pending approved publication/access**.
+- Code repository URL: **https://github.com/AmirmLotfy/Khayal** (public source preview).
 - YouTube demo URL: **pending genuine captures, owner voice, review and approved upload**.
 - Primary Codex session ID: **confirm from the actual main build thread's status**.
 - Public hosted app URL: **none claimed; local application**. Only supply this if an actual form requires it and an approved route exists.

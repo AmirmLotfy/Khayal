@@ -24,7 +24,7 @@ Owner explicitly requested old-cache cleanup and continuation when free storage 
 
 Browsercontrol still reports Local browser use is disabled in Work settings after onecurrentattempt. Do notloop/asktheowner repeatedlyaboutthetoggle. Devpostconnector separatelyreturnsUNAUTHORIZED/reauthentication. DedicatedKhayalTwitchapp hasnotbeencreated; preserveexistingAragozapp. Actualcamera/Twitch/Codexcaptures, fivepersonfairness/OBSchecks, ownerVO, personaleligibility/terms, finalYouTubelink and actualDevpostSubmittedstatus remain open.
 
-Next: ownerreturnsVO; aligncaptions/edit timing toactualspeech, recoverbrowserconnection, createKhayalapplication(publicclientIDonly env), validatecurrentrender/camera/realTwitch, capturegenuinefootage thenreplaceallreviewsubstitutes via submission/video/edit-plan.json and prepare-video.mjs. No simulatorfixturecanclosearealgate. Source/publicrepositorypublication is authorized; publicYouTubefinal and Devpostsubmission await actualfinishedmedia/ownerattestation. Currentdrafts are not an entry.
+Next: ownerreturnsVO; aligncaptions/edit timing toactualspeech, recoverbrowserconnection, createKhayalapplication(publicclientIDonly env), validatecurrentrender/camera/realTwitch, capturegenuinefootage thenreplaceallreviewsubstitutes via submission/video/edit-plan.json and prepare-video.mjs. No simulatorfixturecanclosearealgate. Public source is published at https://github.com/AmirmLotfy/Khayal on main; publicYouTubefinal and Devpostsubmission await actualfinishedmedia/ownerattestation. Currentdrafts are not an entry. Publicsource publication does not close any provider, browser, human or final media gate.
 
 ## Task-owned processes
 

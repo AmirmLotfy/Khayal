@@ -1,6 +1,6 @@
 # Khayal submission studio
 
-This packet is in preparation. Nothing here establishes a completed submission.
+This packet is in preparation. [Public source repository](https://github.com/AmirmLotfy/Khayal). Nothing here establishes a completed submission.
 
 - **artwork/khayal-devpost-3x2.png**: final creative1536×1024promotional cover, built-in imagegen, five lanterns; provenance alongside. It is illustration, not a screenshot.
 - **voiceover-script.md**: owner recording script, eight takes,293spokenwords, about2:30–2:40. Record only quoted passages, dry voice/no music. Leave one second around takes. Return the voice file for editing and timing.

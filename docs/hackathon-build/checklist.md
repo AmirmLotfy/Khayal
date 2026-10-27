@@ -14,7 +14,7 @@
 - [ ] Sustained OBS/GPU/CPU performance and human fairness session.
 - [ ] Owner narration and genuine Twitch/camera/Codex footage integrated into final under3minute master.
 - [x] Clean checkout installation/tests/build/assets verified.
-- [ ] PublicGitHub source publication.
+- [x] Public GitHub source repository published: https://github.com/AmirmLotfy/Khayal .
 - [ ] PublicYouTube link, actualCodexsessionID, authenticatedDevpostfields and ownereligibility/terms confirmation; verifySubmitted.
 
 The user's new direction supersedes the old Meshy/fabric-photo look. Meshy and Blender production are not claimed. Naddaha gameplay and other optional modes remain deferred.

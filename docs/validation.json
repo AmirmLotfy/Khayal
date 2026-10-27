@@ -16,7 +16,11 @@
   "obs_performance": "not verified",
   "real_twitch_chat_follow_raid": "not verified",
   "meshy_credits_spent": 0,
-  "publication": "public source preparation; no final video/Devpost publication",
+  "publication": {
+    "publicSource": "https://github.com/AmirmLotfy/Khayal",
+    "youtube": null,
+    "devpostSubmitted": false
+  },
   "owned_server": {
     "url": "http://localhost:5173/",
     "pid": 60197,
