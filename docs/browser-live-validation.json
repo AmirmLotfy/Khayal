@@ -1,0 +1,112 @@
+{
+  "checkedAtUtc": "2026-10-27T21:44:17.760519+00:00",
+  "twitchApplication": {
+    "name": "Khayal Theatre",
+    "clientId": "81egb0bhhqmrkzdlfo2a4bejj7e16l",
+    "redirect": "http://localhost:5173/",
+    "category": "Game Integration",
+    "type": "Confidential",
+    "clientSecretGenerated": false,
+    "aragozApplicationChanged": false
+  },
+  "oauth": "Owner explicitly approved Authorize in the actual Twitch permission screen; fragment erased, connected status verified",
+  "channel": "amirmolotfy",
+  "chatCommandsSentBy": "agent operating the broadcaster account with explicit owner permission",
+  "chatPosts": [
+    "!cat",
+    "!closer",
+    "!jump",
+    "!afreet during countdown (ignored)",
+    "!afreet during active hunt"
+  ],
+  "broadcastWasLive": false,
+  "camera": "Actual local camera and MediaPipe silhouette; owner accepted permission prompt",
+  "huntOutcome": {
+    "detectedHits": 1,
+    "lanternsRemaining": 5,
+    "formalSwatAccuracyQualified": false,
+    "humanViewerFairnessQualified": false
+  },
+  "renderFpsEvidence": "Cue-book snapshots60fps after camera warmup; not a sustained OBS benchmark",
+  "browser": "Working IAB via CUA",
+  "devpostConnector": "Still UNAUTHORIZED on fresh overview call; signed-in browser used successfully",
+  "devpost": {
+    "project": "https://devpost.com/software/khayal",
+    "state": "DRAFT / INCOMPLETE SUBMISSION",
+    "pitchCoverAndFiveGalleryImagesSaved": true,
+    "storySourceLinkAndCaptionsSaved": true,
+    "additionalAnswersSavedAndReloadVerified": true,
+    "eligibilityBoxes": [
+      false,
+      false,
+      false
+    ],
+    "finalTermsAccepted": false,
+    "finalSubmitClicked": false
+  },
+  "codexAppCapture": "User explicitly requested; canonical com.openai.codex access denied by Computer Use. No bypass attempted.",
+  "cameraAtEnd": "Off; Twitch token remains in stage memory",
+  "captures": [
+    {
+      "path": "submission/video/captures/twitch-camera-freeplay-20261028.webm",
+      "sha256": "31642c44fb73bddd024c1bb044a4247eb7779bcd66d08bbb37f5f06eba033b31",
+      "bytes": 4561704
+    },
+    {
+      "path": "submission/video/captures/twitch-camera-hunt-20261028.webm",
+      "sha256": "cf4ba144657910caba96e57a5422db3e6f779549ccedfaa209ce69322a2f7e50",
+      "bytes": 8022325
+    },
+    {
+      "path": "submission/video/captures/animated-rehearsal-20261028.webm",
+      "sha256": "b9a901c405265ebd5f03f04178f7d44da46a814bbe6ec36f1184d0562ab93023",
+      "bytes": 25451991
+    }
+  ],
+  "checks": {
+    "tests": "30/30 in four files",
+    "typescript": "pass",
+    "productionBuild": "pass",
+    "audioAndCaptionDecodeChecks": "docs/gameplay-review-validation.json"
+  },
+  "limits": [
+    "One broadcaster test is not a multi-viewer rehearsal.",
+    "No real follow or raid recorded.",
+    "No20-swat/static-overlap/5minuteOBS acceptance.",
+    "No genuine Codex UI or Blender footage.",
+    "No YouTube final upload or hackathon submission."
+  ],
+  "cueBookRecovery": "Closed own cue tab and reopened same show; authoritative stage continued with Twitch connected, camera off and60fps status.",
+  "stageAtEnd": "Live Twitch input, theatre open, camera off, company simulator stopped",
+  "preCommitHead": "c83c66e98c04d9c409dba293f532b9b4f0b039bc",
+  "preCommitStatus": [
+    " M .gitignore",
+    " M CURRENT_HANDOFF.md",
+    " M README.md",
+    " M docs/hackathon-build/checklist.md",
+    " M scripts/align-voice.py",
+    " M scripts/prepare-video.mjs",
+    " M scripts/render-captions.mjs",
+    " M scripts/render-review.mjs",
+    " M src/main.ts",
+    " M src/stage/render.ts",
+    " M src/style.css",
+    " M submission/README.md",
+    " M submission/devpost-draft.md",
+    " M submission/submission-fields.json",
+    " M submission/video/captions.srt",
+    " M submission/video/narrated-review-receipt.json",
+    " M submission/video/voice-alignment.json",
+    "?? docs/audio-continuity-validation.json",
+    "?? docs/browser-live-validation.json",
+    "?? docs/caption-sync-validation.json",
+    "?? docs/gameplay-review-validation.json",
+    "?? scripts/package-gallery.mjs",
+    "?? scripts/prepare-review-audio.mjs",
+    "?? scripts/render-gameplay-review.mjs",
+    "?? scripts/verify-gameplay-review.py",
+    "?? submission/devpost-story.md",
+    "?? submission/gallery-manifest.json",
+    "?? submission/video/gameplay-review-receipt.json"
+  ]
+}

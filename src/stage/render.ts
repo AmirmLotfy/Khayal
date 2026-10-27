@@ -197,7 +197,8 @@ export async function createStage(host: HTMLElement, d: Director) {
             fontFamily: l.mono ? textStyle.mono : textStyle.fontFamily,
             fontSize: l.size,
             fill: l.color,
-            letterSpacing: l.spacing ?? 0,
+            // Per-character tracking breaks Arabic joining and bidi order in CanvasText.
+            letterSpacing: /\p{Script=Arabic}/u.test(l.text) ? 0 : (l.spacing ?? 0),
             align: l.align ?? "left",
           },
         });

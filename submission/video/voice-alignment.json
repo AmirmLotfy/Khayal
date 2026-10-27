@@ -1,73 +1,156 @@
 {
   "voiceSha256": "243805bc3448077610d3c7f9266576c2066d884144c37960bd9bcb9519e09eef",
+  "transcriptSha256": "6fa212067182f90e18cd0eb4ac5d6a0ef9779ad0a73fa403fcfab3d2a55f0b01",
   "voiceDuration": 105.480272,
   "timelineDuration": 114,
   "voiceStartsAt": 3,
   "spokenScriptWords": 293,
   "localRecognitionWords": 295,
   "normalizedSequenceSimilarity": 0.9524,
-  "captionCues": 39,
+  "captionCues": 56,
   "takeStarts": [
-    3.0,
-    15.32,
-    29.06,
-    40.84,
-    57.99,
-    72.05,
-    82.53,
-    99.53
+    3.4,
+    15.72,
+    29.0,
+    41.26,
+    58.5,
+    72.28,
+    83.28,
+    99.7
   ],
-  "method": "Local whisper.cpp, English base model; approved-script spelling with recognized word timings; replacement spans interpolated",
+  "method": "Local whisper.cpp base.en DTW lexical token points; approved-script spelling; short phrase captions",
+  "dtwLexicalTokenCount": 315,
+  "dtwAnchorRangeSeconds": [
+    0.5,
+    104.98
+  ],
+  "dtwAnchorsFiniteMonotonicAndWithinVoice": true,
+  "captionReadingLeadSeconds": 0.1,
+  "captionEndPolicy": "last lexical DTW point plus300ms, minimum800ms, bounded by next phrase/word and recording end",
+  "editPlanModified": false,
   "recognitionDifferencesForReview": [
     {
       "script": "Khayal:",
-      "recognition": "Hayao,"
+      "recognition": "Hayao,",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        5.18,
+        5.46
+      ],
+      "listeningVerified": false
     },
     {
       "script": "theatre",
-      "recognition": "theater"
+      "recognition": "theater",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        6.6,
+        6.6
+      ],
+      "listeningVerified": false
     },
     {
       "script": "theatre:",
-      "recognition": "theater,"
+      "recognition": "theater,",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        14.82,
+        14.82
+      ],
+      "listeningVerified": false
     },
     {
       "script": "Khayal",
-      "recognition": "Hayao"
+      "recognition": "Hayao",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        19.62,
+        19.82
+      ],
+      "listeningVerified": false
     },
     {
       "script": "queue",
-      "recognition": "cue"
+      "recognition": "cue",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        36.48,
+        36.48
+      ],
+      "listeningVerified": false
     },
     {
       "script": "Afreet",
-      "recognition": "a freak"
+      "recognition": "a freak",
+      "timing": "one approved word spans multiple recognized words",
+      "sourceAnchorSeconds": [
+        38.92,
+        39.16
+      ],
+      "listeningVerified": false
     },
     {
       "script": "Sixty",
-      "recognition": "60"
+      "recognition": "60",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        40.32,
+        40.32
+      ],
+      "listeningVerified": false
     },
     {
       "script": "swat",
-      "recognition": "swap"
+      "recognition": "swap",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        45.88,
+        45.88
+      ],
+      "listeningVerified": false
     },
     {
       "script": "Codex",
-      "recognition": "codecs"
+      "recognition": "codecs",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        82.12,
+        82.42
+      ],
+      "listeningVerified": false
     },
     {
       "script": "Pixi",
-      "recognition": "Pixie"
+      "recognition": "Pixie",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        88.24,
+        88.24
+      ],
+      "listeningVerified": false
     },
     {
       "script": "theatre; MediaPipe",
-      "recognition": "fear, media pipe"
+      "recognition": "theater. Media pipe",
+      "timing": "explicit theatre/theater spelling equivalence and compound-name token grouping",
+      "sourceAnchorSeconds": [
+        89.02,
+        89.98
+      ],
+      "listeningVerified": false
     },
     {
       "script": "Khayal",
-      "recognition": "Hayao"
+      "recognition": "Hayao",
+      "timing": "one-to-one recognized word anchors",
+      "sourceAnchorSeconds": [
+        96.8,
+        96.98
+      ],
+      "listeningVerified": false
     }
   ],
+  "timingLimit": "DTW points are experimental approximate token locations, not verified acoustic onset/end boundaries. Numeric validation does not establish audible sync.",
   "manualListeningQC": false,
   "finalPublicationApproved": false,
   "rawVoiceIsPublic": false

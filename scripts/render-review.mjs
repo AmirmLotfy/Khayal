@@ -8,6 +8,7 @@ const root = fileURLToPath(new URL("../", import.meta.url)),
   dir = resolve(root, "submission/video");
 const args = process.argv.slice(2), voiceIndex = args.indexOf("--voice");
 const narrated = voiceIndex >= 0;
+if (narrated) throw new Error("The narrated still-image review path is retired after audio dropout discovery. Use scripts/render-gameplay-review.mjs for the corrected actual-gameplay cut.");
 if (narrated && !args[voiceIndex + 1]) throw new Error("--voice requires a path");
 const voice = narrated ? resolve(args[voiceIndex + 1]) : null;
 const plan = JSON.parse(await readFile(resolve(dir, "edit-plan.json"), "utf8"));
@@ -25,7 +26,8 @@ const run = (binary, args) => {
 };
 run(process.execPath, [resolve(root, "scripts/render-captions.mjs"),
   "--srt", narrated ? "captions.srt" : "captions-draft-150s.srt",
-  "--duration", String(duration), "--output-dir", captionWork]);
+  "--duration", String(duration), "--output-dir", captionWork, "--frames"]);
+const captionSequence = JSON.parse(await readFile(resolve(dir,captionWork,"frame-sequence.json"),"utf8"));
 process.env.FONTCONFIG_FILE = resolve(root, ".cache/submission/fonts.conf");
 const sharp = createRequire(import.meta.url)("sharp");
 const esc = (s) =>
@@ -164,15 +166,13 @@ run("ffmpeg", [
   "0",
   "-i",
   list,
-  "-f",
-  "concat",
-  "-safe",
-  "0",
+  "-framerate",
+  "30",
   "-i",
-  resolve(dir, captionWork, "captions.ffconcat"),
+  resolve(captionSequence.sequenceDirectory,"%06d.png"),
   ...(narrated ? ["-i", voice] : []),
   "-filter_complex",
-  "[1:v]fps=30[cap];[0:v][cap]overlay=0:0:eof_action=repeat[v]" + voiceFilters,
+  "[0:v][1:v]overlay=0:0:eof_action=repeat[v]" + voiceFilters,
   "-map",
   "[v]",
   "-t",

@@ -79,7 +79,7 @@ function cueBook() {
   bus.postMessage({ kind: "hello" });
 }
 async function stage() {
-  root.innerHTML = `<div class="shell"><header class="masthead"><a class="brand" href="/" aria-label="Khayal home">KHAYAL<span lang="ar">خيال</span></a><span class="nav-note">A SHARED SHADOWPLAY</span><button id="cue" class="quiet">Director’s desk ↗</button></header><section class="hero"><p class="eyebrow">YOUR BODY. CHAT’S PLAYGROUND.</p><h1>Your shadow.<br><em>Their imagination.</em></h1><div class="hero-aside"><p>Step into the picture.<br>Let your community bring it to life.</p><span class="micro">ONE CAMERA · A WHOLE COMPANY</span></div></section><div class="stage-heading"><span id="stage-signal">THEATRE / REHEARSAL</span><span>SUMMON · PLAY · DEFEND THE LIGHT</span></div><div class="stage" id="stage" aria-label="Interactive shadowplay stage"></div><div class="toolbar"><button id="raise" class="primary">Enter the theatre <span>01</span></button><button id="camera">Enable silhouette</button><button id="capture">Focus stage</button><button id="sound" aria-pressed="false">Sound off</button><button id="save-frame">Save frame</button><button id="record">Record stage</button><button id="login" class="quiet">Connect Twitch ↗</button></div><section class="session-footer"><div><span class="micro">A SMALL INVITATION</span><p>Type <code>!cat</code> to arrive.<br><code>!closer</code> to become impossible to ignore.</p></div><p class="note" id="notice">Open the director’s desk for a solo rehearsal.<br>Your camera is processed on this device.</p><div class="closing-mark" lang="ar">خيال</div></section></div>`;
+  root.innerHTML = `<div class="shell"><header class="masthead"><a class="brand" href="/" aria-label="Khayal home">KHAYAL<span lang="ar">خيال</span></a><span class="nav-note">A SHARED SHADOWPLAY</span><a id="cue" class="button-link quiet" href="/cue?show=${encodeURIComponent(session)}" target="khayal-cue">Director’s desk ↗</a></header><section class="hero"><p class="eyebrow">YOUR BODY. CHAT’S PLAYGROUND.</p><h1>Your shadow.<br><em>Their imagination.</em></h1><div class="hero-aside"><p>Step into the picture.<br>Let your community bring it to life.</p><span class="micro">ONE CAMERA · A WHOLE COMPANY</span></div></section><div class="stage-heading"><span id="stage-signal">THEATRE / REHEARSAL</span><span>SUMMON · PLAY · DEFEND THE LIGHT</span></div><div class="stage" id="stage" aria-label="Interactive shadowplay stage"></div><div class="toolbar"><button id="raise" class="primary">Enter the theatre <span>01</span></button><button id="camera">Enable silhouette</button><button id="capture">Focus stage</button><button id="sound" aria-pressed="false">Sound off</button><button id="save-frame">Save frame</button><button id="record">Record stage</button><button id="login" class="quiet">Connect Twitch ↗</button></div><section class="session-footer"><div><span class="micro">A SMALL INVITATION</span><p>Type <code>!cat</code> to arrive.<br><code>!closer</code> to become impossible to ignore.</p></div><p class="note" id="notice">Open the director’s desk for a solo rehearsal.<br>Your camera is processed on this device.</p><div class="closing-mark" lang="ar">خيال</div></section></div>`;
   const d = new Director();
   const sound = new ShowSound();
   let twitchStatus = "Twitch disconnected";
@@ -298,16 +298,6 @@ async function stage() {
     }
   }
   for (const id of ["raise", "camera", "login"]) button(id, () => send(id));
-  button("cue", () => {
-    const w = window.open(
-      "/cue?show=" + encodeURIComponent(session),
-      "khayal-cue",
-      "width=850,height=950",
-    );
-    if (!w)
-      document.getElementById("notice")!.textContent =
-        "Allow the cue-book window, then open it again.";
-  });
   function download(blob: Blob, name: string) {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);

@@ -1,0 +1,61 @@
+{
+  "file": "submission/video/khayal-gameplay-review-114s.mp4",
+  "durationSeconds": 114,
+  "videoFormat": "H264 1920x1080 30fps",
+  "audioSampleRate": 48000,
+  "maximumDecodedAacFrameGapSeconds": 6.666666768455343e-07,
+  "decodedAudioDurationSeconds": 114.0,
+  "audioDelayTargetSeconds": 3,
+  "audioWindowChecks": [
+    {
+      "sourceSecond": 2,
+      "delayErrorSeconds": 0.0,
+      "correlation": 1.0
+    },
+    {
+      "sourceSecond": 14,
+      "delayErrorSeconds": 0.0,
+      "correlation": 0.9977
+    },
+    {
+      "sourceSecond": 28,
+      "delayErrorSeconds": 0.0,
+      "correlation": 0.999
+    },
+    {
+      "sourceSecond": 40,
+      "delayErrorSeconds": 0.0,
+      "correlation": 0.9644
+    },
+    {
+      "sourceSecond": 56,
+      "delayErrorSeconds": 0.0,
+      "correlation": 0.9981
+    },
+    {
+      "sourceSecond": 70,
+      "delayErrorSeconds": 0.0,
+      "correlation": 0.9816
+    },
+    {
+      "sourceSecond": 81,
+      "delayErrorSeconds": 0.0,
+      "correlation": 1.0
+    },
+    {
+      "sourceSecond": 98,
+      "delayErrorSeconds": 0.0,
+      "correlation": 1.0
+    }
+  ],
+  "captionCues": 56,
+  "burnedCaptionFramesChecked": 112,
+  "burnedCaptionMismatchCount": 0,
+  "mismatches": [],
+  "method": "Decoded AAC continuity, audio correlation at eight source windows, decoded caption pixels classified against all native caption PNGs near each cue start/end",
+  "manualListeningQC": false,
+  "timingLimit": "Correct encoded stream offsets and agreement with the DTW-aligned SRT do not prove perceptual word timing or replace full listening review.",
+  "submissionReady": false,
+  "checkedAtUtc": "2026-10-27T21:44:17.760519+00:00",
+  "fileSha256": "65600df3a3c2bbdcbe72630b661d8d77a324bb8234410d6492a0f684f8f5362a"
+}

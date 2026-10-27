@@ -1,5 +1,5 @@
 /** Native transparent caption frames; works with FFmpeg builds without libass. */
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, mkdtemp, link } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
@@ -59,7 +59,9 @@ let cursor = 0,
   concat = "ffconcat version 1.0\n";
 const add = (name, duration) => {
   if (duration > 0)
-    concat += `file '${name}'\nduration ${duration.toFixed(3)}\n`;
+    // image2 otherwise defaults to 25 fps, rounding every packet PTS to40ms.
+    // Declare the millisecond time base on every image, including the sentinel.
+    concat += `file '${name}'\noption framerate 1000\nduration ${duration.toFixed(3)}\n`;
 };
 for (let i = 0; i < cues.length; i++) {
   const c = cues[i];
@@ -72,6 +74,22 @@ for (let i = 0; i < cues.length; i++) {
   cursor = c.end;
 }
 add("blank.png", Math.max(0, duration - cursor));
-concat += "file 'blank.png'\n";
+concat += "file 'blank.png'\noption framerate 1000\n";
 await writeFile(resolve(work, "captions.ffconcat"), concat);
+if (args.includes("--frames")) {
+  // Sparse PNG concat timestamps proved insufficient in the encoded overlay.
+  // Supply one explicitly indexed PNG for every video frame instead. Hard links
+  // reuse the57 source images without multiplying their pixel storage.
+  const sequenceDirectory = await mkdtemp(resolve(work, "frames-"));
+  const fps = 30, count = Math.round(duration * fps);
+  let cue = 0;
+  for (let n = 0; n < count; n++) {
+    const t = n / fps;
+    while (cue < cues.length && cues[cue].end <= t) cue++;
+    const active = cue < cues.length && cues[cue].start <= t && t < cues[cue].end;
+    const source = active ? `caption-${String(cue).padStart(3,"0")}.png` : "blank.png";
+    await link(resolve(work,source),resolve(sequenceDirectory,`${String(n).padStart(6,"0")}.png`));
+  }
+  await writeFile(resolve(work,"frame-sequence.json"),JSON.stringify({sequenceDirectory,fps,count,duration},null,2)+"\n");
+}
 console.log(`Prepared ${cues.length} native caption overlays.`);

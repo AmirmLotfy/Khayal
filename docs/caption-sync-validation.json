@@ -1,0 +1,73 @@
+{
+  "checkedAtUtc": "2026-10-27T21:08:43.692604+00:00",
+  "sourceVoiceSha256": "243805bc3448077610d3c7f9266576c2066d884144c37960bd9bcb9519e09eef",
+  "transcriptSha256": "6fa212067182f90e18cd0eb4ac5d6a0ef9779ad0a73fa403fcfab3d2a55f0b01",
+  "command": "whisper-cli -m .cache/voice-alignment/ggml-base.en.bin -f submission/video/work/voice/input-16k.wav -l en -dtw base.en -nfa -ng -t 2 -ojf -of submission/video/work/voice/dtw-corrected",
+  "inferenceExitCode": 0,
+  "inferenceTotalMilliseconds": 48002.68,
+  "dtwEnabled": true,
+  "flashAttention": false,
+  "cpuThreads": 2,
+  "method": "Local whisper.cpp base.en DTW lexical token points; approved-script spelling; short phrase captions",
+  "dtwMethodSource": "https://github.com/ggml-org/whisper.cpp/blob/master/include/whisper.h",
+  "dtwLexicalTokens": 315,
+  "anchorRangeSeconds": [
+    0.5,
+    104.98
+  ],
+  "anchorValidation": "All lexical anchors present, finite, nonnegative, monotonic, and within recording. Missing and out-of-range lexical anchors rejected before writes.",
+  "captionCues": 56,
+  "captionRangeSeconds": [
+    3.4,
+    108.28
+  ],
+  "voiceIntervalOnTimelineSeconds": [
+    3,
+    108.480272
+  ],
+  "scriptWordsPreserved": true,
+  "overlapCount": 0,
+  "maxCueWords": 7,
+  "maxLineCharacters": 42,
+  "cueDurationRangeSeconds": [
+    0.8,
+    2.8
+  ],
+  "captionReadingLeadSeconds": 0.1,
+  "captionPngInputTimeBase": "1/1000",
+  "captionPngInputFramerate": "1000/1",
+  "concatPacketCount": 100,
+  "maximumConcatPtsErrorSeconds": 0.0,
+  "maximumNearest30fpsGridErrorSeconds": 0.013333333333335418,
+  "allowedErrorSeconds": 0.03333333333333333,
+  "validationScope": "ffprobe of caption concat packet PTS plus numeric 30fps frame-grid bound; no final video render or burned-frame comparison in this packet.",
+  "invalidInputChecks": [
+    {
+      "anchorCentiseconds": -1,
+      "exitCode": 1,
+      "reason": "Missing/out-of-range DTW lexical anchor: ' Chat': -1"
+    },
+    {
+      "anchorCentiseconds": 10648.0272,
+      "exitCode": 1,
+      "reason": "Missing/out-of-range DTW lexical anchor: ' Chat': 10648.0272"
+    }
+  ],
+  "rejectedInputsPreserveExistingOutputs": true,
+  "editPlanSha256": "32a766ee0b2bdd3e7e11988959c0ff07cb2aebe90ef4b322c4d530f61e9c2bc0",
+  "editPlanModified": false,
+  "manualListeningQC": false,
+  "audibleSyncVerified": false,
+  "finalBurnedVideoVerified": false,
+  "limits": [
+    "DTW points are approximate experimental token locations, not acoustic onset/end ground truth.",
+    "100ms reading lead and300ms phrase-tail hold are editorial rules.",
+    "Approved proper names/spelling retained; all12 recognition differences remain disclosed.",
+    "No video rerender, app tests/build, commit, push, browser actions, or audio upload performed."
+  ],
+  "artifactSha256": {
+    "submission/video/captions.srt": "2ba1e207cfcb3cc6cd5b039eb376a6aaaaf2c11ddf99c795c8d8e5dae587f856",
+    "submission/video/voice-alignment.json": "3e54cf86ecaa3bf7ee3169fdb83c9273ae5ad8bf703be54d6c120a40103b2b18",
+    "submission/video/edit-plan.json": "32a766ee0b2bdd3e7e11988959c0ff07cb2aebe90ef4b322c4d530f61e9c2bc0"
+  }
+}

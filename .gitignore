@@ -10,6 +10,9 @@ submission/video/work/
 submission/video/captures/
 submission/video/voiceover.*
 submission/video/khayal-narrated-review-*.mp4
+submission/video/khayal-gameplay-review-*.mp4
+submission/screenshots/
+docs/browser-evidence/
 
 docs/cache-cleanup*.json
 scripts/ops/

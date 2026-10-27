@@ -1,25 +1,28 @@
 # Khayal submission studio
 
-This packet is in preparation. [Public source repository](https://github.com/AmirmLotfy/Khayal). Nothing here establishes a completed submission.
+The [Devpost project](https://devpost.com/software/khayal) remains **DRAFT / INCOMPLETE SUBMISSION**. The pitch, cover, five actual-capture gallery images, source link, story and Additional info answers are saved. Three eligibility declarations remain unchecked at the owner's explicit request. Final terms and Submit project have not been accepted/clicked. No final YouTube URL exists.
 
-- **artwork/khayal-devpost-3x2.png**: final creative1536×1024promotional cover, built-in imagegen, five lanterns; provenance alongside. It is illustration, not a screenshot.
-- **voiceover-script.md**: original owner recording guide, eight takes and 293 spoken words. The supplied recording is 105.480 seconds; its pace is preserved in the current 114-second edit.
-- **research.md**: four confirmed Twitch award recipients and practical lessons, currentrules, comparison with Aragoz.
-- **devpost-draft.md**: text preparation with evidence still pending explicitly identified.
-- **storyboard.md**: actual capture requirements and the150second editorial plan.
-- **renders/**: shared application geometry exported as SVG using synthetic rehearsal participants.
-- **engine-previews/**: nativePNG versions of those vectors. These are engine exports, NOT actual Chrome, camera or Twitch screenshots. Do not upload them as genuine live evidence.
-- **video/khayal-review-150s.mp4**: completed150second1080p/30 silent captioned editorial review; marked REVIEW CUT throughout. Uses native rehearsal frames and promotional art. It does not contain actual Twitch/camera/Codex footage or owner voice.
-- **video/khayal-narrated-review-114s.mp4**: local private 1080p/30 review, supplied narration normalized, 39 timed English captions. Uses the same rehearsal/editorial sources; genuine live captures are pending. Not a final submission video.
-- **video/edit-plan.json** and **video/captions.srt**: current 114-second timeline and captions aligned locally with whisper.cpp to the supplied voice. Listening QC remains open. Original draft captions are preserved separately.
-- **video/voice-alignment.json**: timing method, voice hash and recognition differences. Proper-name spellings follow the approved script; interpolated replacement spans and lack of manual listening QC are explicit. Raw audio, recognition models/logs and narrated review are excluded from Git.
+## Current media
 
-## Prepare a final master
+- `video/khayal-gameplay-review-114s.mp4`: private local1:54/1080p30 review using actual Twitch/camera footage, a clearly labeled animated rehearsal, actual cue-book/playbill captures and an editorial source explanation. It contains56 corrected caption cues and the complete supplied narration. The source labels distinguish the agent-operated broadcaster test from simulated viewers.
+- `screenshots/`: untouched actual canvas/browser/playbill captures. `screenshots/gallery/` contains five1536×1024 presentation images uploaded to Devpost. `gallery-manifest.json` identifies originals and added framing. Raw captures and narrated video remain ignored/private in Git.
+- `artwork/khayal-devpost-3x2.png`: designed1536×1024 promotional illustration, five lanterns, provenance alongside; saved as the Devpost cover. It is separate from gameplay screenshots.
+- `devpost-story.md`: exact saved public project story. `devpost-draft.md` keeps historical copy behind a current status note.
+- `video/captions.srt` / `video/voice-alignment.json`:56 short cues from locally validated whisper.cpp DTW token points. Proper-name spellings follow the approved script; timing remains approximate and full listening review is open.
+- `research.md`, `storyboard.md`, `voiceover-script.md`: winner research, capture brief and original293-word recording guide. Current footage timing is recorded in `video/gameplay-review-receipt.json`.
 
-`node scripts/prepare-video.mjs --check` lists the actual clip and voice inputs still needed. The input filenames and slot durations are in video/edit-plan.json. Capture from the running application using **Save frame** and **Record stage**, or use OBS. The app recorder is video-only; source labels remain part of the frame. Never label simulated input as live.
+## Corrections and verification
 
-Once actual media and the owner voice are present, review clip provenance/consent and subtitle alignment, then run `node scripts/prepare-video.mjs --render --voice /absolute/path/to/voice.wav`. It checks working space and source dimensions/durations, processes one clip at a time, burns captions, normalizes the supplied voice and produces a review receipt. It never uploads or submits. A correct encode is not proof of rule compliance or authentic footage.
+The previous narrated still-image cut is retired after the owner reported sync defects. Its combined filter path produced sparse AAC packets with missing speech and failed caption intervals. The replacement builds an exact114-second PCM bed, with the full105.480-second narration after three seconds of actual silence, encodes AAC independently, and supplies one explicit caption PNG per30fps video frame. No synthetic voice was generated and the supplied recording was not uploaded for transcription.
 
-To rebuild the local narrated review: `node scripts/render-review.mjs --voice submission/video/voiceover.wav`. Keep the raw recording private. `scripts/align-voice.py` consumes a local whisper.cpp full JSON transcription and the voice path; it updates the timing and reports differences for review. No voice is sent to a transcription provider.
+`docs/gameplay-review-validation.json` records continuous decoded AAC, eight speech windows with zero measured delay error, and112 sampled caption frames matching their intended cues. These are technical checks; they do not claim a human listening judgement. Original voice is unchanged. `docs/browser-live-validation.json` records the actual broadcaster/camera test and its limits.
 
-Target: public GitHub, publicYouTube, mainCodexsessionID, requiredDevpostfields, and verifiedSubmitted by Nov2,18:00Cairo. Browser control and Devpost connection currently return access errors despite owner confirmation that both are enabled. Final submission also needs actual camera/Twitch/Codex footage and final review. The owner voice has been received and integrated into the local review.
+To reproduce from the private inputs: `node scripts/render-gameplay-review.mjs`. FFmpeg, sharp, NumPy/Pillow and the private captures/voice are required. `node scripts/package-gallery.mjs` rebuilds presentation frames from actual screenshots. `scripts/verify-gameplay-review.py` runs the decoded media checks with the bundled Python runtime. Retired `render-review.mjs --voice` is intentionally blocked; the original150-second silent editorial review remains historical material.
+
+`node scripts/prepare-video.mjs --check` remains the stricter final-capture gate; its nine original clip slots must be supplied honestly. It never substitutes simulated footage for a genuine capture requirement. No script uploads or submits.
+
+## Remaining acceptance
+
+The current video is a broadcaster test montage, not the planned multi-viewer hero performance. Real follow/raid qualification, the20-swat/static-overlap study, sustained OBS measurements, human fairness, full listening review and final public video remain open. Computer Use still blocks direct access to the Codex app, so genuine Codex UI capture is unavailable; the review uses actual source and narration to explain its role. Browser access otherwise works; Devpost connector still rejects authentication, while the signed-in browser successfully saved the draft.
+
+Target remains Nov2,18:00Cairo. Eligibility statements stay unchecked until the owner explicitly changes that instruction. Final submission is pending.

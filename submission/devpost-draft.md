@@ -1,3 +1,15 @@
+# Devpost drafting status
+
+Current saved project story: `submission/devpost-story.md`. Browser-verified project: https://devpost.com/software/khayal . State remains **DRAFT / INCOMPLETE SUBMISSION**.
+
+The pitch, designed3:2 cover, five actual-capture gallery images with source captions, story, source link, repository/session answers and owner-provided personal/survey answers are saved. The three eligibility declarations remain unchecked at the owner’s explicit request. Final terms were not accepted and Submit project was not clicked. No final YouTube URL exists.
+
+The current114-second local review uses actual broadcaster-operated Twitch commands and camera footage, a labeled actual-app rehearsal, actual cue-book/playbill captures and an editorial source explanation of Codex’s role. Full listening/human acceptance remains open. Direct Codex app capture is blocked by Computer Use.
+
+Historical initial editorial draft follows for reference; its pending-media statements are superseded by this status.
+
+---
+
 # Khayal
 
 **Local draft, 27 October 2026. Nothing has been sent to Devpost.** This is editorial copy updated after the cyanotype redesign. Original vector art, promotional cover, native engine previews and a captioned review cut are prepared. The supplied owner voice is integrated into a 114-second local review. Genuine camera/Twitch/Codex footage, final video link and authenticated form fields remain pending.

@@ -1,170 +1,230 @@
 1
-00:00:03,000 --> 00:00:07,480
-Chat sends the spirits. Your
-shadow guards the light.
+00:00:03,400 --> 00:00:04,940
+Chat sends the spirits.
 
 2
-00:00:07,480 --> 00:00:10,650
-This is Khayal: a shadow
-theatre built for Twitch,
+00:00:05,340 --> 00:00:07,020
+Your shadow guards the light.
 
 3
-00:00:10,650 --> 00:00:12,600
-where the audience takes the puppets
+00:00:07,580 --> 00:00:08,760
+This is Khayal:
 
 4
-00:00:12,600 --> 00:00:15,320
-and the streamer steps inside the performance.
+00:00:08,900 --> 00:00:10,760
+a shadow theatre built for Twitch,
 
 5
-00:00:15,320 --> 00:00:18,790
-The idea comes from Egyptian
-shadow theatre: a lamp,
+00:00:10,940 --> 00:00:12,720
+where the audience takes the puppets
 
 6
-00:00:18,790 --> 00:00:22,120
-a screen, and figures
-brought to life by people.
+00:00:12,760 --> 00:00:15,020
+and the streamer steps
+inside the performance.
 
 7
-00:00:22,120 --> 00:00:25,580
-Khayal brings that shared
-performance into a stream,
+00:00:15,720 --> 00:00:18,120
+The idea comes from
+Egyptian shadow theatre:
 
 8
-00:00:25,580 --> 00:00:29,060
-with a camera silhouette and
-puppets controlled through chat.
+00:00:18,280 --> 00:00:19,700
+a lamp, a screen,
 
 9
-00:00:29,060 --> 00:00:30,990
-A viewer summons a cat or a camel,
+00:00:19,860 --> 00:00:22,040
+and figures brought to life by people.
 
 10
-00:00:30,990 --> 00:00:33,010
-then moves it with simple commands.
+00:00:22,520 --> 00:00:24,440
+Khayal brings that shared performance
 
 11
-00:00:33,010 --> 00:00:34,260
-Pull it toward the lamp
+00:00:24,560 --> 00:00:26,280
+into a stream, with a camera
 
 12
-00:00:34,260 --> 00:00:36,280
-and the shadow grows larger and softer.
+00:00:26,280 --> 00:00:28,540
+silhouette and puppets
+controlled through chat.
 
 13
-00:00:36,280 --> 00:00:38,580
-Each puppet belongs to one viewer,
+00:00:29,000 --> 00:00:30,380
+A viewer summons a cat
 
 14
-00:00:38,580 --> 00:00:40,840
-with a queue when the stage fills.
+00:00:30,380 --> 00:00:31,480
+or a camel, then
 
 15
-00:00:40,840 --> 00:00:45,380
-Then comes Afreet Hunt.
-Sixty seconds. Five lanterns.
+00:00:31,480 --> 00:00:32,760
+moves it with simple commands.
 
 16
-00:00:45,380 --> 00:00:48,280
-Chat sends spirits toward
-the lights while the streamer
+00:00:33,320 --> 00:00:34,380
+Pull it toward the lamp
 
 17
-00:00:48,280 --> 00:00:50,680
-tries to swat them away
-with a changing silhouette.
+00:00:34,400 --> 00:00:36,420
+and the shadow grows larger and softer.
 
 18
-00:00:50,680 --> 00:00:53,420
-Keep at least three lanterns burning to win.
+00:00:37,080 --> 00:00:38,940
+Each puppet belongs to one viewer,
 
 19
-00:00:53,420 --> 00:00:56,080
-The camera reads movement along your outline,
+00:00:39,020 --> 00:00:40,560
+with a queue when the stage fills.
 
 20
-00:00:56,080 --> 00:00:57,990
-so a still shadow is not a hit.
+00:00:41,260 --> 00:00:42,760
+Then comes Afreet Hunt.
 
 21
-00:00:57,990 --> 00:01:00,960
-A separate cue book lets the
-streamer direct the show.
+00:00:43,220 --> 00:00:44,020
+Sixty seconds.
 
 22
-00:01:01,100 --> 00:01:02,870
-Rehearsal is clearly labeled,
+00:00:44,360 --> 00:00:45,400
+Five lanterns.
 
 23
-00:01:02,870 --> 00:01:05,720
-so simulated events stay separate from Twitch.
+00:00:45,660 --> 00:00:47,520
+Chat sends spirits toward the lights
 
 24
-00:01:05,720 --> 00:01:09,000
-Captions are cleaned, commands have cooldowns,
+00:00:47,580 --> 00:00:48,980
+while the streamer tries to swat
 
 25
-00:01:09,000 --> 00:01:12,050
-and stage moderation stays
-under the broadcaster's control.
+00:00:48,980 --> 00:00:50,540
+them away with a changing silhouette.
 
 26
-00:01:12,050 --> 00:01:15,040
-When the curtain falls, a
-playbill credits the cast.
+00:00:51,180 --> 00:00:52,900
+Keep at least three lanterns burning
 
 27
-00:01:15,040 --> 00:01:17,980
-The goal is a small shared performance:
+00:00:52,900 --> 00:00:53,700
+to win.
 
 28
-00:01:17,980 --> 00:01:20,360
-an unexpected giant cat, a desperate save,
+00:00:53,880 --> 00:00:55,360
+The camera reads movement along
 
 29
-00:01:20,360 --> 00:01:22,530
-and a record of who helped make the night.
+00:00:55,360 --> 00:00:56,860
+your outline, so a still
 
 30
-00:01:22,530 --> 00:01:25,220
-I directed the concept and used Codex
+00:00:56,860 --> 00:00:58,080
+shadow is not a hit.
 
 31
-00:01:25,220 --> 00:01:27,640
-to build the TypeScript app, command handling,
+00:00:58,500 --> 00:00:59,760
+A separate cue book lets
 
 32
-00:01:27,640 --> 00:01:31,140
-cue book, Twitch connection
-code, and camera worker.
+00:00:59,760 --> 00:01:01,200
+the streamer direct the show.
 
 33
-00:01:31,140 --> 00:01:34,520
-Pixi draws the theatre; MediaPipe
-supplies the silhouette.
+00:01:01,640 --> 00:01:03,420
+Rehearsal is clearly labeled,
 
 34
-00:01:34,520 --> 00:01:36,920
-Tests check the rules, while real camera
+00:01:03,440 --> 00:01:05,700
+so simulated events stay
+separate from Twitch.
 
 35
-00:01:36,920 --> 00:01:39,530
+00:01:06,320 --> 00:01:08,900
+Captions are cleaned,
+commands have cooldowns,
+
+36
+00:01:08,900 --> 00:01:10,420
+and stage moderation stays under
+
+37
+00:01:10,420 --> 00:01:11,760
+the broadcaster's control.
+
+38
+00:01:12,280 --> 00:01:14,380
+When the curtain falls, a playbill credits
+
+39
+00:01:14,380 --> 00:01:15,180
+the cast.
+
+40
+00:01:15,540 --> 00:01:17,540
+The goal is a small shared performance:
+
+41
+00:01:17,860 --> 00:01:19,480
+an unexpected giant cat,
+
+42
+00:01:19,580 --> 00:01:21,360
+a desperate save, and a record
+
+43
+00:01:21,360 --> 00:01:22,660
+of who helped make the night.
+
+44
+00:01:23,280 --> 00:01:24,520
+I directed the concept
+
+45
+00:01:24,560 --> 00:01:25,680
+and used Codex to build
+
+46
+00:01:25,680 --> 00:01:28,480
+the TypeScript app,
+command handling, cue book,
+
+47
+00:01:28,600 --> 00:01:30,620
+Twitch connection code, and camera worker.
+
+48
+00:01:31,140 --> 00:01:32,320
+Pixi draws the theatre;
+
+49
+00:01:32,600 --> 00:01:34,140
+MediaPipe supplies the silhouette.
+
+50
+00:01:34,720 --> 00:01:36,940
+Tests check the rules, while real camera
+
+51
+00:01:36,940 --> 00:01:39,160
 and Twitch recordings must
 prove the performance.
 
-36
-00:01:39,530 --> 00:01:41,400
+52
+00:01:39,700 --> 00:01:41,620
 Khayal gives chat a part to play
 
-37
-00:01:41,400 --> 00:01:43,590
+53
+00:01:41,660 --> 00:01:43,440
 and the streamer a stage to inhabit.
 
-38
-00:01:43,590 --> 00:01:45,930
-Bring your shadow. Guard the light.
+54
+00:01:44,020 --> 00:01:44,840
+Bring your shadow.
 
-39
-00:01:45,930 --> 00:01:48,480
-Come back tomorrow. There is more to see.
+55
+00:01:45,140 --> 00:01:47,000
+Guard the light. Come back tomorrow.
+
+56
+00:01:47,240 --> 00:01:48,280
+There is more to see.

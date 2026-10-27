@@ -4,7 +4,7 @@
 
 ![Khayal promotional illustration](submission/artwork/khayal-devpost-3x2.png)
 
-**Status: development preview, not yet submission-ready.** Thirty automated tests and the production build pass. Browser, real-camera, real-Twitch, human fairness and OBS acceptance are still pending. The cover is a promotional illustration, not gameplay footage. [Current gates](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
+**Status: development preview, not yet submission-ready.** Thirty automated tests and the production build pass. The first actual browser/camera/Twitch broadcaster test is recorded. Multi-viewer fairness, formal swat accuracy, real follow/raid and OBS acceptance remain pending. The cover is a promotional illustration, not gameplay footage. [Current gates](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
 
 ## Run locally
 
@@ -50,7 +50,7 @@ npm run submission:review
 npm run submission:check
 ```
 
-Frame exports use the same original SVGspecies paths and scene layout as Pixi, with synthetic Director fixtures; they are labeled engine rehearsal previews, not browser screenshots or realcamera/Twitch evidence. The original 2:30 silent review and the new 1:54 narrated review use those previews, promotional illustration and editorial source cards. The supplied owner voice has been aligned and normalized in the new review; genuine captures remain pending. The final edit script reports missing genuine captures rather than inventing them. `submission/voiceover-script.md` contains eight recording takes.
+Frame exports use the same original SVGspecies paths and scene layout as Pixi, with synthetic Director fixtures; they are labeled engine rehearsal previews, not browser screenshots or realcamera/Twitch evidence. The current 1:54 review contains actual Twitch/camera footage, a labeled animated rehearsal and actual cue-book/playbill captures. Its 56 captions use validated DTW token timing and explicit30fps image frames; its complete narration uses an independently encoded continuous PCM bed. Eight decoded speech windows and112 caption frames pass technical checks. Full listening review remains open. The older narrated still-image cut is retired after sync defects. `submission/voiceover-script.md` contains eight recording takes.
 
 The cyanotype art direction deliberately differs from Aragoz’s wood/brass/curtainworkshop. Khayal’s distinguishing mechanic is body-driven shadow defense; changing colors alone would not establish a substantially different contest entry. Prior winners and inspirations are credited in `submission/research.md`.
 

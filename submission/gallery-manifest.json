@@ -1,0 +1,41 @@
+{
+  "width": 1536,
+  "height": 1024,
+  "images": [
+    {
+      "file": "submission/screenshots/gallery/01-real-twitch-camera.png",
+      "original": "submission/screenshots/01-real-twitch-camera.png",
+      "type": "presentation frame around actual capture",
+      "source": "broadcaster Twitch test; no human-viewer participation claim"
+    },
+    {
+      "file": "submission/screenshots/gallery/02-real-hunt.png",
+      "original": "submission/screenshots/02-real-hunt.png",
+      "type": "presentation frame around actual capture",
+      "source": "broadcaster Twitch test; no human-viewer participation claim"
+    },
+    {
+      "file": "submission/screenshots/gallery/03-cue-book.png",
+      "original": "submission/screenshots/03-live-cue-book.jpg",
+      "type": "presentation frame around actual capture",
+      "source": "broadcaster Twitch test; no human-viewer participation claim"
+    },
+    {
+      "file": "submission/screenshots/gallery/04-playbill.png",
+      "original": "submission/screenshots/04-real-playbill.png",
+      "type": "presentation frame around actual capture",
+      "source": "broadcaster Twitch test; no human-viewer participation claim"
+    },
+    {
+      "file": "submission/screenshots/gallery/05-twitch-command-proof.png",
+      "originals": [
+        "submission/screenshots/01-real-twitch-camera.png",
+        "docs/browser-evidence/twitch-chat-test.jpg"
+      ],
+      "type": "labeled comparison of actual stage and cropped actual chat; not one original screenshot",
+      "source": "authorized !cat, !closer, !jump, !afreet broadcaster tests"
+    }
+  ],
+  "syntheticViewers": false,
+  "reviewRequired": true
+}

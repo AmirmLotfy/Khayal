@@ -22,7 +22,8 @@ input,
 select {
   font: inherit;
 }
-button {
+button,
+.button-link {
   min-height: 46px;
   background: transparent;
   color: #daf0ef;
@@ -33,7 +34,8 @@ button {
     background 0.2s,
     border-color 0.2s;
 }
-button:hover {
+button:hover,
+.button-link:hover {
   background: #123451;
   border-color: #8db5c3;
 }
