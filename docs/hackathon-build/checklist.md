@@ -1,5 +1,7 @@
 # Implementation and acceptance gates — cyanotype revision
 
+[Official submission preflight](../final-submission-preflight.json): required repository,114s public YouTube demo, description and Codex sessionID are present. Only personal eligibility declarations and final rules/terms prevent actual submission. The additional validation checks below remain explicit quality limits; unverified items are not claimed complete.
+
 - [x] Local app, shared parser/director,24puppet/300queue,60sHunt, ceremonies and playbill.
 - [x] Twitch OAuth/EventSub implementation and lifecycle/moderation unit checks.
 - [x] Local camera worker/model assets and temporal collision helpers.
@@ -15,6 +17,7 @@
 - [ ]20physicalswats≥18hits,30sstaticoverlap0hits, mirrored/projected alignment.
 - [x] Five-minute local GPU observation with actual camera inference and 24 simulated puppets held throughout: 59.94 average render-callback fps, 22.57 delivered inference fps, 26 ms p95 capture-to-result latency. Local numeric targets met; this measures the recorded runtime bundle, not OBS or human acceptance. [Receipt](../performance-browser-validation.json).
 - [x] Official OBS33.0.0 installed for capture; [setup receipt](../obs-setup-validation.json). Native control timed out; no recording qualification claimed.
+- [x] Full actual-browser rehearsal recorded using the built-in recorder:24simulated viewers, complete Hunt, deferred follow/raid ceremonies and curtain/playbill. Cameraoff; no real-event or OBS claim. [Receipt](../browser-rehearsal-validation.json).
 - [x] Owner-requested agent-operated source-level show rehearsal:50synthetic viewers, two full Hunts,23scenario checks and six labeled engine frames. [Report and scope](../rehearsals/agent-operated/README.md).
 - [ ] Sustained CPU/OBS performance and human fairness qualification. CPU has a usable29.77-second observation only. Owner declines personal rehearsal; simulated results do not claim human qualification.
 - [x] Owner explicitly confirmed `speech (1).wav` is their own spoken recording. Its complete 105.480-second narration, 56 captions and continuous audio are in the 114-second demo; 112 burned caption frames and eight audio windows pass technical checks. Raw voice remains local. [Media checks](../gameplay-demo-validation.json).

@@ -2,8 +2,11 @@
 
 The [Devpost project](https://devpost.com/software/khayal) remains **DRAFT / INCOMPLETE SUBMISSION**. The pitch, cover, seven gallery images (five actual gameplay/cue/playbill captures and two genuine Codex stills), source link, story and Additional info answers are saved. Three eligibility declarations remain unchecked at the owner's explicit request. Final terms and Submit project have not been accepted/clicked. The [public gameplay demo](https://www.youtube.com/watch?v=VxjgW2sga6o) is published and saved in the Devpost video field; the draft is now3/5 steps.
 
+All required nonpersonal materials are present under the current official requirements; see [the final preflight](../docs/final-submission-preflight.json). The three required eligibility declarations and final rules/terms remain false. Additional physical/human/provider/OBS checks remain disclosed quality limits, not completed evidence.
+
 ## Current media
 
+- The additional complete browser rehearsal is saved privately under `recordings/browser-rehearsal-20261028/show.webm`. It has24simulated viewers, cameraoff, a full Hunt and deferred ceremonies/curtain. [Capture record](../docs/browser-rehearsal-validation.json). It does not replace the public demo.
 - `video/khayal-gameplay-demo-114s.mp4`: local1:54/1080p30 review, [published publicly on YouTube](https://www.youtube.com/watch?v=VxjgW2sga6o), using actual Twitch/camera footage, a clearly labeled animated rehearsal, actual cue-book/playbill captures and genuine owner-recorded Codex conversation footage. It contains56 corrected caption cues and the complete supplied narration. The source labels distinguish the agent-operated broadcaster test from simulated viewers.
 - `screenshots/`: untouched actual canvas/browser/playbill captures. `screenshots/gallery/` contains five1536×1024 presentation images uploaded to Devpost. `gallery-manifest.json` identifies originals and added framing. Raw captures and the local narrated-video file remain ignored in Git; the selected demo is public on YouTube.
 - `artwork/khayal-devpost-3x2.png`: designed1536×1024 promotional illustration, five lanterns, provenance alongside; saved as the Devpost cover. It is separate from gameplay screenshots.

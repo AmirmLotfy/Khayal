@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-28T04:37:19.017964+00:00",
+  "runtimeSourceHead": "d2f0b0eccf0fe4f55f99df2465dfae89023e06ab",
+  "runtimeSourceTree": "b6d60694a086e222b110d584f5125e3221e4ab9a",
+  "officialSource": {
+    "tool": "Devpost get_submission_requirements",
+    "hackathonId": 31742,
+    "fetchedAt": "2026-10-28T04:26:56Z",
+    "complete": true
+  },
+  "officialDeliverables": {
+    "publicRepository": {
+      "url": "https://github.com/AmirmLotfy/Khayal",
+      "evidence": "clean-release-validation.json;64tests/build pass; pinned runtime/font assets and notices bundled"
+    },
+    "publicYouTubeDemo": {
+      "url": "https://www.youtube.com/watch?v=VxjgW2sga6o",
+      "durationSeconds": 114,
+      "evidence": "youtube-revised-publication-validation.json; actual broadcaster/camera + owner-recorded Codex conversation"
+    },
+    "description": {
+      "file": "submission/devpost-story.md",
+      "apiSavedVersion": 8,
+      "publicBrowserVerified": true
+    },
+    "codexSessionId": {
+      "value": "01a17eb7-e4d9-7453-9053-6b3eab7a4153",
+      "savedFieldVerified": true
+    },
+    "websiteRequired": false,
+    "zipRequired": false
+  },
+  "projectSoftwareId": 1513855,
+  "submissionId": 1268334,
+  "allRequiredMaterialsPresent": true,
+  "nonPersonalAdditionalInfoPopulated": true,
+  "submissionFormBlockers": [
+    {
+      "fieldId": 29294,
+      "label": "Age of majority",
+      "checked": false
+    },
+    {
+      "fieldId": 29295,
+      "label": "Eligible jurisdiction",
+      "checked": false
+    },
+    {
+      "fieldId": 29296,
+      "label": "Not employee of sponsors",
+      "checked": false
+    },
+    {
+      "label": "Official rules and Devpost terms",
+      "checked": false
+    }
+  ],
+  "existingOwnerInstruction": "Leave the three eligibility declarations unchecked; final terms and Submit untouched",
+  "finalizationPageVisited": true,
+  "submitted": false,
+  "submissionFormStatus": "DRAFT;3/5",
+  "additionalQualityLimits": [
+    "Human fairness and physical swat qualification unverified",
+    "Real follow/raid delivery unverified",
+    "OBS performance unverified",
+    "Full human listening review unverified"
+  ],
+  "qualityLimitsScope": "These remain unresolved original-plan validation checks; they are disclosed in the public story and are not listed as mandatory deliverables by the fetched submission requirements.",
+  "currentTwitch": "Actual same-scope refresh connected asamirmolotfy;cameraoff",
+  "browserRehearsal": "browser-rehearsal-validation.json",
+  "judgeSetup": "Tracked .env.example includes only the public dedicated Khayal Theatre clientID; fresh checkout requires no new developer app. Private config not read/copied.",
+  "proof": [
+    "docs/browser-evidence/final-devpost-story.jpg",
+    "docs/browser-evidence/finalization-personal-only.jpg",
+    "docs/browser-evidence/current-twitch-ready.jpg"
+  ],
+  "officialRules": {
+    "tool": "Devpost get_hackathon_rules",
+    "fetchedAt": "2026-10-28T04:37:59Z",
+    "complete": true,
+    "reviewScope": "Project/submission/functionality/testing/language/new-work/ownership/multiple-submission requirements inspected. No personal eligibility or terms agreement inferred.",
+    "multipleSubmissions": "Each entry must be unique and substantially different; sponsor/administrator retain final judgment. No eligibility guarantee claimed."
+  },
+  "rulesComplianceAttestedByOwner": false
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "actual browser rehearsal; simulated viewers; cameraoff",
+  "sourceHead": "d2f0b0eccf0fe4f55f99df2465dfae89023e06ab",
+  "recording": {
+    "file": "recordings/browser-rehearsal-20261028/show.webm",
+    "sha256": "f5fff31077dbb14bcfce5ec22ac05340a855cbd4522861347912f511a5fdea72",
+    "bytes": 57322608,
+    "codec": "vp9",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "nominalFps": 30,
+    "audioTracks": 0,
+    "packets": 4196,
+    "observedTimestampSpanSeconds": 141.947
+  },
+  "observations": [
+    "24-member company active,0waiting",
+    "Full3second countdown and60second Hunt completed",
+    "Result:Chat stole the light",
+    "Simulated follow/raid queued during Hunt; caravan resumed afterresult",
+    "Company stopped; curtain exported24-member playbill",
+    "Actual canvas and playbill downloaded"
+  ],
+  "sourceLabels": "REHEARSAL / SIMULATED CHAT; recorded sources remain separate from actual Twitch/camera demo",
+  "realTwitchEvents": false,
+  "cameraInference": false,
+  "humanAudience": false,
+  "obsRecording": false,
+  "formalPerformanceQualification": false,
+  "publishedVideoReplaced": false,
+  "privateInputsPreserved": true,
+  "fullVideoDecode": {
+    "exitCode": 0,
+    "matchingTimeBase": "1:1000",
+    "diagnosticLines": 0,
+    "nonIncreasingInputPacketTimestamps": 0,
+    "initialDiagnostic": "Default30fps null-output timebase rounded some VFR frames to duplicate DTS; repeated with1ms timebase matching WebM timestamps."
+  },
+  "inspectedSampleTimesSeconds": [
+    75,
+    135
+  ],
+  "sampleReview": "Actual75s Hunt and135s curtain frames inspected; simulation label visible, cameraoff. No inference/physical-swat claim."
+}

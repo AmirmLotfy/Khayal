@@ -11,5 +11,18 @@
   "browserAccess": "CUA inventory and one bounded attempt to retain current stage both reported Local browser use is disabled in Work settings; no OS/browser bypass attempted",
   "obsRecording": false,
   "performanceQualified": false,
-  "nextAction": "When Computer Use works, configure dedicated Khayal OBS scene and1080p recording, then run actual5min recording with stage visible,24simulated actors and real camera; collect telemetry and file/log evidence."
+  "nextAction": "When Computer Use works, configure dedicated Khayal OBS scene and1080p recording, then run actual5min recording with stage visible,24simulated actors and real camera; collect telemetry and file/log evidence.",
+  "latestUiRecovery": {
+    "cairoCheckedAt": "2026-10-28T07:48:46.778256+03:00",
+    "controlsRecovered": true,
+    "profileCreated": "Khayal 1080p check",
+    "sceneCollectionCreated": "Khayal capture",
+    "ownBlankSceneAddedToUntitled": "Khayal performance 2026-10-28",
+    "existingProfilesAndSourcesPreserved": true,
+    "recordingWizard": "Recording-only radio showed selected, but next pages still led to streaming account setup. Cancelled without connecting any account. Settings sidebar/screenshot unavailable through current native controls.",
+    "recordingStarted": false,
+    "qualified": false,
+    "ownedObsQuit": "Clicked Quit OBS; process absence verified separately",
+    "browserAccessNow": "Recovered; actual full browser rehearsal recorded using game built-in recorder."
+  }
 }

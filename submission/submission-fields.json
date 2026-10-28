@@ -67,5 +67,16 @@
     "twitch",
     "codex"
   ],
-  "clean_release_source_head": "f116d904f17ee7cf71b1d4680070cca7fec22339"
+  "clean_release_source_head": "f116d904f17ee7cf71b1d4680070cca7fec22339",
+  "submission_materials_prepared": true,
+  "official_preflight": "docs/final-submission-preflight.json",
+  "devpost_project_software_id": 1513855,
+  "devpost_submission_id": 1268334,
+  "submission_form_blockers": [
+    "Required eligibility declarations remain unchecked at ownerinstruction",
+    "Final rules/terms acceptance and actual submission remain pending"
+  ],
+  "browser_rehearsal_recorded": true,
+  "browser_rehearsal_scope": "24simulated viewers;cameraoff;141.947s timestamp span;full Hunt/ceremonies/curtain;no live-event qualification",
+  "judge_twitch_app_registration_required": false
 }

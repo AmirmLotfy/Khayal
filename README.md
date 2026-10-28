@@ -4,7 +4,7 @@
 
 ![Khayal promotional illustration](submission/artwork/khayal-devpost-3x2.png)
 
-**Status: development preview, not yet submission-ready.** Sixty-four automated tests and the production build pass. The first actual browser/camera/Twitch broadcaster test is recorded. Multi-viewer fairness, formal swat accuracy, real follow/raid and OBS acceptance remain pending. The cover is a promotional illustration, not gameplay footage. [Current gates](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
+**Status: playable development preview; submission materials prepared.** Sixty-four automated tests and the production build pass. The public demo includes actual Twitch/camera broadcaster tests and genuine Codex footage. Devpost remains a draft awaiting the required owner declarations and final terms. Human fairness, physical swat accuracy, real follow/raid and OBS qualification remain unverified. The cover is promotional illustration. [Official submission preflight](docs/final-submission-preflight.json) · [Current checks](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
 
 [Watch the public gameplay demo](https://www.youtube.com/watch?v=VxjgW2sga6o) · [Devpost project draft](https://devpost.com/software/khayal)
 
@@ -56,13 +56,17 @@ Mods use `!khayal pause`, `!khayal clear`, `!khayal ban @login`. Stage blocks ne
 
 Keys 1 / 2 / 4 opens theatre/starts Hunt/prepares the playbill; Space pauses. Escape leaves focus mode. **Save frame** exports the actual canvas. **Record stage** exports up to 3 minutes of video-only canvas capture; add the owner voice in the edit. Numbered PNG download links appear in both windows; click each page once. Long names wrap at readable size, and additional pages preserve every cast member. **Sound** enables original quiet synthesized cues; it starts off and contains no sampled music or crowd voice.
 
+An additional full browser rehearsal was recorded with24simulated viewers, a complete Hunt, deferred ceremonies and curtain/playbill. [Capture record](docs/browser-rehearsal-validation.json). It is actual app footage with cameraoff, separate from the public Twitch/camera demo.
+
 ## Agent-operated rehearsal
 
 Run `npm run rehearse` for a deterministic source-level show:50synthetic viewers, FIFO turns, moderated captions, two complete Hunts, pause/resume, deferred ceremonies and curtain/cast retention. The [rehearsal report](docs/rehearsals/agent-operated/report.json) records23scenario checks and six clearly labeled engine frames. It uses the actual parser, Director, mask processor and shared scene with a virtual clock. It does not access Twitch, a camera, browser controls or OBS. [Results and frames](docs/rehearsals/agent-operated/README.md).
 
 ## Connect Twitch
 
-Register a dedicated **Khayal Theatre** application: Game Integration, Confidential for the implicit flow, redirect **http://localhost:5173/**. Copy `.env.example` to `.env.local`, set the public `VITE_TWITCH_CLIENT_ID`, and restart the server. Every frontend environment value is public: never add a client secret. Connect your own broadcaster account while the show is stopped. Scopes: `user:read:chat moderator:read:followers`.
+On a **fresh checkout**, copy `.env.example` to `.env.local` before starting. The example contains the public identifier for the existing **Khayal Theatre** application, so judges can connect their own broadcaster account without creating a developer application. The show binds to the account that authorizes it. Every frontend environment value is public: never add a client secret. Connect while the show is stopped. Scopes: `user:read:chat moderator:read:followers`.
+
+To use your own application instead, register Game Integration / Confidential with redirect **http://localhost:5173/**, replace `VITE_TWITCH_CLIENT_ID` locally and restart the server. Keep existing local configuration if it is already set.
 
 Tokens remain in memory, OAuth state is verified, validation repeats hourly, and reload/expiry requires reauthorization. EventSub handles chat/moderation/follow/raid, deduplicates notifications, and distinguishes reconnect handover from fresh subscription setup. The dedicated Khayal Theatre app was created and an authorized broadcaster chat/camera test was recorded. Reloading the stage still requires a new login; real follow/raid and multi-viewer qualification remain pending. [Browser test record](docs/browser-live-validation.json).
 
