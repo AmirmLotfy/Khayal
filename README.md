@@ -56,6 +56,10 @@ Mods use `!khayal pause`, `!khayal clear`, `!khayal ban @login`. Stage blocks ne
 
 Keys 1 / 2 / 4 opens theatre/starts Hunt/prepares the playbill; Space pauses. Escape leaves focus mode. **Save frame** exports the actual canvas. **Record stage** exports up to 3 minutes of video-only canvas capture; add the owner voice in the edit. Numbered PNG download links appear in both windows; click each page once. Long names wrap at readable size, and additional pages preserve every cast member. **Sound** enables original quiet synthesized cues; it starts off and contains no sampled music or crowd voice.
 
+## Agent-operated rehearsal
+
+Run `npm run rehearse` for a deterministic source-level show:50synthetic viewers, FIFO turns, moderated captions, two complete Hunts, pause/resume, deferred ceremonies and curtain/cast retention. The [rehearsal report](docs/rehearsals/agent-operated/report.json) records23scenario checks and six clearly labeled engine frames. It uses the actual parser, Director, mask processor and shared scene with a virtual clock. It does not access Twitch, a camera, browser controls or OBS. [Results and frames](docs/rehearsals/agent-operated/README.md).
+
 ## Connect Twitch
 
 Register a dedicated **Khayal Theatre** application: Game Integration, Confidential for the implicit flow, redirect **http://localhost:5173/**. Copy `.env.example` to `.env.local`, set the public `VITE_TWITCH_CLIENT_ID`, and restart the server. Every frontend environment value is public: never add a client secret. Connect your own broadcaster account while the show is stopped. Scopes: `user:read:chat moderator:read:followers`.

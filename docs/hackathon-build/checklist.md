@@ -15,7 +15,8 @@
 - [ ]20physicalswats≥18hits,30sstaticoverlap0hits, mirrored/projected alignment.
 - [x] Five-minute local GPU observation with actual camera inference and 24 simulated puppets held throughout: 59.94 average render-callback fps, 22.57 delivered inference fps, 26 ms p95 capture-to-result latency. Local numeric targets met; this measures the recorded runtime bundle, not OBS or human acceptance. [Receipt](../performance-browser-validation.json).
 - [x] Official OBS33.0.0 installed for capture; [setup receipt](../obs-setup-validation.json). Native control timed out; no recording qualification claimed.
-- [ ] Sustained CPU/OBS performance and human fairness session. CPU has a usable29.77-second observation only. Owner says rehearsal participants are not available yet.
+- [x] Owner-requested agent-operated source-level show rehearsal:50synthetic viewers, two full Hunts,23scenario checks and six labeled engine frames. [Report and scope](../rehearsals/agent-operated/README.md).
+- [ ] Sustained CPU/OBS performance and human fairness qualification. CPU has a usable29.77-second observation only. Owner declines personal rehearsal; simulated results do not claim human qualification.
 - [x] Owner explicitly confirmed `speech (1).wav` is their own spoken recording. Its complete 105.480-second narration, 56 captions and continuous audio are in the 114-second demo; 112 burned caption frames and eight audio windows pass technical checks. Raw voice remains local. [Media checks](../gameplay-demo-validation.json).
 - [x] Genuine broadcaster-operated Twitch/camera footage and owner-recorded historical Codex conversation integrated into the published 114-second demo. The Codex clip shows existing planning/change summaries, not continuous coding.
 - [ ] Full manual listening/perceptual caption review and human performance acceptance.

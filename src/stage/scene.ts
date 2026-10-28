@@ -296,7 +296,7 @@ export function stageSceneSvg(
   const type = labels(d, elapsed)
     .map(
       (l) =>
-        `<text x="${l.x}" y="${l.y}" fill="${ink(l.color)}" font-family="${l.mono ? textStyle.mono : textStyle.fontFamily}" font-size="${l.size}" letter-spacing="${l.spacing ?? 0}" text-anchor="${l.align === "center" ? "middle" : l.align === "right" ? "end" : "start"}">${escapeXml(l.text)}</text>`,
+        `<text x="${l.x}" y="${l.y}" fill="${ink(l.color)}" font-family="${l.mono ? textStyle.mono : textStyle.fontFamily}" font-size="${l.size}" letter-spacing="${/\p{Script=Arabic}/u.test(l.text) ? 0 : (l.spacing ?? 0)}" text-anchor="${l.align === "center" ? "middle" : l.align === "right" ? "end" : "start"}">${escapeXml(l.text)}</text>`,
     )
     .join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img"><title>${escapeXml(exportTitle)}</title><desc>Vector export of the Khayal stage engine using synthetic rehearsal participants. This is not a browser screenshot, camera capture, or live Twitch evidence. Original SVG cut-paper artwork, not generated or Meshy art.</desc>${backgroundMarkup()}${figures}${lamps}${type}</svg>`;

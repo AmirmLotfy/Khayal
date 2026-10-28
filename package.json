@@ -13,7 +13,8 @@
     "submission:frames": "node --experimental-strip-types scripts/export-stage-frames.ts && node scripts/rasterize-stage-previews.mjs",
     "submission:captions": "node scripts/prepare-captions.mjs",
     "submission:review": "node scripts/render-review.mjs",
-    "submission:check": "node scripts/prepare-video.mjs --check"
+    "submission:check": "node scripts/prepare-video.mjs --check",
+    "rehearse": "node scripts/rehearse-show.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "0.10.35",

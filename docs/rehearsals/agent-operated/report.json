@@ -1,0 +1,232 @@
+{
+  "kind": "agent-operated source-level rehearsal",
+  "sourceHead": "3bb26b3cebb98cd6c3c40a38f7271ad2a75c24a4",
+  "sourceHeadScope": "Git parent at execution; sourceFiles records exact source bytes, including pending changes",
+  "sourceFiles": {
+    "src/show/director.ts": "aa211acf618d29a8e0b775a500e51ff7f1438bf040050b7b19d3b9ea15b6a6cf",
+    "src/twitch/commands.ts": "3bfb16ea345b7f5c4120d0897c9fcf0c2c94de4e701ab9901dbf34c99aa9d55a",
+    "src/vision/masks.ts": "8bb5271c43c8baa8c4c9804005f20f30d9d0ddfdd001afc8262a1707be50d355",
+    "src/vision/types.ts": "5450952a25111e6f36e5bff24d4dd559419d306208a855e04049b4c84ffbc133",
+    "src/stage/scene.ts": "55433ef674e38577d8892b969e8162431633f6ae27b23bfc530ae573e848abfa",
+    "src/stage/vectors.ts": "4ba285c09fd5e9b0d0079f069ae79d1a9862c78868a23191156b6d836c844993",
+    "src/stage/palette.ts": "d44dd226fc6bdd69a8c04188e284ca3f7cb718edc39ef19a569dace0ea258746"
+  },
+  "runnerSha256": "1cee866ef7725b9af329d90bb242e0cd8e57a9cb985b8790eac0ecf8333f63df",
+  "inputSeed": 20261028,
+  "timeMode": "virtual;60Hz director steps, accelerated wall time",
+  "evidenceScope": "Actual parser/Director/mask-processing/shared-scene source with synthetic inputs. Frames are engine exports, not browser screenshots or camera footage.",
+  "realTwitchEvents": false,
+  "realParticipants": false,
+  "cameraInference": false,
+  "physicalSwatQualification": false,
+  "humanFairnessQualification": false,
+  "obsRecording": false,
+  "checks": [
+    {
+      "name": "50 synthetic viewers enter bounded FIFO",
+      "passed": true,
+      "observed": {
+        "active": 24,
+        "waiting": 26
+      }
+    },
+    {
+      "name": "Viewer cannot issue moderator pause",
+      "passed": true
+    },
+    {
+      "name": "Movement family cooldown rejects immediate second move",
+      "passed": true
+    },
+    {
+      "name": "Jump accepted after movement cooldown",
+      "passed": true
+    },
+    {
+      "name": "Queued caption moderation removes before promotion",
+      "passed": true
+    },
+    {
+      "name": "Mixed caption sanitized by actual parser",
+      "passed": true,
+      "observed": "يا ليل hello"
+    },
+    {
+      "name": "Immediate hide-captions setting applied",
+      "passed": true
+    },
+    {
+      "name": "Every one of50 waiting actors receives a turn",
+      "passed": true,
+      "observed": {
+        "admitted": 50,
+        "virtualSeconds": 65.29999999999758
+      }
+    },
+    {
+      "name": "Simulated follow activates Mesaharati",
+      "passed": true
+    },
+    {
+      "name": "Countdown advances into Hunt",
+      "passed": true
+    },
+    {
+      "name": "Ordinary actors park throughout countdown",
+      "passed": true
+    },
+    {
+      "name": "Afreet active/queue caps and ownership",
+      "passed": true
+    },
+    {
+      "name": "Viewer dodges their own afreet",
+      "passed": true
+    },
+    {
+      "name": "Moderator pause freezes Hunt",
+      "passed": true
+    },
+    {
+      "name": "Ceremonies do not obscure Hunt",
+      "passed": true
+    },
+    {
+      "name": "Undefended full round resolves as chat win",
+      "passed": true,
+      "observed": {
+        "result": "Chat stole the light.",
+        "lights": 0
+      }
+    },
+    {
+      "name": "Queued follow resumes after Hunt",
+      "passed": true
+    },
+    {
+      "name": "Queued raid resumes with bounded caravan",
+      "passed": true
+    },
+    {
+      "name": "30virtual seconds of constant synthetic mask emits no motion",
+      "passed": true,
+      "observed": {
+        "stationaryMotionCells": 0,
+        "physicalCamera": false
+      }
+    },
+    {
+      "name": "Synthetic changing-mask full round resolves keeper win",
+      "passed": true,
+      "observed": {
+        "result": "The keeper saved the light.",
+        "lights": 5,
+        "syntheticHits": 50,
+        "syntheticFrames": 902
+      }
+    },
+    {
+      "name": "Expired synthetic mask cannot hit",
+      "passed": true
+    },
+    {
+      "name": "Cast ledger retains every synthetic participant",
+      "passed": true
+    },
+    {
+      "name": "Curtain clears actors but retains complete cast",
+      "passed": true
+    }
+  ],
+  "snapshots": [
+    {
+      "file": "01-freeplay.svg",
+      "virtualSeconds": 2.3,
+      "phase": "free",
+      "active": 24,
+      "waiting": 26,
+      "afreets": 0,
+      "attackQueue": 0,
+      "lights": 5,
+      "swats": 0,
+      "sha256": "a7bad8a67d2ba53529615f2e12af03f132bee0b7ebe96d3568cdf58b24b5992c",
+      "png": "01-freeplay.png",
+      "pngSha256": "9cff821234b1396b297ca8177655557a1d389af2ec6b577c7e190d6a971a281f"
+    },
+    {
+      "file": "02-hunt-no-defense.svg",
+      "virtualSeconds": 79.42,
+      "phase": "hunt",
+      "active": 24,
+      "waiting": 26,
+      "afreets": 24,
+      "attackQueue": 24,
+      "lights": 3,
+      "swats": 0,
+      "sha256": "d5323203b3c5abebbc786b024a715a0bae13edd32d176cb47f390c9d246cb1bd",
+      "png": "02-hunt-no-defense.png",
+      "pngSha256": "5200c5108bf95e776cb3a76e01d455c65a0e687e8814eed3ef509722fd042ace"
+    },
+    {
+      "file": "03-simulated-caravan.svg",
+      "virtualSeconds": 150.72,
+      "phase": "result",
+      "active": 24,
+      "waiting": 26,
+      "afreets": 0,
+      "attackQueue": 0,
+      "lights": 0,
+      "swats": 0,
+      "sha256": "09c6ca574e8fa96e571ce165b08f760743aa8f026de0208f608eddcfe7bf3892",
+      "png": "03-simulated-caravan.png",
+      "pngSha256": "e7565aa54e47fa09b4b61e3b912685805f6e8a4353171dc1392dd6d72fcbe073"
+    },
+    {
+      "file": "04-synthetic-mask-defense.svg",
+      "virtualSeconds": 161.74,
+      "phase": "hunt",
+      "active": 24,
+      "waiting": 26,
+      "afreets": 0,
+      "attackQueue": 0,
+      "lights": 5,
+      "swats": 50,
+      "sha256": "e226b345ec72238cf8c7a0916d68405c6d0388f8d6ce62d64155075fc7b8dd94",
+      "png": "04-synthetic-mask-defense.png",
+      "pngSha256": "a92d5d26f6b1193cd92df4a993a4801840bf8b56ba3c926d3d457c8238d17c64"
+    },
+    {
+      "file": "05-keeper-result.svg",
+      "virtualSeconds": 213.84,
+      "phase": "result",
+      "active": 24,
+      "waiting": 26,
+      "afreets": 0,
+      "attackQueue": 0,
+      "lights": 5,
+      "swats": 50,
+      "sha256": "da0df915126456e7fd2c404945759afbf78ebb920c5fc3c72d243c70d3b45732",
+      "png": "05-keeper-result.png",
+      "pngSha256": "e67d0a71e210daa4082c6139f16a5aaaa290f766b5a69122dfbe0d2bbc8260f5"
+    },
+    {
+      "file": "06-curtain.svg",
+      "virtualSeconds": 213.84,
+      "phase": "free",
+      "active": 0,
+      "waiting": 0,
+      "afreets": 0,
+      "attackQueue": 0,
+      "lights": 5,
+      "swats": 50,
+      "sha256": "25b64ae99468b8eb9e036b4b3f3c373fb4646deeb3707ed3dd4e459e6ac041a4",
+      "png": "06-curtain.png",
+      "pngSha256": "f0473865b4c37fd2b5d30289c9b83c2389ed972cc351851c0953a65ed383e82a"
+    }
+  ],
+  "status": "passed",
+  "virtualSeconds": 213.84,
+  "directorSteps": 12832,
+  "commands": 209,
+  "completedAt": "2026-10-28T01:19:12.345Z"
+}
