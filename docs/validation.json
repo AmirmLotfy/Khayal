@@ -43,5 +43,7 @@
     ],
     "source": "built-in imagegen promotional illustration, two calls, five lanterns inspected"
   },
-  "cleanup": "5926 manifest-bound cache files removed and verified absent; private receipts excluded from public repository"
+  "cleanup": "5926 manifest-bound cache files removed and verified absent; private receipts excluded from public repository",
+  "historicalReceipt": true,
+  "supersededStatusNote": "Historical source/browser/publication state. Current receipts: goal-release-validation.json, performance-browser-validation.json and youtube-revised-publication-validation.json; do not treat old missing-access/publication fields as current."
 }

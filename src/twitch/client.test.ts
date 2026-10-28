@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { TwitchClient, TWITCH_SCOPES, type TwitchChatRaw } from "./client";
+import { TwitchClient, TWITCH_SCOPES, scrubOAuthCallbackUrl, type TwitchChatRaw } from "./client";
 
 const STATE_KEY = "khayal:twitch:oauth-state";
 const ROOT = "http://localhost:5173/";
@@ -150,6 +150,32 @@ afterEach(() => {
 });
 
 describe("Twitch OAuth callback", () => {
+  it.each([
+    `#access_token=${TEST_TOKEN}&token_type=bearer&state=expected-state`,
+    "#error=access_denied&error_description=declined&state=expected-state",
+    "&error=access_denied&error_description=declined&state=expected-state",
+    `&access_token=${TEST_TOKEN}&token_type=bearer&expires_in=7200&scope=user%3Aread%3Achat&state=expected-state`,
+  ])("scrubs a duplicate-owner callback URL without consuming pending state: case %#", (response) => {
+    callback();
+    const saved = stored.get(STATE_KEY);
+    location.href = `${ROOT}?stage=main&show=show-a${response}`;
+    expect(scrubOAuthCallbackUrl()).toBe(true);
+    expect(location.href).toBe(`${ROOT}?stage=main&show=show-a`);
+    expect(stored.get(STATE_KEY)).toBe(saved);
+    expect(stored.size).toBe(1);
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(MockSocket.instances).toHaveLength(0);
+    expect(clients).toHaveLength(0);
+  });
+  it("preserves an ordinary show URL and its pending state", () => {
+    callback();
+    const saved = stored.get(STATE_KEY);
+    location.href = `${ROOT}?show=show-a#ordinary-stage-anchor`;
+    expect(scrubOAuthCallbackUrl()).toBe(false);
+    expect(location.href).toBe(`${ROOT}?show=show-a#ordinary-stage-anchor`);
+    expect(stored.get(STATE_KEY)).toBe(saved);
+    expect(replaceState).not.toHaveBeenCalled();
+  });
   it("scrubs the fragment synchronously before fetching and keeps the token out of session storage", async () => {
     callback();
     const { client } = makeClient();
@@ -255,6 +281,67 @@ describe("Twitch EventSub lifecycle", () => {
     );
     expect(onEvent).toHaveBeenLastCalledWith(
       expect.objectContaining({ isBroadcaster: true }),
+    );
+  });
+  it("derives moderator authority from IDs and moderator badges, never display names or VIP badges", async () => {
+    const { socket, onEvent } = await connected();
+    socket.notification(
+      "name-spoof",
+      chat({
+        chatter_user_login: "theater",
+        chatter_user_name: "theater",
+        badges: [{ set_id: "vip", id: "1", info: "" }],
+      }),
+    );
+    expect(onEvent).toHaveBeenLastCalledWith(
+      expect.objectContaining({ isBroadcaster: false, isModerator: false }),
+    );
+    socket.notification(
+      "moderator",
+      chat({ badges: [{ set_id: "moderator", id: "1", info: "" }] }),
+    );
+    expect(onEvent).toHaveBeenLastCalledWith(
+      expect.objectContaining({ isBroadcaster: false, isModerator: true }),
+    );
+    socket.notification(
+      "broadcaster",
+      chat({ chatter_user_id: "broadcaster-1", chatter_user_name: "Other Name" }),
+    );
+    expect(onEvent).toHaveBeenLastCalledWith(
+      expect.objectContaining({ isBroadcaster: true, isModerator: false }),
+    );
+  });
+  it("normalizes channel-scoped moderation deletions and ignores another channel", async () => {
+    const { socket, onEvent } = await connected();
+    for (const broadcaster_user_id of ["other-channel", "broadcaster-1"]) {
+      socket.notification(
+        `delete-${broadcaster_user_id}`,
+        { broadcaster_user_id, target_user_id: "viewer-1", message_id: "chat-1" },
+        "channel.chat.message_delete",
+      );
+      socket.notification(
+        `clear-user-${broadcaster_user_id}`,
+        { broadcaster_user_id, target_user_id: "viewer-1" },
+        "channel.chat.clear_user_messages",
+      );
+      socket.notification(
+        `clear-chat-${broadcaster_user_id}`,
+        { broadcaster_user_id },
+        "channel.chat.clear",
+      );
+    }
+    expect(onEvent.mock.calls.map(([event]) => event.kind)).toEqual([
+      "delete",
+      "user-clear",
+      "chat-clear",
+    ]);
+    expect(onEvent).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({ messageId: "chat-1", userId: "viewer-1" }),
+    );
+    expect(onEvent).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({ userId: "viewer-1" }),
     );
   });
   it("preserves subscriptions through Twitch handover and closes the old socket only after welcome", async () => {

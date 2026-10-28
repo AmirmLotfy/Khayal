@@ -217,7 +217,7 @@ export function labels(d: Director, elapsed: number): StageLabel[] {
       mono: true,
     });
   }
-  if (d.ceremony && !d.curtain)
+  if (d.ceremony && !d.curtain && !hunt)
     list.push({
       id: "ceremony",
       text:
@@ -238,7 +238,7 @@ export function stagePuppets(d: Director, elapsed: number): Puppet[] {
   const items = [
     ...(d.phase === "hunt" || d.phase === "countdown" ? d.afreets : d.puppets),
   ];
-  if (d.ceremony)
+  if (d.ceremony && d.phase !== "hunt" && d.phase !== "countdown")
     for (
       let i = 0;
       i <

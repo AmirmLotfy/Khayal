@@ -10,9 +10,9 @@
     1536,
     1024
   ],
-  "review_video_file": "submission/video/khayal-gameplay-review-114s.mp4",
+  "review_video_file": "submission/video/khayal-gameplay-demo-114s.mp4",
   "review_video_is_final": false,
-  "youtube_url": "https://www.youtube.com/watch?v=vynF1sjtyFw",
+  "youtube_url": "https://www.youtube.com/watch?v=VxjgW2sga6o",
   "devpost_project_url": "https://devpost.com/software/khayal",
   "owner_voice_file": "submission/video/voiceover.wav (private local input)",
   "native_engine_previews": 5,
@@ -23,7 +23,6 @@
   "blockers": [
     "Full listening review and human performance rehearsal pending",
     "Real follow/raid, deliberate-swat accuracy, multi-viewer fairness and sustained OBS checks pending",
-    "Owner-provided genuine Codex recording is documented in README; integration into the published demo remains pending",
     "Owner requested eligibility declarations remain unchecked; final terms and submission not authorized"
   ],
   "owner_voice_received": true,
@@ -47,5 +46,13 @@
   "devpost_video_url_saved": true,
   "devpost_steps_done": "3/5",
   "genuine_codex_ui_capture_source": "docs/media/codex/owner-build-walkthrough.mp4",
-  "genuine_codex_ui_in_published_demo": false
+  "genuine_codex_ui_in_published_demo": true,
+  "previous_youtube_url": "https://www.youtube.com/watch?v=vynF1sjtyFw",
+  "owner_voice_provenance": "Owner explicitly confirmed: My own spoken recording",
+  "automated_tests": {
+    "passed": 64,
+    "files": 7
+  },
+  "local_five_minute_gpu_numeric_targets_met": true,
+  "obs_performance_qualified": false
 }

@@ -1,0 +1,11 @@
+{
+  "title": "Khayal — Your Shadow Guards the Light | Twitch Gameplay + Codex Build",
+  "description": "Chat sends the spirits. Your shadow guards the light.\n\nKhayal (خيال) is a local Twitch shadow theatre inspired by Egyptian shadow performance. Chat commands bring cut-paper puppets to life; a camera silhouette protects five lanterns in a 60-second Afreet Hunt.\n\nThis 1:54 gameplay demo includes genuine Twitch chat and camera recordings from an agent-operated broadcaster test, a short explicitly labeled simulator rehearsal, the director’s cue book, an exported playbill and a genuine owner-recorded walkthrough of the Codex conversation used to plan and build the app. Source labels remain visible throughout. The channel was offline during the Twitch tests; this is a development-build demonstration, not evidence of a multi-viewer live broadcast. Human fairness, deliberate-swat accuracy, sustained OBS performance and real follow/raid checks remain pending.\n\nSource and local setup: https://github.com/AmirmLotfy/Khayal\nProject: https://devpost.com/software/khayal\n\nBuilt with TypeScript, Vite, PixiJS and MediaPipe Tasks Vision, with Codex used for implementation and verification. Camera segmentation runs locally; the app has no camera-upload backend.\n\nThe thumbnail is AI-assisted promotional illustration, not a gameplay capture. Gameplay uses the app’s original cyanotype vector artwork. English narration supplied by the creator; English captions included. The Codex clip shows historical planning and change summaries; visible historical test counts and blockers are not current acceptance results.\n\nCodex build account and recording: https://github.com/AmirmLotfy/Khayal/blob/main/docs/BUILD_WITH_CODEX.md\n\nBring your shadow. Guard the light.\n\n#Khayal #Twitch #Codex",
+  "visibility": "public",
+  "audience": "not made for kids",
+  "video": "submission/video/khayal-gameplay-demo-114s.mp4",
+  "thumbnail": "submission/artwork/khayal-youtube-16x9.jpg",
+  "captions": "submission/video/captions.srt",
+  "video_is_final": false,
+  "genuine_codex_recording": true
+}

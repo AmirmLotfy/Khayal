@@ -4,9 +4,9 @@
 
 ![Khayal promotional illustration](submission/artwork/khayal-devpost-3x2.png)
 
-**Status: development preview, not yet submission-ready.** Thirty automated tests and the production build pass. The first actual browser/camera/Twitch broadcaster test is recorded. Multi-viewer fairness, formal swat accuracy, real follow/raid and OBS acceptance remain pending. The cover is a promotional illustration, not gameplay footage. [Current gates](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
+**Status: development preview, not yet submission-ready.** Sixty-four automated tests and the production build pass. The first actual browser/camera/Twitch broadcaster test is recorded. Multi-viewer fairness, formal swat accuracy, real follow/raid and OBS acceptance remain pending. The cover is a promotional illustration, not gameplay footage. [Current gates](docs/hackathon-build/checklist.md) · [Submission studio](submission/README.md)
 
-[Watch the public gameplay demo](https://www.youtube.com/watch?v=vynF1sjtyFw) · [Devpost project draft](https://devpost.com/software/khayal)
+[Watch the public gameplay demo](https://www.youtube.com/watch?v=VxjgW2sga6o) · [Devpost project draft](https://devpost.com/software/khayal)
 
 ## Planned and built with Codex
 
@@ -31,7 +31,7 @@ These stills were extracted from Amir's supplied screen recording. Crops isolate
 
 ![An earlier Codex implementation checkpoint and changed-file summary](docs/media/codex/implementation-checkpoint.jpg)
 
-*Implementation evidence: an earlier checkpoint and its changed-file summary. The visible 29-test result and browser blocker describe that historical point; the current suite has 30 tests and later browser/Twitch checks are recorded separately.*
+*Implementation evidence: an earlier checkpoint and its changed-file summary. The visible 29-test result and browser blocker describe that historical point; the current suite has 64 tests and later browser/Twitch checks are recorded separately.*
 
 [Watch or download the 19-second owner-supplied Codex walkthrough](docs/media/codex/owner-build-walkthrough.mp4). It scrolls through existing conversation records; it is not a continuous recording of code being written or proof that every acceptance gate passed. [Media provenance](docs/media/codex/provenance.json).
 
@@ -48,13 +48,13 @@ Open http://localhost:5173/ and **Enter the theatre**, then **Director’s desk*
 
 ## Play
 
-From the director’s desk, start the rehearsal company or send `!cat`, `!camel`, `!goha`, `!boat`, `!croc`. Move with `!left`, `!right`, `!jump`; change projected depth with `!closer`/`!far`; add a 60-grapheme plain-text caption with `!say hello`. One puppet per viewer, 24 on stage and a bounded fair queue.
+From the director’s desk, select a 12/24/30/50-member rehearsal company and start it, or send `!cat`, `!camel`, `!goha`, `!boat`, `!croc`. Move with `!left`, `!right`, `!jump`; change projected depth with `!closer`/`!far`; add a 60-grapheme plain-text caption with `!say hello`. One puppet per viewer, 24 on stage and a bounded fair queue.
 
 **Afreet Hunt:** 60 seconds after a 3-second countdown. Chat sends `!afreet` and dodges with `!up`/`!down`; the performer keeps at least three of five lights burning. Camera motion is measured at the silhouette boundary; moving a hand wholly inside an unchanged torso outline does not create a swat. Ordinary puppets also bounce on a fresh outline hit.
 
 Mods use `!khayal pause`, `!khayal clear`, `!khayal ban @login`. Stage blocks never ban a Twitch account. Captions are plain text, links/controls removed, and moderated deletions are synchronized. Source labels distinguish simulator and live mode; switching source clears rehearsal state.
 
-Keys 1 / 2 / 4 opens theatre/starts Hunt/exports cast; Space pauses. Escape leaves focus mode. **Save frame** exports the actual canvas. **Record stage** exports up to 3 minutes of video-only canvas capture; add the owner voice in the edit. Multiple playbill pages preserve large casts. **Sound** enables original quiet synthesized cues; it starts off and contains no sampled music or crowd voice.
+Keys 1 / 2 / 4 opens theatre/starts Hunt/prepares the playbill; Space pauses. Escape leaves focus mode. **Save frame** exports the actual canvas. **Record stage** exports up to 3 minutes of video-only canvas capture; add the owner voice in the edit. Numbered PNG download links appear in both windows; click each page once. Long names wrap at readable size, and additional pages preserve every cast member. **Sound** enables original quiet synthesized cues; it starts off and contains no sampled music or crowd voice.
 
 ## Connect Twitch
 
@@ -66,7 +66,7 @@ Tokens remain in memory, OAuth state is verified, validation repeats hourly, and
 
 Enable silhouette and grant video permission in the stage window. No microphone is requested. The model/WASM are served locally, with one frame in flight and no camera-upload endpoint. Choose GPU/CPU and 15/30 inference fps in the director’s settings. Stale or failed inference hides the shadow and pauses a Hunt. Keep the stage visible; use OBS Virtual Camera if another app already owns the camera.
 
-For full live capture use OBS window capture at 1920×1080, with cue book excluded. Actual camera latency, swat accuracy, sustained rendering during OBS recording and human fairness remain unmeasured. The source-levelfps counter is not a verified benchmark.
+For full live capture use OBS window capture at 1920×1080, with cue book excluded. A five-minute local GPU run with 24 simulated puppets measured 59.9 fps average rendering, 18.4 ms p95 frame interval, 22.6 delivered inference fps and 26 ms p95 capture-to-result latency. CPU was compared in a separate short run. [Measurements and scope](docs/performance-browser-validation.json). Swat accuracy, sustained rendering during OBS recording and human fairness remain unverified. The cue book includes Start/Stop controls for a bounded five-minute local observation and explicit JSON download links. Reports measure unclamped render intervals, actual delivered inference cadence and capture-to-result latency; hidden periods, setting changes, gaps and invalid samples are disclosed. Local telemetry alone does not verify OBS or human performance.
 
 ## Submission and reproducibility
 
@@ -79,7 +79,7 @@ npm run submission:review
 npm run submission:check
 ```
 
-Frame exports use the same original SVGspecies paths and scene layout as Pixi, with synthetic Director fixtures; they are labeled engine rehearsal previews, not browser screenshots or realcamera/Twitch evidence. The current 1:54 review contains actual Twitch/camera footage, a labeled animated rehearsal and actual cue-book/playbill captures. Its 56 captions use validated DTW token timing and explicit30fps image frames; its complete narration uses an independently encoded continuous PCM bed. Eight decoded speech windows and112 caption frames pass technical checks. Full listening review remains open. The older narrated still-image cut is retired after sync defects. `submission/voiceover-script.md` contains eight recording takes.
+Frame exports use the same original SVGspecies paths and scene layout as Pixi, with synthetic Director fixtures; they are labeled engine rehearsal previews, not browser screenshots or realcamera/Twitch evidence. The current 1:54 public demo contains actual Twitch/camera footage, a labeled animated rehearsal, actual cue-book/playbill captures and the owner-recorded Codex conversation. Its 56 captions use validated DTW token timing and explicit30fps image frames; its complete narration uses an independently encoded continuous PCM bed. Eight decoded speech windows and112 caption frames pass technical checks. Full listening review remains open. The older narrated still-image cut is retired after sync defects. `submission/voiceover-script.md` contains eight recording takes.
 
 The cyanotype art direction deliberately differs from Aragoz’s wood/brass/curtainworkshop. Khayal’s distinguishing mechanic is body-driven shadow defense; changing colors alone would not establish a substantially different contest entry. Prior winners and inspirations are credited in `submission/research.md`.
 

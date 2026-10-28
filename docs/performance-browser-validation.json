@@ -1,0 +1,357 @@
+{
+  "evidence": "Actual local-browser observations with real camera inference and explicitly simulated puppets; no OBS or human fairness qualification",
+  "fiveMinuteRuntimeBundle": "dist/assets/index-DyYR1L6t.js (before later OAuth-duplicate URL scrub/control-error display changes) and final simulator playbill source-label change",
+  "sourceCanvas": [
+    1920,
+    1080
+  ],
+  "runs": {
+    "gpu-short": {
+      "rawPrivateFile": "docs/browser-evidence/performance/gpu-short.json",
+      "sha256": "5e3e320f707cc97d5c9e6a11be6a6927190e164318350c425e937196d8f7c1da",
+      "startedAtIso": "2026-10-27T23:31:08.426Z",
+      "durationMs": 13862.60000000149,
+      "initialContext": {
+        "source": "sim",
+        "delegate": "GPU",
+        "requestedFps": 30,
+        "mirror": true,
+        "camera": true,
+        "visibility": "visible",
+        "phase": "free",
+        "ordinaryActors": 24,
+        "waitingActors": 0,
+        "afreets": 0,
+        "waitingAfreets": 0
+      },
+      "actorRanges": {
+        "ordinaryActors": {
+          "min": 24,
+          "max": 24
+        },
+        "waitingActors": {
+          "min": 0,
+          "max": 0
+        },
+        "afreets": {
+          "min": 0,
+          "max": 0
+        },
+        "waitingAfreets": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "render": {
+        "samples": 831,
+        "meanMs": 16.666185318894694,
+        "p95Ms": 17.399999998509884,
+        "maxMs": 17.80000000447035,
+        "averageFps": 60.00173290202681,
+        "definition": "Unclamped requestAnimationFrame callback intervals; not GPU render duration",
+        "coverage": {
+          "firstResultOffsetMs": 9.100000001490116,
+          "finalResultGapMs": 3.899999998509884,
+          "maxObservedGapMs": 17.80000000447035
+        }
+      },
+      "inference": {
+        "samples": 311,
+        "meanMs": 44.41061093246151,
+        "p95Ms": 54.5,
+        "maxMs": 62.100000001490116,
+        "averageFps": 22.51714126429771,
+        "results": 312,
+        "definition": "Cadence of actual delivered onFrame results, not requested FPS",
+        "coverage": {
+          "firstResultOffsetMs": 19.80000000447035,
+          "finalResultGapMs": 31.100000001490116,
+          "maxObservedGapMs": 62.100000001490116
+        }
+      },
+      "captureToOnFrame": {
+        "samples": 312,
+        "meanMs": 13.562500000186306,
+        "p95Ms": 16.900000000001455,
+        "maxMs": 26.70000000148866,
+        "definition": "Stage performance.now at onFrame minus the frame's capture timestamp"
+      },
+      "validity": {
+        "measurementsUsable": true,
+        "issues": []
+      },
+      "coverage": {
+        "fullFiveMinutes": false,
+        "complete": true,
+        "maxAllowedGapMs": 1000
+      },
+      "acceptance": {
+        "fiveMinuteLocalObservation": "not-established",
+        "performanceTargets": "unassessed",
+        "obs": "unverified",
+        "human": "unverified"
+      }
+    },
+    "cpu-short": {
+      "rawPrivateFile": "docs/browser-evidence/performance/cpu-short.json",
+      "sha256": "26e8b8a3ab8fce00d49abac702a04697f6ff8f8bea9ecbd8c48730423561cf32",
+      "startedAtIso": "2026-10-27T23:33:11.061Z",
+      "durationMs": 29771.80000000447,
+      "initialContext": {
+        "source": "sim",
+        "delegate": "CPU",
+        "requestedFps": 30,
+        "mirror": true,
+        "camera": true,
+        "visibility": "visible",
+        "phase": "free",
+        "ordinaryActors": 24,
+        "waitingActors": 0,
+        "afreets": 0,
+        "waitingAfreets": 0
+      },
+      "actorRanges": {
+        "ordinaryActors": {
+          "min": 24,
+          "max": 24
+        },
+        "waitingActors": {
+          "min": 0,
+          "max": 0
+        },
+        "afreets": {
+          "min": 0,
+          "max": 0
+        },
+        "waitingAfreets": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "render": {
+        "samples": 1784,
+        "meanMs": 16.682062780267387,
+        "p95Ms": 18.30000000447035,
+        "maxMs": 32.399999998509884,
+        "averageFps": 59.94462514449137,
+        "definition": "Unclamped requestAnimationFrame callback intervals; not GPU render duration",
+        "coverage": {
+          "firstResultOffsetMs": 7.600000001490116,
+          "finalResultGapMs": 3.4000000059604645,
+          "maxObservedGapMs": 32.399999998509884
+        }
+      },
+      "inference": {
+        "samples": 678,
+        "meanMs": 43.86091445427069,
+        "p95Ms": 53.899999998509884,
+        "maxMs": 86.30000000447035,
+        "averageFps": 22.799342249067745,
+        "results": 679,
+        "definition": "Cadence of actual delivered onFrame results, not requested FPS",
+        "coverage": {
+          "firstResultOffsetMs": 17.200000002980232,
+          "finalResultGapMs": 16.900000005960464,
+          "maxObservedGapMs": 86.30000000447035
+        }
+      },
+      "captureToOnFrame": {
+        "samples": 679,
+        "meanMs": 12.219734904281976,
+        "p95Ms": 22.39999999999418,
+        "maxMs": 65.30000000298605,
+        "definition": "Stage performance.now at onFrame minus the frame's capture timestamp"
+      },
+      "validity": {
+        "measurementsUsable": true,
+        "issues": []
+      },
+      "coverage": {
+        "fullFiveMinutes": false,
+        "complete": true,
+        "maxAllowedGapMs": 1000
+      },
+      "acceptance": {
+        "fiveMinuteLocalObservation": "not-established",
+        "performanceTargets": "unassessed",
+        "obs": "unverified",
+        "human": "unverified"
+      }
+    },
+    "gpu-variable-load": {
+      "rawPrivateFile": "docs/browser-evidence/performance/gpu-variable-load.json",
+      "sha256": "e071857d4b5d27557bdb0f3cb4ff419adec7d967a1d1babfa07c285c1f65e73c",
+      "startedAtIso": "2026-10-27T23:34:45.626Z",
+      "durationMs": 179730,
+      "initialContext": {
+        "source": "sim",
+        "delegate": "GPU",
+        "requestedFps": 30,
+        "mirror": true,
+        "camera": true,
+        "visibility": "visible",
+        "phase": "free",
+        "ordinaryActors": 24,
+        "waitingActors": 0,
+        "afreets": 0,
+        "waitingAfreets": 0
+      },
+      "actorRanges": {
+        "ordinaryActors": {
+          "min": 0,
+          "max": 24
+        },
+        "waitingActors": {
+          "min": 0,
+          "max": 0
+        },
+        "afreets": {
+          "min": 0,
+          "max": 0
+        },
+        "waitingAfreets": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "render": {
+        "samples": 10777,
+        "meanMs": 16.674705391111114,
+        "p95Ms": 18.899999998509884,
+        "maxMs": 43.29999999701977,
+        "averageFps": 59.971074543426475,
+        "definition": "Unclamped requestAnimationFrame callback intervals; not GPU render duration",
+        "coverage": {
+          "firstResultOffsetMs": 7.199999995529652,
+          "finalResultGapMs": 19.5,
+          "maxObservedGapMs": 43.29999999701977
+        }
+      },
+      "inference": {
+        "samples": 4035,
+        "meanMs": 44.51370508054634,
+        "p95Ms": 56.600000001490116,
+        "maxMs": 107.89999999850988,
+        "averageFps": 22.464991359189877,
+        "results": 4036,
+        "definition": "Cadence of actual delivered onFrame results, not requested FPS",
+        "coverage": {
+          "firstResultOffsetMs": 52.19999999552965,
+          "finalResultGapMs": 65,
+          "maxObservedGapMs": 107.89999999850988
+        }
+      },
+      "captureToOnFrame": {
+        "samples": 4036,
+        "meanMs": 15.797968285419973,
+        "p95Ms": 23.900000002991874,
+        "maxMs": 72.19999999704305,
+        "definition": "Stage performance.now at onFrame minus the frame's capture timestamp"
+      },
+      "validity": {
+        "measurementsUsable": true,
+        "issues": []
+      },
+      "coverage": {
+        "fullFiveMinutes": false,
+        "complete": true,
+        "maxAllowedGapMs": 1000
+      },
+      "acceptance": {
+        "fiveMinuteLocalObservation": "not-established",
+        "performanceTargets": "unassessed",
+        "obs": "unverified",
+        "human": "unverified"
+      }
+    },
+    "gpu-five-minute": {
+      "rawPrivateFile": "docs/browser-evidence/performance/gpu-five-minute.json",
+      "sha256": "2d87bfb6973a666e9230b15ab14f631d24c83490653ff54247d4caeddece4a23",
+      "startedAtIso": "2026-10-27T23:41:57.027Z",
+      "durationMs": 300000,
+      "initialContext": {
+        "source": "sim",
+        "delegate": "GPU",
+        "requestedFps": 30,
+        "mirror": true,
+        "camera": true,
+        "visibility": "visible",
+        "phase": "free",
+        "ordinaryActors": 24,
+        "waitingActors": 0,
+        "afreets": 0,
+        "waitingAfreets": 0
+      },
+      "actorRanges": {
+        "ordinaryActors": {
+          "min": 24,
+          "max": 24
+        },
+        "waitingActors": {
+          "min": 0,
+          "max": 0
+        },
+        "afreets": {
+          "min": 0,
+          "max": 0
+        },
+        "waitingAfreets": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "render": {
+        "samples": 17981,
+        "meanMs": 16.68411656748757,
+        "p95Ms": 18.399999998509884,
+        "maxMs": 134.10000000149012,
+        "averageFps": 59.93724606004644,
+        "definition": "Unclamped requestAnimationFrame callback intervals; not GPU render duration",
+        "coverage": {
+          "firstResultOffsetMs": 0.8000000044703484,
+          "finalResultGapMs": 2.100000001490116,
+          "maxObservedGapMs": 134.10000000149012
+        }
+      },
+      "inference": {
+        "samples": 6772,
+        "meanMs": 44.298006497342215,
+        "p95Ms": 56.70000000298023,
+        "maxMs": 245.39999999850988,
+        "averageFps": 22.574379279573176,
+        "results": 6773,
+        "definition": "Cadence of actual delivered onFrame results, not requested FPS",
+        "coverage": {
+          "firstResultOffsetMs": 13.399999998509884,
+          "finalResultGapMs": 0.5,
+          "maxObservedGapMs": 245.39999999850988
+        }
+      },
+      "captureToOnFrame": {
+        "samples": 6773,
+        "meanMs": 15.614100104850863,
+        "p95Ms": 25.9999999984866,
+        "maxMs": 219.79999999998836,
+        "definition": "Stage performance.now at onFrame minus the frame's capture timestamp"
+      },
+      "validity": {
+        "measurementsUsable": true,
+        "issues": []
+      },
+      "coverage": {
+        "fullFiveMinutes": true,
+        "complete": true,
+        "maxAllowedGapMs": 1000
+      },
+      "acceptance": {
+        "fiveMinuteLocalObservation": "recorded",
+        "performanceTargets": "unassessed",
+        "obs": "unverified",
+        "human": "unverified"
+      }
+    }
+  },
+  "fiveMinuteLocalNumericTargetsMet": true,
+  "fullObsPerformanceGateComplete": false,
+  "discardedObservation": "gpu-variable-load was stopped at179.7s because manually seeded actors expired; its count range cannot qualify the sustained24-puppet target. Explicit24-member rehearsal control fixed the load for the completed run."
+}

@@ -42,15 +42,17 @@ The original Meshy/Blender asset-production route was not carried out; no credit
 
 ## Testing, corrections and actual interaction
 
-Codex wrote tests for command ownership, moderator authority, Unicode captions, cooldowns, queue fairness, camera-motion rules, Hunt timing and Twitch lifecycle handling. The current suite contains 30 tests in four files. A clean-checkout rehearsal was also recorded at an earlier source revision; its [receipt](clean-checkout-validation.json) identifies that revision and its limits.
+Codex wrote tests for command ownership, moderator authority, Unicode captions, cooldowns, queue fairness, camera-motion rules, Hunt timing and Twitch lifecycle handling. The current suite contains 64 tests in seven files. A clean-checkout rehearsal was also recorded at an earlier source revision; its [receipt](clean-checkout-validation.json) identifies that revision and its limits.
 
 Once browser access worked, Codex created the dedicated Twitch app and exercised authorized broadcaster commands. Amir approved OAuth and camera access. Actual chat/camera recordings show puppet control and one detected Hunt hit with five lanterns retained. This was a broadcaster test in an offline channel, not a multi-viewer live broadcast. Browser testing also exposed and led to fixes for Arabic joining and separate cue-window opening/recovery. See [browser validation](browser-live-validation.json).
 
-Amir then identified that the first review video lacked gameplay and had subtitle-sync problems. Codex replaced the still-image cut with actual recordings and audited the final encoded media. The repair uses a continuous PCM narration bed, independently encoded AAC and explicit caption frames. [Technical video checks](gameplay-review-validation.json) cover audio continuity, eight voice-timing windows and 112 caption-frame samples; they do not claim a full human listening review.
+Amir then identified that the first review video lacked gameplay and had subtitle-sync problems. Codex replaced the still-image cut with actual recordings and audited the final encoded media. The repair uses a continuous PCM narration bed, independently encoded AAC and explicit caption frames. [Technical video checks](gameplay-demo-validation.json) cover audio continuity, eight voice-timing windows and 112 caption-frame samples; they do not claim a full human listening review.
+
+Browser-led hardening added bounded camera startup/reconfiguration, duplicate-callback URL scrubbing, ceremony suspension during Hunt, queued-caption moderation and visible-time queue rotation. Playbill pages now have explicit download links and wrap long Arabic names without dropping characters. A five-minute real-camera/local GPU observation kept 24 simulated puppets throughout and met the numeric targets; [its receipt](performance-browser-validation.json) explicitly excludes OBS and human qualification.
 
 ## Delivery and responsibility
 
-Codex prepared the repository, setup instructions, promotional cover, actual-capture gallery, story, captions and video. Amir supplied the narration and this Codex screen recording and authorized publication. The [public demo](https://www.youtube.com/watch?v=vynF1sjtyFw) and [publication receipt](youtube-publication-validation.json) record that delivery. The uploaded demo predates this new Codex recording and still contains an editorial source card in its Codex section.
+Codex prepared the repository, setup instructions, promotional cover, actual-capture gallery, story, captions and video. Amir supplied the narration and this Codex screen recording and authorized publication. The [public demo](https://www.youtube.com/watch?v=VxjgW2sga6o) and [publication receipt](youtube-revised-publication-validation.json) record that delivery. The revised public demo now includes the owner-supplied Codex recording in its build section. Historical planning/checkpoint text remains labeled as historical.
 
 | Amir | Codex |
 |---|---|

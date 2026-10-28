@@ -26,13 +26,13 @@ Video verification found that a combined audio/video encoding path could lose sp
 
 ## What works today
 
-A dedicated Khayal Theatre Twitch application is connected. An actual camera and Twitch chat test received `!cat`, `!closer`, `!jump` and `!afreet`; the recorded hunt registered one silhouette hit and finished with all five lights lit. The commands were operated by the agent as the broadcaster, not by an invented audience. The gallery uses actual captures in labeled presentation frames; its separate promotional cover is an illustration.
+A dedicated Khayal Theatre Twitch application was created and used for the recorded test. An actual camera and Twitch chat test received `!cat`, `!closer`, `!jump` and `!afreet`; the recorded hunt registered one silhouette hit and finished with all five lights lit. The commands were operated by the agent as the broadcaster, not by an invented audience. The gallery uses actual captures in labeled presentation frames; its separate promotional cover is an illustration.
 
 Automated checks cover command ownership, moderator checks, Unicode captions, cooldowns, queue fairness, mask freshness, Hunt timing and Twitch lifecycle behavior. These checks do not replace human or provider acceptance.
 
 ## What's next
 
-The [public gameplay demo](https://www.youtube.com/watch?v=vynF1sjtyFw) shows the recorded Twitch and camera test, a labeled rehearsal and the Codex implementation explanation. The entry remains in preparation: a multi-viewer performance, real follow and raid qualification, the deliberate-swat accuracy study, sustained OBS measurements and full listening review remain open. The demo preserves the distinction between real Twitch interaction, rehearsals and editorial explanations.
+The [public gameplay demo](https://www.youtube.com/watch?v=VxjgW2sga6o) shows the recorded Twitch and camera test, a labeled rehearsal and genuine owner-recorded Codex planning and implementation summaries. The entry remains in preparation: a multi-viewer performance, real follow and raid qualification, the deliberate-swat accuracy study, sustained OBS measurements and full listening review remain open. The demo preserves the distinction between real Twitch interaction, rehearsals and editorial explanations.
 
 ## Try it
 

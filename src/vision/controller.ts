@@ -13,6 +13,9 @@ import {
   type WorkerResponse,
 } from "./types";
 
+/** Bound camera/model setup so a silent browser or worker cannot hold UI actions. */
+export const VISION_OPERATION_TIMEOUT_MS = 30_000;
+
 export interface VisionControllerOptions
   extends VisionCallbacks,
     Partial<VisionConfiguration> {
@@ -45,6 +48,7 @@ export class VisionController {
     number,
     { resolve: () => void; reject: (error: Error) => void }
   >();
+  private waiting = new Set<{ reject: (error: Error) => void }>();
   private currentStatus: VisionStatus = "idle";
 
   constructor(options: VisionControllerOptions) {
@@ -81,6 +85,14 @@ export class VisionController {
   async start(video: HTMLVideoElement): Promise<void> {
     this.stop();
     const generation = this.generation;
+    const deadline = performance.now() + VISION_OPERATION_TIMEOUT_MS;
+    const startupWait = <T>(operation: Promise<T>, message: string) =>
+      this.waitFor(
+        operation,
+        generation,
+        message,
+        Math.max(1, deadline - performance.now()),
+      );
     this.video = video;
     this.setStatus("requesting-camera");
     try {
@@ -96,7 +108,7 @@ export class VisionController {
         throw new Error(
           "This browser does not support worker-based segmentation.",
         );
-      const stream = await navigator.mediaDevices.getUserMedia({
+      const acquisition = navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
           facingMode: "user",
@@ -104,18 +116,30 @@ export class VisionController {
           height: { ideal: 720 },
           aspectRatio: { ideal: 16 / 9 },
         },
+      }).then((stream) => {
+        // Permission prompts cannot be cancelled. A late grant must not leave
+        // a live camera after timeout, stop(), or a replacement start().
+        if (generation !== this.generation)
+          stream.getTracks().forEach((track) => track.stop());
+        else this.stream = stream;
+        return stream;
       });
+      const stream = await startupWait(
+        acquisition,
+        "Camera permission timed out. Start the camera again when ready.",
+      );
       if (generation !== this.generation) {
-        stream.getTracks().forEach((track) => track.stop());
         return;
       }
-      this.stream = stream;
       for (const track of stream.getVideoTracks())
         track.addEventListener("ended", this.onCameraLost);
       video.muted = true;
       video.playsInline = true;
       video.srcObject = stream;
-      await video.play();
+      await startupWait(
+        video.play(),
+        "Camera playback timed out. Start the camera again.",
+      );
       if (generation !== this.generation) return;
       this.setStatus("loading-model");
       const worker = new Worker(
@@ -144,7 +168,10 @@ export class VisionController {
         wasmRoot: new URL(this.wasmRoot, location.href).href,
         modelPath: new URL(this.modelPath, location.href).href,
       });
-      await ready;
+      await startupWait(
+        ready,
+        "Camera model initialization timed out. Try CPU in Settings or restart the camera.",
+      );
       if (generation !== this.generation) return;
       this.setStatus("running");
       this.animationId = requestAnimationFrame(this.tick);
@@ -186,6 +213,8 @@ export class VisionController {
     this.initializing = null;
     for (const pending of this.configuring.values()) pending.reject(stopped);
     this.configuring.clear();
+    for (const pending of this.waiting) pending.reject(stopped);
+    this.waiting.clear();
     this.setStatus("stopped");
   }
 
@@ -220,8 +249,41 @@ export class VisionController {
         delegate: this.settings.delegate,
         requestId,
       });
-      await completed;
+      await this.waitFor(
+        completed,
+        this.generation,
+        "Camera processor change timed out. Start the camera again.",
+      );
     }
+  }
+
+  private waitFor<T>(
+    operation: Promise<T>,
+    generation: number,
+    message: string,
+    timeoutMs = VISION_OPERATION_TIMEOUT_MS,
+  ): Promise<T> {
+    return new Promise<T>((resolve, reject) => {
+      const finish = (error?: Error, value?: T) => {
+        clearTimeout(timeout);
+        this.waiting.delete(pending);
+        if (error) reject(error);
+        else resolve(value as T);
+      };
+      const pending = { reject: (error: Error) => finish(error) };
+      const timeout = setTimeout(() => {
+        const error = new Error(message);
+        this.fail(error, generation);
+        finish(error);
+      }, timeoutMs);
+      this.waiting.add(pending);
+      operation.then(
+        (value) => finish(undefined, value),
+        (error: unknown) => finish(
+          error instanceof Error ? error : new Error(String(error)),
+        ),
+      );
+    });
   }
 
   private post(message: WorkerRequest, transfer: Transferable[] = []) {
@@ -273,7 +335,10 @@ export class VisionController {
     };
     if (
       !isMaskFresh(next, performance.now()) ||
-      next.mirror !== this.settings.mirror
+      next.mirror !== this.settings.mirror ||
+      // A result captured before setOptions completed must not restore the
+      // collision frame that configure() deliberately invalidated.
+      this.configuring.size > 0
     ) {
       this.recycle(next);
       return;
@@ -340,6 +405,8 @@ export class VisionController {
     this.initializing = null;
     for (const pending of this.configuring.values()) pending.reject(error);
     this.configuring.clear();
+    for (const pending of this.waiting) pending.reject(error);
+    this.waiting.clear();
     this.stop();
     this.setStatus("error");
     this.callbacks.onError?.(error);

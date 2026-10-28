@@ -1,5 +1,7 @@
 # Accepted technical specification
 
+**Scope history:** The October27 owner-directed cyanotype redesign supersedes the original fabric/Meshy/Blender art route below. Current production art is original shared vector geometry; no Meshy credits or completed Blender production are claimed. The current published demo is114 seconds, with actual broadcaster/camera tests and owner-recorded historical Codex conversation. See [current gates](checklist.md) and [design direction](../DESIGN_DIRECTION.md). Human/OBS and submission declarations remain separate.
+
 Accepted in chat Oct27,2026: five must-haves (stage, silhouette, chat puppets, Afreet Hunt, follow/raid+curtain), cue book and simulator. Local Vite/TypeScript/PixiJS8/MediaPipe0.10.35/Vitest; two windows, one authoritative stage. Browser memory-only Twitch implicit OAuth on localhost5173; public clientID only. The chosen Twitch registration client type is Confidential because Twitch limits Public clients to Device Code Grant.
 
 Modules: stage draws palette/actors; show Director owns state and commands; Twitch parses/sanitizes/cooldowns and normalizes EventSub; vision worker owns inference and temporal64×36 mask; panel/main owns windows/settings; playbill exports paginated1080×1350 PNGs. Input→typed command→authorization/cooldown→Director→stage/cast ledger. Cue book exchanges per-show actions/status via BroadcastChannel. Vision sends a fresh mirrored/cropped256×144 display mask and64×36 collision grid. No backend.

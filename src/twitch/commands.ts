@@ -55,6 +55,11 @@ const admins: Record<string, "pause" | "clear" | "ban"> = {
   احظر: "ban",
 };
 
+function alias<T>(aliases: Record<string, T>, name: string): T | undefined {
+  // Audience text must never resolve inherited Object properties as commands.
+  return Object.hasOwn(aliases, name) ? aliases[name] : undefined;
+}
+
 /** Plain display text only. The UI must still insert it with textContent, never innerHTML. */
 export function sanitizeSay(input: string): string {
   const clean = input
@@ -89,24 +94,24 @@ export function parseCommand(input: string): Command | null {
     return text ? { kind: "say", text } : null;
   }
   if (name === "summon" || name === "هات") {
-    const puppet = puppets[argument.toLowerCase()];
+    const puppet = alias(puppets, argument.toLowerCase());
     return puppet ? { kind: "summon", puppet } : null;
   }
   if (name === "move" || name === "حرك") {
-    const direction = directions[argument.toLowerCase()];
+    const direction = alias(directions, argument.toLowerCase());
     return direction ? { kind: "move", direction } : null;
   }
-  if (puppets[name] && !argument)
-    return { kind: "summon", puppet: puppets[name]! };
-  if (directions[name] && !argument)
-    return { kind: "move", direction: directions[name]! };
+  const puppet = alias(puppets, name);
+  if (puppet && !argument) return { kind: "summon", puppet };
+  const direction = alias(directions, name);
+  if (direction && !argument) return { kind: "move", direction };
   if ((name === "afreet" || name === "عفريت") && !argument)
     return { kind: "afreet" };
   const [adminName, ...rest] =
     name === "admin" || name === "khayal"
       ? argument.split(/\s+/u)
       : [name, argument];
-  const action = admins[adminName?.toLowerCase() ?? ""];
+  const action = alias(admins, adminName?.toLowerCase() ?? "");
   if (!action) return null;
   const target = rest.join(" ").trim();
   if (action !== "ban") return target ? null : { kind: "admin", action };

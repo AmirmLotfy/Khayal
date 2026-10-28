@@ -55,6 +55,21 @@ describe("chat command parsing", () => {
       target: "user",
     });
   });
+  it("rejects inherited object properties in every command alias lookup", () => {
+    for (const name of ["constructor", "__proto__", "toString", "hasOwnProperty"]) {
+      for (const input of [
+        `!${name}`,
+        `!summon ${name}`,
+        `!هات ${name}`,
+        `!move ${name}`,
+        `!حرك ${name}`,
+        `!admin ${name}`,
+        `!khayal ${name}`,
+      ]) {
+        expect(parseCommand(input), input).toBeNull();
+      }
+    }
+  });
   it("preserves Arabic and removes links and direction controls", () => {
     expect(
       parseCommand(

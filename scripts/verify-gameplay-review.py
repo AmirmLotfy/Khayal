@@ -4,6 +4,8 @@ Requires NumPy and Pillow (available in the Codex bundled Python runtime).
 This verifies stream/frame timing, not a human listening judgement.
 """
 import json
+import sys
+import hashlib
 import math
 import subprocess
 import wave
@@ -13,8 +15,10 @@ from PIL import Image
 
 root = Path(__file__).resolve().parent.parent
 video = root / "submission/video"
-work = video / "work/gameplay-review"
-film = video / "khayal-gameplay-review-114s.mp4"
+with_codex = "--codex-recording" in sys.argv
+work_name = "gameplay-demo" if with_codex else "gameplay-review"
+work = video / "work" / work_name
+film = video / f"khayal-{work_name}-114s.mp4"
 probe = json.loads(subprocess.check_output(["ffprobe", "-v", "error", "-show_format", "-show_streams", "-of", "json", str(film)]))
 assert abs(float(probe["format"]["duration"])-114) < 1/30
 picture = next(s for s in probe["streams"] if s["codec_type"] == "video")
@@ -73,7 +77,7 @@ for actual,(frame,expected) in zip(frames,checks):
     recognized=int(np.argmin(errors))
     if recognized != expected:
         mismatches.append({"frame":frame,"second":frame/30,"expectedCue":expected+1,"closestCue":recognized+1})
-report={"file":"submission/video/khayal-gameplay-review-114s.mp4","durationSeconds":114,"videoFormat":"H264 1920x1080 30fps","audioSampleRate":48000,"maximumDecodedAacFrameGapSeconds":max(map(abs,gaps)),"decodedAudioDurationSeconds":len(encoded)/16000,"audioDelayTargetSeconds":3,"audioWindowChecks":audio_checks,"captionCues":len(cues),"burnedCaptionFramesChecked":len(checks),"burnedCaptionMismatchCount":len(mismatches),"mismatches":mismatches,"method":"Decoded AAC continuity, audio correlation at eight source windows, decoded caption pixels classified against all native caption PNGs near each cue start/end","manualListeningQC":False,"timingLimit":"Correct encoded stream offsets and agreement with the DTW-aligned SRT do not prove perceptual word timing or replace full listening review.","submissionReady":False}
-(root / "docs/gameplay-review-validation.json").write_text(json.dumps(report,indent=2)+"\n")
+report={"file":str(film.relative_to(root)),"sha256":hashlib.sha256(film.read_bytes()).hexdigest(),"genuineCodexUiFootage":with_codex,"durationSeconds":114,"videoFormat":"H264 1920x1080 30fps","audioSampleRate":48000,"maximumDecodedAacFrameGapSeconds":max(map(abs,gaps)),"decodedAudioDurationSeconds":len(encoded)/16000,"audioDelayTargetSeconds":3,"audioWindowChecks":audio_checks,"captionCues":len(cues),"burnedCaptionFramesChecked":len(checks),"burnedCaptionMismatchCount":len(mismatches),"mismatches":mismatches,"method":"Decoded AAC continuity, audio correlation at eight source windows, decoded caption pixels classified against all native caption PNGs near each cue start/end","manualListeningQC":False,"timingLimit":"Correct encoded stream offsets and agreement with the DTW-aligned SRT do not prove perceptual word timing or replace full listening review.","submissionReady":False}
+(root / f"docs/{work_name}-validation.json").write_text(json.dumps(report,indent=2)+"\n")
 print(json.dumps(report,indent=2))
 assert not mismatches, "Burned captions disagree with SRT"

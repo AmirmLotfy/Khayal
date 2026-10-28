@@ -1,0 +1,34 @@
+{
+  "videoUrl": "https://www.youtube.com/watch?v=VxjgW2sga6o",
+  "videoId": "VxjgW2sga6o",
+  "channel": "Frameless / @framelessco",
+  "file": "submission/video/khayal-gameplay-demo-114s.mp4",
+  "fileSha256": "54e661564ca9c6697319cf83cb7117ba8ddb59a12e56b7db30bf340d3f3a69ce",
+  "durationSeconds": 114,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "genuineCodexUiFootage": true,
+  "scope": "Owner-recorded historical planning and change summaries; not continuous coding footage",
+  "ownerPublicationAgreement": "Accept and publish revised demo",
+  "youtubeUi": "Video published / Public; copyright and Community Guidelines No issues found; English by you; High Definition complete",
+  "hostedPlayback": "Observed paused85s with readyState4; screenshot shows genuine Codex conversation and aligned caption",
+  "devpostVideoSaved": true,
+  "devpostStatus": "DRAFT / INCOMPLETE SUBMISSION;3/5steps",
+  "eligibilityDeclarations": [
+    false,
+    false,
+    false
+  ],
+  "finalTermsAccepted": false,
+  "submitted": false,
+  "humanAcceptanceComplete": false,
+  "manualListeningQC": false,
+  "ownerNarrationConfirmation": "My own spoken recording",
+  "proof": [
+    "docs/browser-evidence/youtube-revised-published.jpg",
+    "docs/browser-evidence/youtube-revised-codex-playback.jpg",
+    "docs/browser-evidence/devpost-revised-video-saved.jpg"
+  ]
+}

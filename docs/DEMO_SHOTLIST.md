@@ -1,17 +1,20 @@
-# Demo production packet — target2:50
+# Demo edit and remaining capture plan
 
-All live interaction shots require genuine Twitch events and permission to show participant usernames. Simulator footage may be identified as development/testing; it cannot stand in for the live demo. Preserve source clips and their actual recording dates.
+The current [public demo](https://www.youtube.com/watch?v=VxjgW2sga6o) is114seconds,1920×1080,30fps. It uses the owner's own spoken narration. The exact source intervals, labels and hashes are in [the edit receipt](../submission/video/gameplay-demo-receipt.json). No generated footage substitutes for gameplay.
 
-|Time|Actual capture needed|
+| Time | Existing source |
 |---|---|
-|00:00–00:10|Lamp rises, viewer puppet enters, streamer silhouette swats outside the torso outline.|
-|00:10–00:25|Khayal title and brief Cairo shadow-theatre explanation.|
-|00:25–01:00|Twitch chat visible: summon, movement, depth and a caption.|
-|01:00–01:35|Named afreets, physical defense, five lanterns and actual results.|
-|01:35–01:55|Genuine follow and incoming raid, captured as they happen.|
-|01:55–02:35|Real Codex work, tests, and actual approved model→Blender→layered asset processing. Do not recreate misleading development history.|
-|02:35–02:50|Curtain, readable playbill, closing line.|
+|0:00–0:03|Actual Twitch/camera Hunt hit, agent-operated broadcaster test.|
+|0:03–0:36.9|Actual Twitch/camera free-play, same broadcaster test.|
+|0:36.9–0:41.16|Actual app rehearsal, explicitly simulated viewers/camera off.|
+|0:41.16–0:58.4|Actual Twitch/camera Hunt excerpt.|
+|0:58.4–1:12.18|Actual cue-book screenshot.|
+|1:12.18–1:23.18|Actual one-member broadcaster-test playbill.|
+|1:23.18–1:39.6|Owner-recorded Codex conversation, historical planning/change summaries.|
+|1:39.6–1:54|Actual Hunt result/closing footage.|
 
-Capture1920×1080 with OBS; keep stage visible and cue book excluded. Use the owner’s recorded percussion/voice and rights-cleared sound only. Burn English captions into the final video, keep its duration below2:55, and review audio levels, names, secret exposure, render quality and all claims against actual evidence before public YouTube upload.
+The Codex section is genuine UI, not continuous coding. Current vector production supersedes the original proposed Meshy/Blender route; no Blender production footage is claimed. The earlier2:50storyboard is a planning reference, not the published edit.
 
-Filming and editing cannot start from nonexistent footage. Await owner performance, actual Twitch qualification, approved art and supplied sound; do not fill the missing footage with generated video.
+For the human hero performance, still capture real viewer summon/movement/depth/caption commands, an actual multiplayer Hunt, a genuine follow and incoming raid, then a readable cast playbill. Obtain participant recording/name permissions. Arrange at least3viewers and the5-participant fairness check; do not invent an audience or call simulator events live.
+
+Capture actual1080p OBS output with the stage visible and cue book excluded. Keep the replacement demo below3minutes. Listen through the complete narration and inspect perceptual caption timing, names, claims and secret exposure. Existing checks prove continuous AAC,8speechwindows and112captionframes, not full human listening acceptance. Preserve raw sources and recording dates. See [acceptance runbook](ACCEPTANCE_RUNBOOK.md).

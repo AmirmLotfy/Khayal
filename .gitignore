@@ -17,3 +17,5 @@ docs/browser-evidence/
 docs/cache-cleanup*.json
 scripts/ops/
 __pycache__/
+
+submission/video/khayal-gameplay-demo-*.mp4

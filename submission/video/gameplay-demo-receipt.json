@@ -1,0 +1,102 @@
+{
+  "output": "/Users/frameless/Desktop/Khayal/submission/video/khayal-gameplay-demo-114s.mp4",
+  "duration": 114,
+  "width": 1920,
+  "height": 1080,
+  "segments": [
+    {
+      "start": 0,
+      "end": 3,
+      "file": "captures/twitch-camera-hunt-20261028.mp4",
+      "seek": 22,
+      "kind": "video",
+      "label": "REAL TWITCH + CAMERA / AGENT-OPERATED BROADCASTER TEST / 1x",
+      "note": "Excerpt of actual detected hit; no deliberate-swat accuracy claim"
+    },
+    {
+      "start": 3,
+      "end": 15.62,
+      "file": "captures/twitch-camera-freeplay-20261028.mp4",
+      "seek": 14,
+      "kind": "video",
+      "label": "REAL TWITCH + CAMERA / AGENT-OPERATED BROADCASTER TEST / 1x"
+    },
+    {
+      "start": 15.62,
+      "end": 28.9,
+      "file": "captures/twitch-camera-freeplay-20261028.mp4",
+      "seek": 0,
+      "kind": "video",
+      "label": "REAL TWITCH + CAMERA / AGENT-OPERATED BROADCASTER TEST / 1x"
+    },
+    {
+      "start": 28.9,
+      "end": 36.9,
+      "file": "captures/twitch-camera-freeplay-20261028.mp4",
+      "seek": 25,
+      "kind": "video",
+      "label": "REAL TWITCH + CAMERA / AGENT-OPERATED BROADCASTER TEST / 1x"
+    },
+    {
+      "start": 36.9,
+      "end": 41.16,
+      "file": "captures/animated-rehearsal-20261028.mp4",
+      "seek": 12,
+      "kind": "video",
+      "label": "ACTUAL APP REHEARSAL / SIMULATED VIEWERS / CAMERA OFF / 1x"
+    },
+    {
+      "start": 41.16,
+      "end": 58.4,
+      "file": "captures/twitch-camera-hunt-20261028.mp4",
+      "seek": 18,
+      "kind": "video",
+      "label": "REAL TWITCH + CAMERA / AGENT-OPERATED BROADCASTER TEST / 1x"
+    },
+    {
+      "start": 58.4,
+      "end": 72.18,
+      "file": "../screenshots/03-live-cue-book.jpg",
+      "kind": "image",
+      "label": "ACTUAL CUE-BOOK SCREENSHOT / RECORDED TEST SESSION"
+    },
+    {
+      "start": 72.18,
+      "end": 83.18,
+      "file": "../screenshots/04-real-playbill.png",
+      "kind": "image",
+      "label": "ACTUAL EXPORTED PLAYBILL / ONE BROADCASTER TEST CAST MEMBER"
+    },
+    {
+      "start": 83.18,
+      "end": 99.6,
+      "file": "../../docs/media/codex/owner-build-walkthrough.mp4",
+      "seek": 0,
+      "kind": "video",
+      "label": "OWNER-RECORDED CODEX CONVERSATION / HISTORICAL PLANNING + CHANGE SUMMARIES / 1x"
+    },
+    {
+      "start": 99.6,
+      "end": 114,
+      "file": "captures/twitch-camera-hunt-20261028.mp4",
+      "seek": 58,
+      "kind": "video",
+      "label": "REAL TWITCH + CAMERA / AGENT-OPERATED BROADCASTER TEST / 1x"
+    }
+  ],
+  "voiceOffsetSeconds": 3,
+  "captionCues": 56,
+  "continuousPcmAudioBed": true,
+  "realTwitchAndCamera": true,
+  "agentOperatedBroadcasterTest": true,
+  "humanViewerRehearsal": false,
+  "followAndRaidVerified": false,
+  "genuineCodexUiFootage": true,
+  "codexFootageScope": "Owner-supplied screen recording of historical planning and change summaries, not continuous code writing",
+  "manualListeningQC": false,
+  "submissionReady": false,
+  "fileSha256": "54e661564ca9c6697319cf83cb7117ba8ddb59a12e56b7db30bf340d3f3a69ce",
+  "technicalValidation": "docs/gameplay-demo-validation.json",
+  "publicUrl": "https://www.youtube.com/watch?v=VxjgW2sga6o",
+  "ownerNarrationProvenance": "Owner explicitly confirmed original spoken recording"
+}

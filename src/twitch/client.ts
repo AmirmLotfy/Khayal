@@ -7,6 +7,22 @@ export const TWITCH_SCOPES = [
 const SOCKET_URL = "wss://eventsub.wss.twitch.tv/ws";
 const STATE_KEY = "khayal:twitch:oauth-state";
 
+/** Erase callback URL data without consuming a token or reading/changing OAuth state. */
+export function scrubOAuthCallbackUrl(): boolean {
+  if (typeof window === "undefined") return false;
+  const clean = new URL(window.location.href);
+  const fragment = new URLSearchParams(clean.hash.slice(1));
+  if (
+    !fragment.has("access_token") && !fragment.has("error") &&
+    !clean.searchParams.has("access_token") && !clean.searchParams.has("error")
+  ) return false;
+  clean.hash = "";
+  for (const key of ["access_token", "token_type", "expires_in", "scope", "error", "error_description", "state"])
+    clean.searchParams.delete(key);
+  window.history.replaceState(null, "", clean.pathname + clean.search);
+  return true;
+}
+
 export interface TwitchIdentity {
   broadcasterId: string;
   userId: string;
@@ -222,18 +238,16 @@ export class TwitchClient {
       !fragment.has("access_token") &&
       !fragment.has("error") &&
       !query.has("error")
-    )
+    ) {
+      // Tokens in query parameters are unsupported, but still must not remain in history.
+      scrubOAuthCallbackUrl();
       return false;
+    }
     const response =
       fragment.has("access_token") || fragment.has("error") ? fragment : query;
     const accessToken = response.get("access_token");
     const returnedState = response.get("state");
-    // Remove both successful credentials and error callback parameters from browser history.
-    const clean = new URL(window.location.href);
-    clean.hash = "";
-    for (const key of ["error", "error_description", "state"])
-      clean.searchParams.delete(key);
-    window.history.replaceState(null, "", clean.pathname + clean.search);
+    scrubOAuthCallbackUrl();
     try {
       const saved = JSON.parse(sessionStorage.getItem(STATE_KEY) ?? "null") as {
         state?: string;

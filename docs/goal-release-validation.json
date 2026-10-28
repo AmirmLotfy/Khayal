@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-28",
+  "sourceParent": "67fb7562045467b50dda94394901ccc1a710cf6f",
+  "productionBundle": "dist/assets/index-DglJuiop.js",
+  "automated": {
+    "tests": 64,
+    "files": 7,
+    "build": "TypeScript and Vite passed",
+    "diffCheck": "passed"
+  },
+  "browserChecks": [
+    "Separate cue closes/reopens without stopping stage; closing stage produces disconnected cue",
+    "Duplicate stage prevented; synthetic callback fragment erased despite existing owner",
+    "Real same-scope Twitch refresh connected as amirmolotfy; callback URL cleaned",
+    "Real camera GPU/CPU switching and timeout recovery",
+    "Live Hunt camera-stop pauses; restarting camera retains operator pause until resume",
+    "50-member rehearsal cast yields explicit numbered playbill downloads; long Arabic name wraps readably",
+    "Non-camera control error leaves camera status intact"
+  ],
+  "diagnosticLimit": "CDP offline emulation did not interrupt the existing WebSocket in15seconds. Restored network overrides. No real reconnect acceptance claimed.",
+  "performanceReceipt": "performance-browser-validation.json",
+  "mediaReceipt": "youtube-revised-publication-validation.json",
+  "narration": "Owner confirmed own spoken recording",
+  "devpost": {
+    "status": "DRAFT / INCOMPLETE SUBMISSION",
+    "steps": "3/5",
+    "eligibilityDeclarations": [
+      false,
+      false,
+      false
+    ],
+    "finalTermsAccepted": false,
+    "submitted": false
+  },
+  "remaining": [
+    "Final clean-checkout verification at committed source",
+    "20 deliberate physical swats and30seconds stationary overlap; mirror/lighting study",
+    "Real multi-viewer rehearsal and5-participant fairness",
+    "Real follow and incoming raid",
+    "Five-minute1080p OBS recording qualification",
+    "Full manual listening review",
+    "Owner eligibility/terms declarations currently withheld"
+  ],
+  "submissionReady": false
+}
