@@ -1,0 +1,84 @@
+{
+  "sourceHead": "f116d904f17ee7cf71b1d4680070cca7fec22339",
+  "publicClone": true,
+  "privateConfigCopied": false,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/AmirmLotfy/Khayal.git",
+        "checkout"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "npm",
+        "ci",
+        "--cache",
+        "/private/var/folders/2x/jrx2nybn1mlfj566lg2wzq2h0000gn/T/khayal-release-check-xrpynl8y/npm-cache",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "assetHashesVerified": [
+    "public/assets/vision/wasm/vision_wasm_module_internal.js",
+    "public/assets/vision/wasm/vision_wasm_module_internal.wasm",
+    "public/assets/vision/selfie_segmenter_landscape.tflite",
+    "public/assets/fonts/e4f8e3be1cc9ce3b5684da0919f1bcc61b502263d4628dea93492f97545964aa.ttf",
+    "public/assets/fonts/eb916bee1eec1f92b27ea9965a451bf2d8356f89d1fd2dc20244b2f51137fb54.ttf",
+    "public/assets/fonts/a7fdc993f9f0387caedba4e42521136fa97e4c0837ae6239bf0413ccf8af00c2.ttf",
+    "public/assets/fonts/843e9e39e53e36e835e73f15573bf3589e2e60932bd5d6512d01672d1bd5792e.ttf",
+    "public/assets/fonts/a0a943015fae6d41423f2f65ff27655055b1f1aca1a890b84c2b3855ae925a2b.ttf"
+  ],
+  "browserStartup": "Passed actual localhost5173 fresh startup without .env.local:1920x1080canvas, separate cue book,50simulated viewers24active/26waiting; explicit51-name two-page export including long wrapped Arabic name. Simulator stopped and disposable browser windows closed.",
+  "cleanup": "Verified exact task marker, resolved macOS temporary parent, source HEAD/remote and no open handles; removed only disposable task checkout/cache.",
+  "productionBundle": "dist/assets/index-DlB_VhsX.js",
+  "tests": {
+    "passed": 64,
+    "files": 7
+  },
+  "npmCi": "59packages installed in30seconds",
+  "scope": "No Twitch credentials/config copied; this checks default rehearsal startup, not provider/human acceptance",
+  "playbillDownloads": [
+    {
+      "filename": "khayal-playbill-1 (3).png",
+      "sha256": "ae42082cb43fccd3c1941a99bbc16938b6a088552f164bd67d88815c4d0bae91",
+      "dimensions": [
+        1080,
+        1350
+      ]
+    },
+    {
+      "filename": "khayal-playbill-2 (2).png",
+      "sha256": "b70a7b014812d0b1329cf894a474e449854eacc039d2ec6fc70d43d4b715e485",
+      "dimensions": [
+        1080,
+        1350
+      ]
+    }
+  ],
+  "privateEvidence": "docs/browser-evidence/clean-release-cue.jpg",
+  "ownedTemporaryCheckoutRemoved": true,
+  "originalWorkspacePreviewRestored": true
+}

@@ -30,10 +30,19 @@
       false
     ],
     "finalTermsAccepted": false,
-    "submitted": false
+    "submitted": false,
+    "galleryImages": 7,
+    "codexStillsSaved": true,
+    "builtWith": [
+      "typescript",
+      "pixijs",
+      "vite",
+      "mediapipe",
+      "twitch",
+      "codex"
+    ]
   },
   "remaining": [
-    "Final clean-checkout verification at committed source",
     "20 deliberate physical swats and30seconds stationary overlap; mirror/lighting study",
     "Real multi-viewer rehearsal and5-participant fairness",
     "Real follow and incoming raid",
@@ -41,5 +50,13 @@
     "Full manual listening review",
     "Owner eligibility/terms declarations currently withheld"
   ],
-  "submissionReady": false
+  "submissionReady": false,
+  "runtimeSourceHead": "f116d904f17ee7cf71b1d4680070cca7fec22339",
+  "cleanReleaseReceipt": "clean-release-validation.json",
+  "participants": "Owner answered Not available yet. No human session or follow/raid events fabricated.",
+  "originalWorkspaceCurrentTwitch": "Fresh same-scope authorization connected as amirmolotfy; cameraoff",
+  "privateGalleryProof": "docs/browser-evidence/devpost-codex-gallery-saved.jpg",
+  "checkedAt": "2026-10-28T01:01:16.876032+00:00",
+  "obsSetupReceipt": "obs-setup-validation.json",
+  "toolAccessAtCheckpoint": "Devpost connector UNAUTHORIZED; CUA browser access disabled and OBS native controls timed out. Existing browser-saved draft/earlier actual provider tests remain evidence, not current access guarantees."
 }

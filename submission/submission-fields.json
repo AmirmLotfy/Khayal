@@ -31,7 +31,7 @@
   "devpost_submission_edit_url": "https://devpost.com/submit-to/31742-codex-x-twitchcon-hackathon/manage/submissions/1268334-khayal/project-overview",
   "devpost_status": "DRAFT",
   "devpost_cover_uploaded": true,
-  "devpost_gallery_images_uploaded": 5,
+  "devpost_gallery_images_uploaded": 7,
   "devpost_story_saved": true,
   "devpost_additional_answers_saved": true,
   "owner_eligibility_instruction": "Leave the three declarations unchecked",
@@ -54,5 +54,18 @@
     "files": 7
   },
   "local_five_minute_gpu_numeric_targets_met": true,
-  "obs_performance_qualified": false
+  "obs_performance_qualified": false,
+  "devpost_gallery_composition": {
+    "actualGameplayCuePlaybill": 5,
+    "ownerRecordedCodexConversation": 2
+  },
+  "devpost_built_with": [
+    "typescript",
+    "pixijs",
+    "vite",
+    "mediapipe",
+    "twitch",
+    "codex"
+  ],
+  "clean_release_source_head": "f116d904f17ee7cf71b1d4680070cca7fec22339"
 }

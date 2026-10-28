@@ -14,13 +14,14 @@
 - [ ] Physical camera denial/track-loss, expired-login and actual provider reconnect qualification beyond automated checks.
 - [ ]20physicalswats≥18hits,30sstaticoverlap0hits, mirrored/projected alignment.
 - [x] Five-minute local GPU observation with actual camera inference and 24 simulated puppets held throughout: 59.94 average render-callback fps, 22.57 delivered inference fps, 26 ms p95 capture-to-result latency. Local numeric targets met; this measures the recorded runtime bundle, not OBS or human acceptance. [Receipt](../performance-browser-validation.json).
-- [ ] Sustained CPU/OBS performance and human fairness session. CPU has a usable 29.77-second observation only.
+- [x] Official OBS33.0.0 installed for capture; [setup receipt](../obs-setup-validation.json). Native control timed out; no recording qualification claimed.
+- [ ] Sustained CPU/OBS performance and human fairness session. CPU has a usable29.77-second observation only. Owner says rehearsal participants are not available yet.
 - [x] Owner explicitly confirmed `speech (1).wav` is their own spoken recording. Its complete 105.480-second narration, 56 captions and continuous audio are in the 114-second demo; 112 burned caption frames and eight audio windows pass technical checks. Raw voice remains local. [Media checks](../gameplay-demo-validation.json).
 - [x] Genuine broadcaster-operated Twitch/camera footage and owner-recorded historical Codex conversation integrated into the published 114-second demo. The Codex clip shows existing planning/change summaries, not continuous coding.
 - [ ] Full manual listening/perceptual caption review and human performance acceptance.
-- [x] Earlier clean-checkout installation/tests/build/assets verified at the revision identified in [its receipt](../clean-checkout-validation.json); that receipt does not qualify later source changes.
+- [x] Final runtime source `f116d90`: clean public clone, npmci,64tests/build,8asset checksums and actual browser startup/51-name two-page export pass without private configuration. [Release receipt](../clean-release-validation.json).
 - [x] Public GitHub source repository published: https://github.com/AmirmLotfy/Khayal .
-- [x] Devpost existing draft verified; cover, five actual-capture gallery images, story/repo, session ID and owner-provided answers saved.
+- [x] Devpost existing draft verified; cover, five actual-capture gallery images plus two genuine historical Codex stills, story/repo, session ID and owner-provided answers saved.
 - [x] Revised public YouTube demo, designed 16:9 thumbnail, metadata, English subtitles and 1080p availability verified: [114-second demo](https://www.youtube.com/watch?v=VxjgW2sga6o). Saved as Devpost video; draft 3/5, still incomplete. [Publication receipt](../youtube-revised-publication-validation.json).
 - [ ] Owner eligibility/terms and final submission. Owner requested three eligibility boxes remain unchecked.
 

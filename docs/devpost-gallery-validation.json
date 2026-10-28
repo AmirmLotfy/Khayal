@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-28",
+  "projectUrl": "https://devpost.com/software/khayal",
+  "savedGalleryCount": 7,
+  "publicCarouselItems": 8,
+  "carouselIncludesVideo": true,
+  "added": [
+    {
+      "file": "docs/media/codex/accepted-plan.jpg",
+      "photoId": 5725305,
+      "caption": "Owner-recorded Codex conversation: accepted plan and implementation request. Direct crop; historical planning evidence."
+    },
+    {
+      "file": "docs/media/codex/implementation-checkpoint.jpg",
+      "photoId": 5725306,
+      "caption": "Owner-recorded Codex checkpoint. The visible 29-test result is historical; current checks are documented in the repository."
+    }
+  ],
+  "builtWith": [
+    "typescript",
+    "pixijs",
+    "vite",
+    "mediapipe",
+    "twitch",
+    "codex"
+  ],
+  "saveAndReloadVerified": true,
+  "publicPlanningStillVerified": true,
+  "eligibilityDeclarations": [
+    false,
+    false,
+    false
+  ],
+  "status": "DRAFT / INCOMPLETE SUBMISSION;3/5",
+  "submitted": false,
+  "proof": "docs/browser-evidence/devpost-codex-gallery-saved.jpg"
+}

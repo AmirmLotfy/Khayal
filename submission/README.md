@@ -1,6 +1,6 @@
 # Khayal submission studio
 
-The [Devpost project](https://devpost.com/software/khayal) remains **DRAFT / INCOMPLETE SUBMISSION**. The pitch, cover, five actual-capture gallery images, source link, story and Additional info answers are saved. Three eligibility declarations remain unchecked at the owner's explicit request. Final terms and Submit project have not been accepted/clicked. The [public gameplay demo](https://www.youtube.com/watch?v=VxjgW2sga6o) is published and saved in the Devpost video field; the draft is now3/5 steps.
+The [Devpost project](https://devpost.com/software/khayal) remains **DRAFT / INCOMPLETE SUBMISSION**. The pitch, cover, seven gallery images (five actual gameplay/cue/playbill captures and two genuine Codex stills), source link, story and Additional info answers are saved. Three eligibility declarations remain unchecked at the owner's explicit request. Final terms and Submit project have not been accepted/clicked. The [public gameplay demo](https://www.youtube.com/watch?v=VxjgW2sga6o) is published and saved in the Devpost video field; the draft is now3/5 steps.
 
 ## Current media
 

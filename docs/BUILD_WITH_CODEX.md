@@ -42,7 +42,7 @@ The original Meshy/Blender asset-production route was not carried out; no credit
 
 ## Testing, corrections and actual interaction
 
-Codex wrote tests for command ownership, moderator authority, Unicode captions, cooldowns, queue fairness, camera-motion rules, Hunt timing and Twitch lifecycle handling. The current suite contains 64 tests in seven files. A clean-checkout rehearsal was also recorded at an earlier source revision; its [receipt](clean-checkout-validation.json) identifies that revision and its limits.
+Codex wrote tests for command ownership, moderator authority, Unicode captions, cooldowns, queue fairness, camera-motion rules, Hunt timing and Twitch lifecycle handling. The current suite contains 64 tests in seven files. A fresh public clone at runtime revision `f116d90` passes npmci, all64tests, the production build and8asset hashes. Its [release receipt](clean-release-validation.json) also records actual clean browser startup and a51-name two-page playbill without private configuration.
 
 Once browser access worked, Codex created the dedicated Twitch app and exercised authorized broadcaster commands. Amir approved OAuth and camera access. Actual chat/camera recordings show puppet control and one detected Hunt hit with five lanterns retained. This was a broadcaster test in an offline channel, not a multi-viewer live broadcast. Browser testing also exposed and led to fixes for Arabic joining and separate cue-window opening/recovery. See [browser validation](browser-live-validation.json).
 

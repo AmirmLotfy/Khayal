@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-28T01:01:16.876032+00:00",
+  "installedPath": "/Applications/OBS.app",
+  "version": "33.0.0",
+  "source": "Homebrew official obs cask; https://cdn-fastly.obsproject.com/downloads/obs-studio-33.0.0-macos-apple.dmg",
+  "sha256": "b36f4e9da5f2f17c733ba711c8fe0656d6b0cd573cfe96eeb3e68325cffef739",
+  "officialRelease": "https://github.com/obsproject/obs-studio/releases/tag/33.0.0",
+  "installation": "brew install --cask obs passed; no unrelated taps trusted or apps modified",
+  "launch": "Exact /Applications/OBS.app launched. CUA full-path getApp timed out at30s, inventory confirmed running; subsequent getApp timed out. Newly launched exact process55942 was gracefully terminated and absence verified.",
+  "otherProjectPreserved": "An existing Aragoz/.runtime/OBS.app caused bundle-ID ambiguity; that bundle was not modified or launched.",
+  "browserAccess": "CUA inventory and one bounded attempt to retain current stage both reported Local browser use is disabled in Work settings; no OS/browser bypass attempted",
+  "obsRecording": false,
+  "performanceQualified": false,
+  "nextAction": "When Computer Use works, configure dedicated Khayal OBS scene and1080p recording, then run actual5min recording with stage visible,24simulated actors and real camera; collect telemetry and file/log evidence."
+}
